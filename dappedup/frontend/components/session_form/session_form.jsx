@@ -22,6 +22,18 @@ class SessionForm extends React.Component {
         this.props.processForm(user);
     }; 
 
+    renderErrors() {
+        return(
+          <ul>
+            {this.props.errors.map((error, i) => (
+              <li key={`error-${i}`}>
+                {error}
+              </li>
+            ))}
+          </ul>
+        );
+    }
+    
     render() {
         return (
           <div className="login-form-container">
@@ -31,7 +43,7 @@ class SessionForm extends React.Component {
               Please {this.props.formType} or {this.props.navLink}
               <div className="login-form">
                 <br/>
-                <label>Username:
+                <label>Email:
                   <input type="text"
                     value={this.state.email}
                     onChange={this.update('email')}
