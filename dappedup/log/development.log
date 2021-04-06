@@ -1,0 +1,40 @@
+Started GET "/" for ::1 at 2021-04-05 17:41:41 -0400
+
+ActiveRecord::NoDatabaseError - FATAL:  database "dappedup_development" does not exist:
+
+Started POST "/__better_errors/f1fc39347534b856/variables" for ::1 at 2021-04-05 17:41:43 -0400
+Started GET "/" for ::1 at 2021-04-05 17:42:52 -0400
+
+ActiveRecord::NoDatabaseError - FATAL:  database "dappedup_development" does not exist:
+
+Started POST "/__better_errors/8674c72662b8dffa/variables" for ::1 at 2021-04-05 17:42:53 -0400
+  [1m[35m (3443.2ms)[0m  [1m[35mCREATE DATABASE "dappedup_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (2743.7ms)[0m  [1m[35mCREATE DATABASE "dappedup_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2021-04-05 17:44:01 -0400
+
+ActionController::RoutingError - uninitialized constant StaticPagesController:
+
+Started POST "/__better_errors/2f650e16d1aceef1/variables" for ::1 at 2021-04-05 17:44:01 -0400
+Started GET "/" for ::1 at 2021-04-05 17:48:22 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 3485ms (Views: 3479.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-04-05 19:38:51 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (8.4ms)
+Started GET "/" for ::1 at 2021-04-05 19:38:56 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 8273ms (Views: 8262.7ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 3530ms (Views: 3524.9ms | ActiveRecord: 0.0ms)
+
+
