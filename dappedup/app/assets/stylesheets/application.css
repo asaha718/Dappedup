@@ -14,15 +14,57 @@
  *= require_self
  */
 
-
 .login-form-container {
     display: flex;
     justify-content: center;
     margin-top: 100px;
+    background-color: white;
+    color: #333;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+    top: 60px;
+    height: 350px;
+    width: 400px;
+    padding: 40px;
+    margin-left: 250px; 
 }
 
 header { 
     display: flex;
     justify-content: space-between;
-    margin: 20px
+    margin: 20px; 
+    padding: 10px; 
 }
+
+.errors{ 
+    color: red;
+}
+
+h1 { 
+    font-size: 20px;
+}
+
+h2 { 
+    font-size: 30px; 
+    font-weight: bold;
+}
+
+h4 { 
+    font-size: 20px;
+}
+
+.session-submit {
+    display: inline-block;
+    padding: 10px 30px;
+    cursor: pointer;
+    background-color: rgb(23, 92, 219);
+    border: none; 
+    border-radius: 5px;
+}
+
+.session-submit:hover{ 
+    transform: scale(.98);
+    filter: brightness(85%); 
+}
+

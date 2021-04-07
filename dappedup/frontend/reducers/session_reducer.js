@@ -19,5 +19,5 @@ import {
     }
   };
   
-  export default sessionReducer;
+export default sessionReducer;
   

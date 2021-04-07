@@ -6,35 +6,42 @@ class SessionForm extends React.Component {
       this.state = {
         email: "",
         password: "", 
-        bio:"", 
+        bio: "", 
         location: "", 
-        job_title:""
+        job_title: "", 
+        full_name: ""
       } 
-      this.handleSubmit = this.handleSubmit.bind(this); 
+      this.handleSubmit = this.handleSubmit.bind(this);
+       
     };
 
     update(field) {
-        return e => this.setState({
-          [field]: e.currentTarget.value
-        });
+      return e => this.setState({
+        [field]: e.currentTarget.value
+      });
     }; 
 
     handleSubmit(e) {
-        e.preventDefault();
-        const user = Object.assign({}, this.state);
-        this.props.processForm(user);
+      e.preventDefault();
+      const user = Object.assign({}, this.state);
+      this.props.processForm(user); 
+    
     }; 
 
     renderErrors() {
-        return(
-          <ul>
-            {this.props.errors.map((error, i) => (
-              <li key={`error-${i}`}>
-                {error}
-              </li>
-            ))}
-          </ul>
-        );
+      return(
+        <ul>
+          {this.props.errors.map((error, i) => (
+            <li key={`error-${i}`}>
+              {error}
+            </li>
+          ))}
+        </ul>
+      );
+    }
+
+    componentDidMount(){ 
+      if (this.props.errors.length !==0) this.props.clearErrors()
     }
 
     render() {
@@ -42,9 +49,12 @@ class SessionForm extends React.Component {
         return (
             <div className="login-form-container">
               <form onSubmit={this.handleSubmit} className="login-form-box">
-                Welcome to DappedUp!
+                <h2>Welcome to DappedUp!</h2>
                 <br/>
-                Please {this.props.formType} or {this.props.navLink}
+                <h4>Please {this.props.formType} or {this.props.navLink}</h4>
+                <div className="errors">
+                  {this.renderErrors()}
+                </div>
                 <div className="login-form">
                   <br/>
                   <label>Email:
@@ -59,6 +69,14 @@ class SessionForm extends React.Component {
                     <input type="password"
                       value={this.state.password}
                       onChange={this.update('password')}
+                      className="login-input"
+                    />
+                  </label>
+                  <br/>
+                  <label>Full Name:
+                    <input type="text"
+                      value={this.state.full_name}
+                      onChange={this.update('full_name')}
                       className="login-input"
                     />
                   </label>
@@ -97,9 +115,12 @@ class SessionForm extends React.Component {
         return ( 
           <div className="login-form-container">
               <form onSubmit={this.handleSubmit} className="login-form-box">
-                Welcome to DappedUp!
+                <h2>Welcome to DappedUp!</h2>
                 <br/>
-                Please {this.props.formType} or {this.props.navLink}
+                <h4>Please {this.props.formType} or {this.props.navLink}</h4>
+                <div className="errors">
+                  {this.renderErrors()}
+                </div>
                 <div className="login-form">
                   <br/>
                   <label>Email:
