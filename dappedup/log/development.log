@@ -207,3 +207,93 @@ DETAIL:  Failing row contains (2, g@g.com, $2a$12$FV6eQ.fv.Dj5b2VSo8B7d.UDtsp4no
 : INSERT INTO "users" ("email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id":
   app/controllers/api/users_controller.rb:5:in `create'
 
+Started GET "/" for ::1 at 2021-04-06 18:34:34 -0400
+  [1m[35m (4.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/anug/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (15.8ms)
+Started GET "/" for ::1 at 2021-04-06 18:34:38 -0400
+Completed 200 OK in 8666ms (Views: 8651.5ms | ActiveRecord: 0.0ms)
+
+
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 233ms (Views: 184.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/user" for ::1 at 2021-04-06 18:35:57 -0400
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"", "password"=>"[FILTERED]", "email"=>"a@saha@gmail.com", "bio"=>"hello", "location"=>"nyc", "job_title"=>"boss"}}
+Unpermitted parameter: :username
+  [1m[36mUser Load (19.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "t4jMbqwEKq9uFrh9DUi-ig"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:37
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "a@saha@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Create (10.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "bio", "location", "job_title", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "a@saha@gmail.com"], ["password_digest", "$2a$12$ILwZey9h5vbS.2aE6GWiWubit2/y0Eqkaw8blXY6P65ITJSLsu51a"], ["session_token", "t4jMbqwEKq9uFrh9DUi-ig"], ["bio", "hello"], ["location", "nyc"], ["job_title", "boss"], ["created_at", "2021-04-06 22:35:58.117411"], ["updated_at", "2021-04-06 22:35:58.117411"]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[35m (10.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "5YxooLVMuPM_FsKSR1CpZA"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:37
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:21
+  [1m[36mUser Exists (7.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "a@saha@gmail.com"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:21
+  [1m[36mUser Update (3.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "5YxooLVMuPM_FsKSR1CpZA"], ["updated_at", "2021-04-06 22:35:58.178972"], ["id", 3]]
+  ↳ app/models/user.rb:21
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:21
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (0.8ms)
+Completed 200 OK in 902ms (Views: 22.5ms | ActiveRecord: 100.5ms)
+
+
+Started GET "/" for ::1 at 2021-04-06 18:36:49 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "5YxooLVMuPM_FsKSR1CpZA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered static_pages/root.html.erb within layouts/application (183.1ms)
+Completed 500 Internal Server Error in 328ms (ActiveRecord: 2.4ms)
+
+
+
+ActionView::MissingTemplate - Missing partial api/users/_user.json.jbuilder with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/anug/fsp/Dappedup/dappedup/app/views":
+  app/views/static_pages/root.html.erb:3:in `_app_views_static_pages_root_html_erb__4487388274611695027_70368228658900'
+
+Started POST "/__better_errors/63b2f9eb305273ce/variables" for ::1 at 2021-04-06 18:36:54 -0400
+Started GET "/" for ::1 at 2021-04-06 18:47:22 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "5YxooLVMuPM_FsKSR1CpZA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (5.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (29.9ms)
+Completed 200 OK in 310ms (Views: 301.6ms | ActiveRecord: 3.5ms)
+
+
+Started DELETE "/api/session" for ::1 at 2021-04-06 18:47:32 -0400
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "5YxooLVMuPM_FsKSR1CpZA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "VButhLQBw7lmKogDeyEf4A"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:37
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:21
+  [1m[36mUser Exists (4.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "a@saha@gmail.com"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:21
+  [1m[36mUser Update (4.0ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "VButhLQBw7lmKogDeyEf4A"], ["updated_at", "2021-04-06 22:47:32.862136"], ["id", 3]]
+  ↳ app/models/user.rb:21
+  [1m[35m (8.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:21
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (15.5ms)
+  Rendered api/users/show.json.jbuilder (36.0ms)
+Completed 200 OK in 206ms (Views: 80.1ms | ActiveRecord: 18.7ms)
+
+
