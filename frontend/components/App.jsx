@@ -1,10 +1,15 @@
 import React from "react";
 import GreetingContainer from "./greeting/greeting_container"; 
-import {Link, Route, Switch} from "react-router-dom"; 
+import {Link, Redirect, Route, Switch} from "react-router-dom"; 
 import LoginFormContainer from "./session_form/login_form_container"; 
 import SignupFormContainer from "./session_form/signup_form_container";
 import {AuthRoute} from "../utils/route_util"
 
+const noMatchPage=()=> { 
+  return ( 
+    <h3>404 -Not found</h3>
+  )
+}; 
 
 const App = () => (
   <div>
@@ -17,7 +22,8 @@ const App = () => (
       <div className="backGround">
         <Switch>
           <AuthRoute path="/login" component={LoginFormContainer} />
-          <AuthRoute path="/signup" component={SignupFormContainer} />  
+          <AuthRoute path="/signup" component={SignupFormContainer} />
+          <Route path="*" component={noMatchPage} />
         </Switch>
       </div>
   </div>
