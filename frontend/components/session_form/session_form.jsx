@@ -47,21 +47,24 @@ class SessionForm extends React.Component {
     render() {
       if (this.props.formType=== 'signup'){ 
         return (
-            <div className="login-form-container">
-              <form onSubmit={this.handleSubmit} className="login-form-box">
-                <h2>Welcome to DappedUp!</h2>
+          <div className="signup-page">
+            <div className="signup-form-container">
+              <form onSubmit={this.handleSubmit} className="signup-form-box">
+                <div className="welcome-greeting">
+                  <h2>Make the most of your professional life</h2>
+                </div>
                 <br/>
-                <h4>Please {this.props.formType} or {this.props.navLink}</h4>
+                {/* <h4>Please {this.props.formType} or {this.props.navLink}</h4> */}
                 <div className="errors">
                   {this.renderErrors()}
                 </div>
-                <div className="login-form">
+                <div className="signup-form">
                   <br/>
                   <label>Email:
                     <input type="text"
                       value={this.state.email}
                       onChange={this.update('email')}
-                      className="login-input"
+                      className="signup-input"
                     />
                   </label>
                   <br/>
@@ -69,7 +72,7 @@ class SessionForm extends React.Component {
                     <input type="password"
                       value={this.state.password}
                       onChange={this.update('password')}
-                      className="login-input"
+                      className="signup-input"
                     />
                   </label>
                   <br/>
@@ -77,7 +80,7 @@ class SessionForm extends React.Component {
                     <input type="text"
                       value={this.state.full_name}
                       onChange={this.update('full_name')}
-                      className="login-input"
+                      className="signup-input"
                     />
                   </label>
                   <br/>
@@ -85,7 +88,7 @@ class SessionForm extends React.Component {
                     <textarea
                       value={this.state.bio}
                       onChange={this.update('bio')}
-                      className="login-input"
+                      className="signup-input"
                     />
                   </label>
                   <br/>
@@ -93,7 +96,7 @@ class SessionForm extends React.Component {
                     <input type="text"
                       value={this.state.location}
                       onChange={this.update('location')}
-                      className="login-input"
+                      className="signup-input"
                     />
                   </label>
                   <br/>
@@ -101,7 +104,7 @@ class SessionForm extends React.Component {
                     <input type="text"
                       value={this.state.job_title}
                       onChange={this.update('job_title')}
-                      className="login-input"
+                      className="signup-input"
                     />
                   </label>
                   <br/>
@@ -109,15 +112,18 @@ class SessionForm extends React.Component {
                 </div>
               </form>
             </div>
+          </div>
           );
 
       }else if( this.props.formType==='login'){ 
         return ( 
           <div className="login-form-container">
               <form onSubmit={this.handleSubmit} className="login-form-box">
+              <div className="welcome-greeting">
                 <h2>Welcome to DappedUp!</h2>
+              </div>
                 <br/>
-                <h4>Please {this.props.formType} or {this.props.navLink}</h4>
+                {/* <h4>Please {this.props.formType} or {this.props.navLink}</h4> */}
                 <div className="errors">
                   {this.renderErrors()}
                 </div>

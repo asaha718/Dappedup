@@ -10,14 +10,16 @@ const App = () => (
   <div>
       <header>
         <Link to="/" className="header-link">
-        <h1>Dapped Up</h1>
+        <h1>DappedUp</h1>
         </Link>
         <GreetingContainer />
       </header>
-      <Switch>
-        <AuthRoute path="/login" component={LoginFormContainer} />
-        <AuthRoute path="/signup" component={SignupFormContainer} />  
-      </Switch>
+      <div className="backGround">
+        <Switch>
+          <AuthRoute path="/login" component={LoginFormContainer} />
+          <AuthRoute path="/signup" component={SignupFormContainer} />  
+        </Switch>
+      </div>
   </div>
 );
 

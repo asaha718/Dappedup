@@ -13,25 +13,34 @@
  *= require_tree .
  *= require_self
 */
- 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');  
+
 h1 { 
-     font-size: 20px;
+    font-size: 20px;
 }
  
-h2 { 
-     font-size: 30px; 
-     font-weight: bold;
+.welcome-greeting {
+    font-family: Cambria;  
+    font-size: 30px; 
+    font-weight: bold;
 }
  
 h4 { 
-     font-size: 20px;
+    font-size: 20px;
 }
  
 header { 
-     display: flex;
-     justify-content: space-between;
-     margin: 20px; 
-     padding: 10px; 
+    display: flex;
+    justify-content: space-between;
+    margin: 20px; 
+    padding: 10px; 
+}
+
+.header-link { 
+    text-decoration: none; 
+    font-family: 'Noto Sans KR';
+    font-weight: bold;
+    color: blue;
 }
 
 .login-form-container {
@@ -46,18 +55,34 @@ header {
     padding: 40px;
 }
 
+.signup-form-container{ 
+    display: flex;
+    justify-content: center;
+    width: 400px;
+    height: 600px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.signup-page { 
+    height: 800px;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(238, 241, 241);
+}
 
 .errors{ 
     color: red;
 }
 
-.session-submit {
+.header-button {
     margin: auto;
     padding: 10px 30px;
     cursor: pointer;
     background-color: rgb(23, 92, 219);
     border: none; 
     border-radius: 5px;
+    color: white;
 }
 
 .session-submit:hover{ 
@@ -65,11 +90,41 @@ header {
     filter: brightness(85%); 
 }
 
-.login-input{ 
-    border: 0;
-    border-bottom: 1px solid #b4becb;
-    width: 100%;
-    font-size: 16px;
-    padding: 3px;
+    /* .login-input{ 
+        border: 0;
+        border-bottom: 1px solid #b4becb;
+        width: 100%;
+        font-size: 16px;
+        padding: 3px;
+    } */
+
+.login-signup{ 
+    text-decoration: none;
 }
 
+.header-group{ 
+    display: flex;
+}
+
+input[type='text'], 
+input[type='password'], 
+textarea { 
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.session-submit { 
+    width: 100%;
+    background-color:blue;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
