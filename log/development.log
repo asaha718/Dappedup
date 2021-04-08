@@ -1,0 +1,65 @@
+Started GET "/" for ::1 at 2021-04-08 13:16:57 -0400
+  [1m[35m (4.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/anug/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (17.7ms)
+Started GET "/" for ::1 at 2021-04-08 13:17:01 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 4408ms (Views: 4402.7ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 1559ms (Views: 1555.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session" for ::1 at 2021-04-08 13:17:11 -0400
+Started POST "/api/session" for ::1 at 2021-04-08 13:17:11 -0400
+Processing by Api::SessionsController#create as JSON
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]", "bio"=>"", "location"=>"", "job_title"=>"", "full_name"=>""}}
+  Parameters: {"user"=>{"email"=>"user@demo.com", "password"=>"[FILTERED]", "full_name"=>"Demo Person", "bio"=>"A am trained in the modern art of demoing web applications. Feel free to contact me for any demo needs.", "location"=>"Demo Land", "job_title"=>"Professonal Demo Artiest"}}
+  [1m[36mUser Load (12.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  [1m[36mUser Load (14.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@demo.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:9
+  ↳ app/models/user.rb:9
+Completed 401 Unauthorized in 46ms (Views: 0.4ms | ActiveRecord: 16.4ms)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PUMTxyB4u7Lm6CTwK9Vh3Q"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:41
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:25
+  [1m[36mUser Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "user@demo.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:25
+  [1m[36mUser Update (4.0ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "PUMTxyB4u7Lm6CTwK9Vh3Q"], ["updated_at", "2021-04-08 17:17:12.231250"], ["id", 1]]
+  ↳ app/models/user.rb:25
+  [1m[35m (6.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:25
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered api/users/show.json.jbuilder (4.4ms)
+Completed 200 OK in 431ms (Views: 25.4ms | ActiveRecord: 55.4ms)
+
+
+Started DELETE "/api/session" for ::1 at 2021-04-08 13:17:15 -0400
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PUMTxyB4u7Lm6CTwK9Vh3Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fKi5q0oLshkq74WvuKeKDA"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:41
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:25
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "user@demo.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:25
+  [1m[36mUser Update (3.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "fKi5q0oLshkq74WvuKeKDA"], ["updated_at", "2021-04-08 17:17:15.646558"], ["id", 1]]
+  ↳ app/models/user.rb:25
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:25
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (1.4ms)
+  Rendered api/users/show.json.jbuilder (8.1ms)
+Completed 200 OK in 47ms (Views: 19.9ms | ActiveRecord: 5.9ms)
+
+
