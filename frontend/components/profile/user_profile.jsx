@@ -3,12 +3,75 @@ import React from 'react';
 class UserProfile extends React.Component{ 
     constructor(props){ 
         super(props)
+        this.state= this.props.profile
+        this.handleSubmit=this.handleSubmit.bind(this); 
+    }
+
+    update(field){
+        return e => this.setState({[field]: e.currentTarget.value})    
+    }
+
+    handleSubmit(e){ 
+        e.preventDefault()
+        this.props.updateProfile(this.state)
     }
 
     render(){
-        let { profile }= this.props
+        // let {profile} = this.state
+        // console.log(this.props)
+        // console.log(this.state)
         return ( 
-            <h1>{profile.full_name}</h1>
+            <div className="user-profile-page">
+                <div className="username">
+                    <h1>{this.state.full_name}</h1>
+                </div>
+                <div className="user-info">
+                    <h3>Email: {this.state.email}</h3>
+                    <h3>Job Title: {this.state.job_title}</h3>
+                    <h3>Location: {this.state.location}</h3>
+                    <h3>About me: {this.state.bio}</h3>
+                </div>
+
+                <br/>
+                <div className="edit-user-form">
+
+                    <form onSubmit={this.handleSubmit}>
+                        <h2>Update your profile</h2>
+                        <br/>
+                        {/* <label>Full Name: 
+                            <input type="text" 
+                                value={this.state.full_name} 
+                                onChange={this.update('full_name')}
+                            />
+                        </label>
+                        <label>E-mail: 
+                            <input type="text" 
+                                value={this.state.email} 
+                                onChange={this.update('email')}
+                            />
+                        </label> */}
+                        <label>Job Title: 
+                            <input type="text" 
+                                value={this.state.job_title} 
+                                onChange={this.update('job_title')}
+                            />
+                        </label>
+                        <label>Location: 
+                            <input type="text" 
+                                value={this.state.location} 
+                                onChange={this.update('location')}
+                            />
+                        </label>
+                        <label>Bio: 
+                            <textarea 
+                                value={this.state.bio} 
+                                onChange={this.update('bio')}
+                            />
+                        </label>
+                        <input type="submit" value="Update Profile"/>
+                    </form>
+                </div>
+            </div> 
         ) 
     }
 }

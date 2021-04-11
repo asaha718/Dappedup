@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import { updateProfile } from '../../actions/profile_actions';
 import UserProfile from './user_profile'
 
-const mSTP= (state, ownProps) => ({ 
+const mSTP= (state) => ({ 
     profile: state.entities.users[state.session.id] 
 })
 

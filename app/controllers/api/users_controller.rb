@@ -11,7 +11,7 @@ class Api::UsersController < ApplicationController
   end 
   
   def update
-    @user=User.find_by(params[:id])
+    @user=User.find_by(id: params[:id])
     if @user.update(user_params)
       @user.save
       render "api/users/show"
@@ -21,9 +21,9 @@ class Api::UsersController < ApplicationController
 
   end
 
-  def destroy
-    @user=User.find_by(params[:id])
-    @user.destroy
+  def show
+    @user= User.find_by(id: params[:id])
+    render "api/users/show"
   end
 
   private 
