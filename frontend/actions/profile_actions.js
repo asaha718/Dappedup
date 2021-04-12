@@ -17,7 +17,7 @@ import { receiveCurrentUser } from './session_actions';
 //     ProfileAPIUtil.fetchProfile(userId).then(userId=> dispatch(receiveProfile(userId)))
 // );
  
-export const updateProfile = userId => dispatch ( 
+export const updateProfile = userId => dispatch => ( 
     ProfileAPIUtil.updateProfile(userId).then(userId=> dispatch(receiveCurrentUser(userId)))
 ); 
 

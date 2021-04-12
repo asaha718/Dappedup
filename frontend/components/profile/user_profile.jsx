@@ -19,19 +19,23 @@ class UserProfile extends React.Component{
     render(){
         // let {profile} = this.state
         // console.log(this.props)
-        // console.log(this.state)
+        console.log(this.state)
         return ( 
             <div className="user-profile-page">
-                <div className="username">
-                    <h1>{this.state.full_name}</h1>
+                <div className="user-presentational">
+                    <div className="fullname">
+                        <h1>{this.state.full_name}</h1>
+                    </div>
+                    <div className="user-info">
+                        <h3>{this.state.email}</h3>
+                        <h3>{this.state.job_title}</h3>
+                        <h3>{this.state.location}</h3>
+                    </div>
                 </div>
-                <div className="user-info">
-                    <h3>Email: {this.state.email}</h3>
-                    <h3>Job Title: {this.state.job_title}</h3>
-                    <h3>Location: {this.state.location}</h3>
-                    <h3>About me: {this.state.bio}</h3>
+                <div className="profile-about">
+                    <h3>About: </h3>
+                    <p> {this.state.bio} </p>
                 </div>
-
                 <br/>
                 <div className="edit-user-form">
 
