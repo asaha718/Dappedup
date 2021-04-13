@@ -3456,3 +3456,84 @@ Processing by Api::SessionsController#destroy as JSON
 Completed 200 OK in 55ms (Views: 20.3ms | ActiveRecord: 3.5ms)
 
 
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6797995023754954320)[0m
+  ↳ bin/rails:9
+  [1m[35m (4.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreatePosts (20210413022411)
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE  INDEX  "index_posts_on_author_id" ON "posts"  ("author_id")[0m
+  ↳ db/migrate/20210413022411_create_posts.rb:10
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE  INDEX  "index_posts_on_author_id" ON "posts"  ("author_id")[0m
+  ↳ db/migrate/20210413022411_create_posts.rb:10
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(6797995023754954320)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6797995023754954320)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreatePosts (20210413022411)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (62.0ms)[0m  [1m[35mCREATE TABLE "posts" ("id" bigserial primary key, "body" text NOT NULL, "author_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20210413022411_create_posts.rb:3
+  [1m[35m (9.6ms)[0m  [1m[35mCREATE  INDEX  "index_posts_on_author_id" ON "posts"  ("author_id")[0m
+  ↳ db/migrate/20210413022411_create_posts.rb:9
+  [1m[36mActiveRecord::SchemaMigration Create (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210413022411"]]
+  ↳ bin/rails:9
+  [1m[35m (9.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (3.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(6797995023754954320)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2021-04-13 12:27:19 -0400
+  [1m[35m (13.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/anug/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (32.9ms)
+Started GET "/" for ::1 at 2021-04-13 12:27:22 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 7666ms (Views: 7660.5ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 10779ms (Views: 10770.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2021-04-13 12:28:12 -0400
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"mailman@mail.com", "password"=>"[FILTERED]", "bio"=>"I am a mail peron", "location"=>"world", "job_title"=>"mail", "full_name"=>"Mailer Man"}}
+  [1m[36mUser Load (16.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "AQYgXpaSKbGTu9sl8db0dw"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:45
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "mailman@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Create (16.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "bio", "location", "job_title", "created_at", "updated_at", "full_name") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["email", "mailman@mail.com"], ["password_digest", "$2a$12$G8Zc70a4lMoPHzUgGQVa2.mZBASJMauuL0FCUTdVnVceVhn/P5/i."], ["session_token", "AQYgXpaSKbGTu9sl8db0dw"], ["bio", "I am a mail peron"], ["location", "world"], ["job_title", "mail"], ["created_at", "2021-04-13 16:28:13.410296"], ["updated_at", "2021-04-13 16:28:13.410296"], ["full_name", "Mailer Man"]]
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[35m (12.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:5
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "S0snF8ltsGfMXgVxSMLwjg"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:45
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:29
+  [1m[36mUser Exists (2.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "mailman@mail.com"], ["id", 8], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Update (4.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "S0snF8ltsGfMXgVxSMLwjg"], ["updated_at", "2021-04-13 16:28:13.544615"], ["id", 8]]
+  ↳ app/models/user.rb:29
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:29
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered api/users/show.json.jbuilder (8.1ms)
+Completed 200 OK in 1261ms (Views: 43.7ms | ActiveRecord: 124.2ms)
+
+
