@@ -9,7 +9,7 @@ const HomePage= (props) => {
             </div>
                
             <div className="home-messages">
-                <h3> Let the right peoplel know youre open to work</h3>
+                <h3> Let the right people know you're open to work</h3>
                 <br/>
                 <h3>Conversations today could lead to opportunity tomorrow</h3>
                 <br/>
