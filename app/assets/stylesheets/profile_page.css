@@ -8,6 +8,7 @@
     height: 850px;
     text-align: left;
     background-color: #f3f2ef;
+    position: fixed;
     
 }
 
@@ -16,9 +17,10 @@
     background-color: white;
     border-style: outset;
     border-width: 2px;
-    border-radius: 2px;
+    border-radius: 10px;
     width: 300px;
-    height: 150px;
+    height: 230px;
+    text-align: center;
 }
 
 .edit-user-form{
@@ -40,18 +42,25 @@
     margin-top: 20px;
 }
 
+.header-name{ 
+    margin: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 250;
+    
+}
+
 .user-info h3{ 
     margin: 5px;
 }
 
 .profile-about{
     padding-top: 10px; 
-    margin: auto;
-
+    margin: auto; 
+    margin-top: 10px;
     background-color: white;
     border-style: outset;
     border-width: 2px;
-    border-radius: 2px;
+    border-radius: 10px;
     width: 400px;
     height: 100px;
 }
@@ -59,4 +68,12 @@
 .profile-about h3{ 
     font-size: 18px;
     margin-bottom: 6px;
+}
+.profile-pic{ 
+    height: 100px;
+    width: 100px;
+    margin: auto;
+}
+.user-presentational img{ 
+    width: 100%;
 }

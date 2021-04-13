@@ -16,6 +16,7 @@ class UserProfile extends React.Component{
         this.props.updateProfile(this.state)
     }
 
+    
     render(){
         // let {profile} = this.state
         // console.log(this.props)
@@ -23,6 +24,9 @@ class UserProfile extends React.Component{
         return ( 
             <div className="user-profile-page">
                 <div className="user-presentational">
+                    <div className="profile-pic">
+                        <img src="https://i.pinimg.com/originals/18/d9/e1/18d9e1307018dbc76750ca7d5124fccd.png"/>
+                    </div>
                     <div className="fullname">
                         <h1>{this.state.full_name}</h1>
                     </div>
