@@ -19,7 +19,7 @@ class UserProfile extends React.Component{
     render(){
         // let {profile} = this.state
         // console.log(this.props)
-        console.log(this.state)
+        // console.log(this.state)
         return ( 
             <div className="user-profile-page">
                 <div className="user-presentational">
