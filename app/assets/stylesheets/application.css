@@ -98,10 +98,14 @@ header {
         padding: 3px;
     } */
 
-.login-signup{ 
+a { 
     text-decoration: none;
+    padding: 5px;
 }
 
+.login-signup{ 
+    display: flex;
+}
 .header-group{ 
     display: flex;
 }
@@ -156,3 +160,6 @@ textarea {
     justify-content: space-evenly;
 }   
 
+.home-messages, .welcome-message{ 
+    margin-left: 20px;
+}
