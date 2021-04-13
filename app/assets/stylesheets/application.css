@@ -128,3 +128,31 @@ textarea {
     border-radius: 50px;
     cursor: pointer;
 }
+
+.home-body h1{
+    font-size: large;
+    color: #2977c9;
+    font-weight: 200;
+    font-size: 4rem;
+}
+
+.home-body h3{
+    font-size: small;
+    color: #111b27;
+    font-weight: 150;
+    font-size: 2rem;
+    
+}
+
+.home-body{
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+
+.welcome-content{ 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}   
+

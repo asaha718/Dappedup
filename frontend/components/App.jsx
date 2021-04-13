@@ -4,7 +4,8 @@ import {Link, Redirect, Route, Switch} from "react-router-dom";
 import LoginFormContainer from "./session_form/login_form_container"; 
 import SignupFormContainer from "./session_form/signup_form_container";
 import HomePageContainer from "./home/home_container"
-import {AuthRoute} from "../utils/route_util"
+import UserProfileContainer from "./profile/user_profile_container"
+import {AuthRoute, ProtectedRoute} from "../utils/route_util"
 
 
 const noMatchPage=()=> { 
@@ -26,7 +27,9 @@ const App = () => (
           <AuthRoute path="/login" component={LoginFormContainer} />
           <AuthRoute path="/signup" component={SignupFormContainer} />
           <Route exact path="/" component={HomePageContainer}/>
-          <Route path="*" exact component={noMatchPage} />
+          <ProtectedRoute path="/profile" component={UserProfileContainer}/>
+          <Route component={noMatchPage} />
+
         </Switch>
       </div>
   </div>
