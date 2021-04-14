@@ -1,22 +1,20 @@
-import React from 'react'; 
+import React from 'react';
+import EditProfileForm from './edit_profile';  
 
 class UserProfile extends React.Component{ 
     constructor(props){ 
-        super(props)
-        this.state= this.props.profile
-        this.handleSubmit=this.handleSubmit.bind(this); 
+        super(props)  
+        this.state = {showForm: false} 
     }
 
-    update(field){
-        return e => this.setState({[field]: e.currentTarget.value})    
+    handleClick(){ 
+        if (this.state.showForm === false){ 
+            return () => this.setState({showForm: true}) 
+        }else{ 
+            return () => this.setState({showForm: false})
+        }    
     }
 
-    handleSubmit(e){ 
-        e.preventDefault()
-        this.props.updateProfile(this.state)
-    }
-
-    
     render(){
         // let {profile} = this.state
         // console.log(this.props)
@@ -28,57 +26,20 @@ class UserProfile extends React.Component{
                         <img src="https://i.pinimg.com/originals/18/d9/e1/18d9e1307018dbc76750ca7d5124fccd.png"/>
                     </div>
                     <div className="fullname">
-                        <h1>{this.state.full_name}</h1>
+                        <h1>{this.props.profile.full_name}</h1>
                     </div>
                     <div className="user-info">
-                        <h3>{this.state.email}</h3>
-                        <h3>{this.state.job_title}</h3>
-                        <h3>{this.state.location}</h3>
+                        <h3>{this.props.profile.email}</h3>
+                        <h3>{this.props.profile.job_title}</h3>
+                        <h3>{this.props.profile.location}</h3>
                     </div>
                 </div>
                 <div className="profile-about">
                     <h3>About: </h3>
-                    <p> {this.state.bio} </p>
+                    <p> {this.props.profile.bio} </p>
                 </div>
-                <br/>
-                <div className="edit-user-form">
-
-                    <form onSubmit={this.handleSubmit}>
-                        <h2>Update your profile</h2>
-                        <br/>
-                        {/* <label>Full Name: 
-                            <input type="text" 
-                                value={this.state.full_name} 
-                                onChange={this.update('full_name')}
-                            />
-                        </label>
-                        <label>E-mail: 
-                            <input type="text" 
-                                value={this.state.email} 
-                                onChange={this.update('email')}
-                            />
-                        </label> */}
-                        <label>Job Title: 
-                            <input type="text" 
-                                value={this.state.job_title} 
-                                onChange={this.update('job_title')}
-                            />
-                        </label>
-                        <label>Location: 
-                            <input type="text" 
-                                value={this.state.location} 
-                                onChange={this.update('location')}
-                            />
-                        </label>
-                        <label>Bio: 
-                            <textarea 
-                                value={this.state.bio} 
-                                onChange={this.update('bio')}
-                            />
-                        </label>
-                        <input type="submit" value="Update Profile"/>
-                    </form>
-                </div>
+                <button onClick={this.handleClick()}> Edit Profile </button>
+                    {this.state.showForm ? <EditProfileForm profile= {this.props.profile} updateProfile={this.props.updateProfile} handleClick={this.handleClick()}/> : null}
             </div> 
         ) 
     }

@@ -81,6 +81,7 @@ class SessionForm extends React.Component {
                       value={this.state.full_name}
                       onChange={this.update('full_name')}
                       className="signup-input"
+                      required
                     />
                   </label>
                   <br/>
@@ -89,6 +90,7 @@ class SessionForm extends React.Component {
                       value={this.state.bio}
                       onChange={this.update('bio')}
                       className="signup-input"
+                      required
                     />
                   </label>
                   <br/>
@@ -97,6 +99,7 @@ class SessionForm extends React.Component {
                       value={this.state.location}
                       onChange={this.update('location')}
                       className="signup-input"
+                      required
                     />
                   </label>
                   <br/>
@@ -105,6 +108,7 @@ class SessionForm extends React.Component {
                       value={this.state.job_title}
                       onChange={this.update('job_title')}
                       className="signup-input"
+                      required
                     />
                   </label>
                   <br/>
@@ -145,7 +149,7 @@ class SessionForm extends React.Component {
                     />
                   </label>
                   <br/>
-                  <input className="session-submit" type="submit" value={this.props.formType} />
+                  <input className="session-submit" type="submit" value="Sign in" />
                   <button onClick={this.props.demoUser} className="session-submit">Login as Demo Person</button>
                 </div>
               </form>

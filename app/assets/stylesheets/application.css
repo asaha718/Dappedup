@@ -13,6 +13,9 @@
  *= require_tree .
  *= require_self
 */
+
+/* login, logout, signup and splash page styling */
+
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');  
 
 h1 { 
@@ -23,6 +26,7 @@ h1 {
     font-family: Cambria;  
     font-size: 30px; 
     font-weight: bold;
+    color:#2977c9;
 }
  
 h4 { 
@@ -40,7 +44,7 @@ header {
     text-decoration: none; 
     font-family: 'Noto Sans KR';
     font-weight: bold;
-    color: blue;
+    color: #0850eb;
 }
 
 .login-form-container {
@@ -59,9 +63,10 @@ header {
     display: flex;
     justify-content: center;
     width: 400px;
-    height: 600px;
+    height: 650px;
     background-color: white;
     border-radius: 10px;
+    margin: 15px 0px;
 }
 
 .signup-page { 
@@ -163,4 +168,25 @@ textarea {
 
 .home-messages, .welcome-message{ 
     margin-left: 20px;
+}
+
+.signup-form-box { 
+    margin: 15px 10px;
+    height: auto;
+}
+
+.signup-btn{ 
+    padding: 3px;
+
+}
+.signup-btn:hover { 
+    background-color: rgb(202, 202, 202);
+}
+
+.login-btn{ 
+    padding: 3px;
+}
+
+.login-btn:hover { 
+    background-color:  #0850eb;
 }
