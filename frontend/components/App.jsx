@@ -22,16 +22,14 @@ const App = () => (
         </Link>
         <GreetingContainer />
       </header>
-      <div className="backGround">
-        <Switch>
-          <AuthRoute path="/login" component={LoginFormContainer} />
-          <AuthRoute path="/signup" component={SignupFormContainer} />
-          <Route exact path="/" component={HomePageContainer}/>
-          <ProtectedRoute path="/profile" component={UserProfileContainer}/>
-          <Route component={noMatchPage} />
+      <Switch>
+        <AuthRoute path="/login" component={LoginFormContainer} />
+        <AuthRoute path="/signup" component={SignupFormContainer} />
+        <Route exact path="/" component={HomePageContainer}/>
+        <ProtectedRoute path="/profile" component={UserProfileContainer}/>
+        <Route component={noMatchPage} />
 
-        </Switch>
-      </div>
+      </Switch>
   </div>
 );
 

@@ -1,15 +1,6 @@
-.edit-user-form h2 { 
-    margin-bottom: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-}
-
-.user-profile-page{ 
-    height: 850px;
-    text-align: left;
+body { 
     background-color: #f3f2ef;
-    position: fixed;
-    
+    position: relative;
 }
 
 .user-presentational{ 
@@ -21,16 +12,7 @@
     width: 300px;
     height: 230px;
     text-align: center;
-}
-
-.edit-user-form{
-    background-color: white; 
-    margin: 20px 200px;
-    border-style: double;
-    border-color: black;
-    border-width: 5px;
-    border-spacing: 1px;
-    border-radius: 5px;
+    
 }
 
 .user-profile-page .fullname{ 
@@ -44,8 +26,9 @@
 
 .header-name{ 
     margin: 5px;
+    padding: 2px;
     font-family: Arial, Helvetica, sans-serif;
-    font-weight: 250;
+    font-weight:650;  
     
 }
 
@@ -54,7 +37,7 @@
 }
 
 .profile-about{
-    padding-top: 10px; 
+    padding: 8px; 
     margin: auto; 
     margin-top: 10px;
     background-color: white;
@@ -76,4 +59,28 @@
 }
 .user-presentational img{ 
     width: 100%;
+}
+
+/* User Form CSS */
+
+.edit-profile-btn { 
+    margin: 5px auto;
+    display:block;
+    
+}
+
+.edit-user-form h2 { 
+    margin-bottom: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+.edit-user-form{
+    background-color: white; 
+    margin: 20px 200px;
+    border-style: double;
+    border-color: black;
+    border-width: 5px;
+    border-spacing: 1px;
+    border-radius: 5px;
 }

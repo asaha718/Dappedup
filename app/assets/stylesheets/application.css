@@ -34,9 +34,9 @@ h4 {
 }
  
 header { 
+    background-color: white;
     display: flex;
-    justify-content: space-between;
-    margin: 20px; 
+    justify-content: space-between; 
     padding: 10px; 
 }
 
@@ -47,13 +47,14 @@ header {
     color: #0850eb;
 }
 
+
 .login-form-container {
     display: flex;
     justify-content: center;
     text-align: center;
     background-color: white;
     color: #333;
-    border-radius: 10px;
+    border-radius: 20px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
     margin: 10px 400px;
     padding: 40px;
@@ -70,7 +71,6 @@ header {
 }
 
 .signup-page { 
-    height: 800px;
     display: flex;
     justify-content: center;
     background-color: rgb(238, 241, 241);

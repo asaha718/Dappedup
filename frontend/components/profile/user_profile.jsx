@@ -38,7 +38,9 @@ class UserProfile extends React.Component{
                     <h3>About: </h3>
                     <p> {this.props.profile.bio} </p>
                 </div>
-                <button onClick={this.handleClick()}> Edit Profile </button>
+                <button className="edit-profile-btn" onClick={this.handleClick()}>
+                     Edit Profile 
+                </button>
                     {this.state.showForm ? <EditProfileForm profile= {this.props.profile} updateProfile={this.props.updateProfile} handleClick={this.handleClick()}/> : null}
             </div> 
         ) 
