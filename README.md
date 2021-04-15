@@ -23,7 +23,7 @@ DappedUp is my attempt at a full stack clone of LinkedIn. Currently still in pro
 [![EditProfileGif.gif](https://s4.gifyu.com/images/EditProfileGif.gif)](https://gifyu.com/image/rPao)
 
 ## Code
- A feature that solidified my understanding of state and the use of props in React and Redux was my edit form commponent. To persit my changes to the database I had to pass my props down to my EditProfileForm class from my UserProfile class. Also added a toggling feature to only render the edit form on request.   
+ A feature that solidified my understanding of state and the use of props in React and Redux was my profile component. To persit my changes to the database I had to pass my props down to my EditProfileForm class from my UserProfile class. Also added a toggling feature to only render the edit form on request.   
 
 ```javascript
 //user_profile.jsx
