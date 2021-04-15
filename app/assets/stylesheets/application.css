@@ -107,6 +107,7 @@ a {
     text-decoration: none;
     color: black;
     padding: 5px;
+    font-family: 'Noto Sans KR'; 
 }
 
 .login-signup{ 
@@ -137,6 +138,11 @@ textarea {
     border: none;
     border-radius: 50px;
     cursor: pointer;
+}
+
+.session-submit:focus{ 
+    outline: none;
+    box-shadow: none;
 }
 
 .home-body h1{
