@@ -16,9 +16,6 @@ class UserProfile extends React.Component{
     }
 
     render(){
-        // let {profile} = this.state
-        // console.log(this.props)
-        // console.log(this.state)
         return ( 
             <div className="user-profile-page">
                 <div className="user-presentational">
@@ -41,7 +38,11 @@ class UserProfile extends React.Component{
                 <button className="edit-profile-btn" onClick={this.handleClick()}>
                      Edit Profile 
                 </button>
-                    {this.state.showForm ? <EditProfileForm profile= {this.props.profile} updateProfile={this.props.updateProfile} handleClick={this.handleClick()}/> : null}
+                    {this.state.showForm ? <EditProfileForm 
+                                                profile= {this.props.profile} 
+                                                updateProfile={this.props.updateProfile} 
+                                                handleClick={this.handleClick()}
+                                            /> : null}
             </div> 
         ) 
     }
