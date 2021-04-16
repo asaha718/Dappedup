@@ -4,7 +4,7 @@
 
 [DappedUp Live Link ](https://dappedup.herokuapp.com/#/) 
 
-DappedUp is my attempt at a full stack clone of LinkedIn. Currently still in progress but current features include logging in, signing up, logging out and updating your profile. Future features that will be creating posts, viewing jobs from companies and applying to those job postings. 
+DappedUp is my attempt at a full stack clone of LinkedIn. Current features include logging in, signing up, logging out and updating your profile. Future features that will be creating posts, viewing jobs from companies and applying to those job postings. 
 
 ## Technologies 
 * React
