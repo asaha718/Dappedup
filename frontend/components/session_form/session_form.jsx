@@ -45,7 +45,7 @@ class SessionForm extends React.Component {
     }
 
     render() {
-      if (this.props.formType=== 'signup'){ 
+      if (this.props.formType=== 'Signup'){ 
         return (
           <div className="signup-page">
             <div className="signup-form-container">
@@ -119,7 +119,7 @@ class SessionForm extends React.Component {
           </div>
           );
 
-      }else if( this.props.formType==='login'){ 
+      }else if( this.props.formType==='Login'){ 
         return ( 
           <div className="login-form-container">
               <form onSubmit={this.handleSubmit} className="login-form-box">
