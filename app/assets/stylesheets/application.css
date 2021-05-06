@@ -50,6 +50,7 @@ header {
 
 .login-form-container {
     display: flex;
+    position: absolute;
     justify-content: center;
     text-align: center;
     background-color: white;
@@ -133,7 +134,7 @@ textarea {
     width: 100%;
     background-color:blue;
     color: white;
-    padding: 14px 20px;
+    padding: 10px 0; 
     margin: 8px 0;
     border: none;
     border-radius: 50px;
