@@ -127,7 +127,6 @@ class SessionForm extends React.Component {
                 <h2>Welcome to DappedUp!</h2>
               </div>
                 <br/>
-                {/* <h4>Please {this.props.formType} or {this.props.navLink}</h4> */}
                 <div className="errors">
                   {this.renderErrors()}
                 </div>
