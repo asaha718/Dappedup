@@ -49,15 +49,14 @@ header {
 
 
 .login-form-container {
-    display: flex;
-    position: absolute;
+    display: flex; 
     justify-content: center;
     text-align: center;
     background-color: white;
     color: #333;
     border-radius: 20px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-    margin: 10px 400px;
+    margin: 15px 680px;
     padding: 40px;
 }
 
