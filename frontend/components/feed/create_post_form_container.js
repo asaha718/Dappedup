@@ -9,7 +9,7 @@ const mSTP= state =>({
     formType: 'Start a post'
 }); 
 
-const mDTP = dispatch=> ({ 
+const mDTP = dispatch => ({ 
     createPost: post=> dispatch(createPost(post))
 })
 

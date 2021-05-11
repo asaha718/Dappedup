@@ -1,14 +1,14 @@
 import React from 'react'; 
 
-const PostIndexItem= (props) => { 
-    return ( 
+const PostIndexItem= ({post, deletePost}) => { 
+    return( 
         <div>
             <li>
-                {this.props.post}
-                <button onClick={()=> props.deletePost(props.post.id)}></button>
+                {post.body}
+                <button onClick={()=> deletePost(post.id)}>delete</button>
             </li>
         </div>
     )
 }
 
-export default PostIndexItem; 
+export default PostIndexItem

@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react'; 
+import PostIndexContainer from './post_index_container';
 
 class PostForm extends React.Component{ 
     constructor(props){ 
@@ -7,8 +8,9 @@ class PostForm extends React.Component{
         this.handleSubmit=this.handleSubmit.bind(this); 
     }
 
-    handleSubmit(){ 
-        this.props.createPost(this.state)
+    handleSubmit(event){
+        event.preventDefault() 
+        this.props.createPost(this.state); 
     }
 
     update(field){ 
@@ -24,8 +26,10 @@ class PostForm extends React.Component{
                     <label> 
                         <textarea placeholder={this.props.formType} value= {this.state.body} onChange={this.update('body')}/>
                     </label>
+                    <br />
                     <input type='submit' value= 'Post' />
                  </form>
+                 <PostIndexContainer />
             </div>
         )
     }
