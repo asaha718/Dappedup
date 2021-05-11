@@ -6,6 +6,7 @@ import SignupFormContainer from "./session_form/signup_form_container";
 import HomePageContainer from "./home/home_container"
 import UserProfileContainer from "./profile/user_profile_container"
 import {AuthRoute, ProtectedRoute} from "../utils/route_util"
+import PostFormContainer from "./feed/create_post_form_container"
 
 
 const noMatchPage=()=> { 
@@ -27,6 +28,7 @@ const App = () => (
         <AuthRoute path="/signup" component={SignupFormContainer} />
         <Route exact path="/" component={HomePageContainer}/>
         <ProtectedRoute path="/profile" component={UserProfileContainer}/>
+        <ProtectedRoute path="/feed" component={PostFormContainer}/>
         <Route component={noMatchPage} />
 
       </Switch>

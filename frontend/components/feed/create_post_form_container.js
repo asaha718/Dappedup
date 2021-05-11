@@ -6,11 +6,11 @@ const mSTP= state =>({
     post: { 
         body: ''
     }, 
-    formType: 'Create Post'
+    formType: 'Start a post'
 }); 
 
 const mDTP = dispatch=> ({ 
-    action: post=> dispatch(createPost(post))
+    createPost: post=> dispatch(createPost(post))
 })
 
 export default connect(mSTP, mDTP)(PostForm)
