@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+/* POST FORM CONTAINER- FEED SECTION*/
+.feed-page { 
+  display: flex;
+  justify-content: flex-start;  
+}
+
+.feed-section {
+    width: 500px;
+    padding-top: 15px; 
+    padding-left: 30px;
+}
+
+.post-field { 
+    border-radius: 50px;
+    outline: none;
+    cursor: pointer;
+}
+textarea { 
+    resize: none;
+}
+.post-upload-btn { 
+    display: flex;
+    justify-content: space-between;
+}
+.post-btn{ 
+    font-size: 16px; 
+    color: white;
+    background-color: blue;
+    cursor: pointer;
+    padding: 10px 20px; 
+    border-radius: 40px;
+}
+
+.post-btn:hover{ 
+    opacity: 0.8;
+}
+
+
+/* USER SIDE CARD CONTAINER */
+
+.profile-card {
+    text-align: center; 
+    width: 280px;
+    height: 250px;
+    background-color: white;
+    padding: 10px 15px;
+    margin: 15px 10px;
+    border-radius: 10px;
+}
+
+.profile-card-picture img{ 
+    width: 120px;
+    border-radius: 50%;
+}
+
+.profile-card-info { 
+    font-family: 'Rubik', sans-serif;
+}
+.profile-card-info .full-name { 
+    padding: 10px 0px;
+}
+
+.profile-card-info > .profile-card-details{ 
+    color: rgb(129, 129, 129);
+}
+
+.profile-card-details > h3 { 
+    padding-bottom: 5px;
+}
+
+

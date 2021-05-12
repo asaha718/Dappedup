@@ -12090,3 +12090,1878 @@ Completed 200 OK in 581ms (Views: 14.1ms | ActiveRecord: 17.6ms)
 /home/anug/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.1.8/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:335:in `block (2 levels) in create_worker'
 /home/anug/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.1.8/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `catch'
 /home/anug/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/concurrent-ruby-1.1.8/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `block in create_worker'
+Started DELETE "/api/session" for ::1 at 2021-05-12 14:13:10 -0400
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/anug/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "_BiSnOvLfXHgl_Ela3Ehww"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "aQRdauQBUPTYAQ_sEJ61UQ"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:45
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:29
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "user@demo.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Update (3.7ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "aQRdauQBUPTYAQ_sEJ61UQ"], ["updated_at", "2021-05-12 18:13:11.160537"], ["id", 1]]
+  ↳ app/models/user.rb:29
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:29
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered api/users/show.json.jbuilder (5.8ms)
+Completed 200 OK in 141ms (Views: 19.5ms | ActiveRecord: 24.3ms)
+
+
+Started GET "/" for ::1 at 2021-05-12 14:13:16 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (4.8ms)
+Started GET "/" for ::1 at 2021-05-12 14:13:21 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 5167ms (Views: 5163.4ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 331ms (Views: 328.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session" for ::1 at 2021-05-12 14:13:26 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"user@demo.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@demo.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:13
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "gN6438fzldnQwa6ymxM_lw"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:45
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:29
+  [1m[36mUser Exists (2.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "user@demo.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Update (2.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "gN6438fzldnQwa6ymxM_lw"], ["updated_at", "2021-05-12 18:13:26.702510"], ["id", 1]]
+  ↳ app/models/user.rb:29
+  [1m[35m (8.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:29
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/users/show.json.jbuilder (3.1ms)
+Completed 200 OK in 383ms (Views: 11.7ms | ActiveRecord: 18.6ms)
+
+
+Started GET "/" for ::1 at 2021-05-12 14:13:37 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "gN6438fzldnQwa6ymxM_lw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 100ms (Views: 95.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 14:13:39 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (2.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (1.9ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (96.8ms)
+Completed 500 Internal Server Error in 148ms (ActiveRecord: 34.0ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder__3000389482945999954_70005333083100'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder__3000389482945999954_70005333083100'
+
+Started GET "/api/posts" for ::1 at 2021-05-12 14:14:35 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (17.6ms)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 1.3ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder__3000389482945999954_70005328716340'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder__3000389482945999954_70005328716340'
+
+Started POST "/__better_errors/040936e34bbf56d1/variables" for ::1 at 2021-05-12 14:14:35 -0400
+Started GET "/" for ::1 at 2021-05-12 14:38:25 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "gN6438fzldnQwa6ymxM_lw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (1.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 933ms (Views: 927.5ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 14:38:27 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (34.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (6.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (132.4ms)
+Completed 500 Internal Server Error in 194ms (ActiveRecord: 40.9ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder__3000389482945999954_70005325009160'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder__3000389482945999954_70005325009160'
+
+Started GET "/" for ::1 at 2021-05-12 14:44:58 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "gN6438fzldnQwa6ymxM_lw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 187ms (Views: 181.8ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 14:44:59 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (42.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (6.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (121.0ms)
+Completed 500 Internal Server Error in 180ms (ActiveRecord: 49.0ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder__3000389482945999954_70005389724300'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder__3000389482945999954_70005389724300'
+
+Started GET "/" for ::1 at 2021-05-12 14:46:12 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "gN6438fzldnQwa6ymxM_lw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (16.7ms)
+Completed 200 OK in 205ms (Views: 199.0ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 14:46:13 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (39.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (14.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (128.2ms)
+Completed 500 Internal Server Error in 318ms (ActiveRecord: 54.4ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder__3000389482945999954_70005328537240'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder__3000389482945999954_70005328537240'
+
+Started GET "/" for ::1 at 2021-05-12 14:46:32 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "gN6438fzldnQwa6ymxM_lw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 218ms (Views: 214.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 14:46:32 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (3.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (32.0ms)
+Completed 500 Internal Server Error in 141ms (ActiveRecord: 4.3ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder__3000389482945999954_70005333260480'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder__3000389482945999954_70005333260480'
+
+Started GET "/" for ::1 at 2021-05-12 14:53:13 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "gN6438fzldnQwa6ymxM_lw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 115ms (Views: 108.1ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 14:53:14 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (2.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (2.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (22.1ms)
+Completed 500 Internal Server Error in 106ms (ActiveRecord: 4.9ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder__3000389482945999954_70005329292980'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder__3000389482945999954_70005329292980'
+
+Started GET "/" for ::1 at 2021-05-12 15:07:28 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "gN6438fzldnQwa6ymxM_lw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (1.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 161ms (Views: 155.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 15:07:29 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (7.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (20.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (78.2ms)
+Completed 500 Internal Server Error in 184ms (ActiveRecord: 27.7ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder__3000389482945999954_70005326204860'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder__3000389482945999954_70005326204860'
+
+Started GET "/" for ::1 at 2021-05-12 15:13:07 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "gN6438fzldnQwa6ymxM_lw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 763ms (Views: 750.2ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 15:13:08 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (128.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (3.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (282.9ms)
+Completed 500 Internal Server Error in 313ms (ActiveRecord: 131.7ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder__3000389482945999954_70005333079940'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder__3000389482945999954_70005333079940'
+
+Started GET "/" for ::1 at 2021-05-12 15:13:45 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "gN6438fzldnQwa6ymxM_lw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 175ms (Views: 171.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 15:13:46 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (17.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (3.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (107.3ms)
+Completed 500 Internal Server Error in 236ms (ActiveRecord: 20.4ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder__3000389482945999954_70005328783840'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder__3000389482945999954_70005328783840'
+
+Started GET "/" for ::1 at 2021-05-12 15:15:05 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "gN6438fzldnQwa6ymxM_lw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 203ms (Views: 196.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 15:15:06 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (15.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (45.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (217.4ms)
+Completed 500 Internal Server Error in 325ms (ActiveRecord: 61.0ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder__3000389482945999954_70005327444340'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder__3000389482945999954_70005327444340'
+
+Started GET "/" for ::1 at 2021-05-12 15:15:19 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "gN6438fzldnQwa6ymxM_lw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 166ms (Views: 162.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 15:15:20 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (14.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (2.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (90.8ms)
+Completed 500 Internal Server Error in 282ms (ActiveRecord: 16.6ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder__3000389482945999954_70005391982820'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder__3000389482945999954_70005391982820'
+
+Started GET "/" for ::1 at 2021-05-12 15:15:47 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "gN6438fzldnQwa6ymxM_lw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 174ms (Views: 169.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 15:15:48 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (14.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (6.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (96.5ms)
+Completed 500 Internal Server Error in 175ms (ActiveRecord: 21.6ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder__3000389482945999954_70005329629060'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder__3000389482945999954_70005329629060'
+
+Started GET "/" for ::1 at 2021-05-12 15:17:15 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "gN6438fzldnQwa6ymxM_lw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (1.0ms)
+  Rendered static_pages/root.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 180ms (Views: 177.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 15:17:16 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (1.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (3.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (49.0ms)
+Completed 500 Internal Server Error in 83ms (ActiveRecord: 4.6ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder__3000389482945999954_70005331440800'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder__3000389482945999954_70005331440800'
+
+Started GET "/" for ::1 at 2021-05-12 15:17:27 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "gN6438fzldnQwa6ymxM_lw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 173ms (Views: 166.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 15:17:28 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (1.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (74.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (151.4ms)
+Completed 500 Internal Server Error in 255ms (ActiveRecord: 75.6ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder__3000389482945999954_70005327094740'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder__3000389482945999954_70005327094740'
+
+Started GET "/" for ::1 at 2021-05-12 15:32:41 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "gN6438fzldnQwa6ymxM_lw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 254ms (Views: 246.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 15:32:42 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (3.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (16.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (106.6ms)
+Completed 500 Internal Server Error in 255ms (ActiveRecord: 20.2ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder__3000389482945999954_70005333119560'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder__3000389482945999954_70005333119560'
+
+Started GET "/" for ::1 at 2021-05-12 15:33:25 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "gN6438fzldnQwa6ymxM_lw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (15.2ms)
+Completed 200 OK in 170ms (Views: 164.8ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 15:33:26 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (73.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (2.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (105.2ms)
+Completed 500 Internal Server Error in 186ms (ActiveRecord: 75.2ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder__3000389482945999954_70005328765760'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder__3000389482945999954_70005328765760'
+
+Started GET "/" for ::1 at 2021-05-12 15:34:54 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "gN6438fzldnQwa6ymxM_lw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 171ms (Views: 166.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 15:34:54 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (7.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (28.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (104.0ms)
+Completed 500 Internal Server Error in 189ms (ActiveRecord: 36.3ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder__3000389482945999954_70005327398580'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder__3000389482945999954_70005327398580'
+
+Started GET "/" for ::1 at 2021-05-12 15:35:56 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "gN6438fzldnQwa6ymxM_lw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 167ms (Views: 162.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 15:35:56 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (1.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (108.1ms)
+Completed 500 Internal Server Error in 186ms (ActiveRecord: 2.3ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder__3000389482945999954_70368701365360'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder__3000389482945999954_70368701365360'
+
+Started GET "/" for ::1 at 2021-05-12 15:36:29 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "gN6438fzldnQwa6ymxM_lw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 171ms (Views: 165.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 15:36:30 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (21.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (78.9ms)
+Completed 500 Internal Server Error in 210ms (ActiveRecord: 22.6ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder__3000389482945999954_70005329320840'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder__3000389482945999954_70005329320840'
+
+Started POST "/api/posts" for ::1 at 2021-05-12 15:42:40 -0400
+Processing by Api::PostsController#create as JSON
+  Parameters: {"post"=>{"body"=>"My first post ", "photo"=>"null"}}
+Completed 500 Internal Server Error in 67ms (ActiveRecord: 23.1ms)
+
+
+
+ActiveSupport::MessageVerifier::InvalidSignature - ActiveSupport::MessageVerifier::InvalidSignature:
+  app/controllers/api/posts_controller.rb:12:in `create'
+
+Started DELETE "/api/session" for ::1 at 2021-05-12 15:46:05 -0400
+  [1m[35m (4.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/anug/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "gN6438fzldnQwa6ymxM_lw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "BFNBvNTOuOySGRr5uZcMYw"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:45
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:29
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "user@demo.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Update (9.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "BFNBvNTOuOySGRr5uZcMYw"], ["updated_at", "2021-05-12 19:46:05.602993"], ["id", 1]]
+  ↳ app/models/user.rb:29
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:29
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered api/users/show.json.jbuilder (4.8ms)
+Completed 200 OK in 114ms (Views: 27.2ms | ActiveRecord: 27.1ms)
+
+
+Started POST "/api/session" for ::1 at 2021-05-12 15:46:07 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"user@demo.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@demo.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:13
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YxORKZDzdHAt9mquCpx_Wg"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:45
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:29
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "user@demo.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:29
+  [1m[36mUser Update (2.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "YxORKZDzdHAt9mquCpx_Wg"], ["updated_at", "2021-05-12 19:46:08.019489"], ["id", 1]]
+  ↳ app/models/user.rb:29
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:29
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered api/users/show.json.jbuilder (3.1ms)
+Completed 200 OK in 291ms (Views: 11.0ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 15:52:21 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (4.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (3.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (86.7ms)
+Completed 500 Internal Server Error in 114ms (ActiveRecord: 24.8ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder___698122274581410419_70368278255500'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder___698122274581410419_70368278255500'
+
+Started POST "/api/posts" for ::1 at 2021-05-12 15:52:43 -0400
+Processing by Api::PostsController#create as JSON
+  Parameters: {"post"=>{"body"=>"we are trying once more ", "photo"=>#<ActionDispatch::Http::UploadedFile:0x00007fffc8779398 @tempfile=#<Tempfile:/tmp/RackMultipart20210512-30586-edqvkw.JPG>, @original_filename="Anug_Saha.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"post[photo]\"; filename=\"Anug_Saha.JPG\"\r\nContent-Type: image/jpeg\r\n">}}
+[36m  S3 Storage (216.9ms) [0m[32mUploaded file to key: ZnbCDRMvELkCRL3waDFaVV6X (checksum: HwBxBkA01kziaHD5wHMMTg==)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/posts_controller.rb:12
+  [1m[36mActiveStorage::Blob Create (5.4ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "ZnbCDRMvELkCRL3waDFaVV6X"], ["filename", "Anug_Saha.JPG"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 68728], ["checksum", "HwBxBkA01kziaHD5wHMMTg=="], ["created_at", "2021-05-12 19:52:44.051086"]]
+  ↳ app/controllers/api/posts_controller.rb:12
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/posts_controller.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/posts_controller.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/posts_controller.rb:12
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YxORKZDzdHAt9mquCpx_Wg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/posts_controller.rb:14
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/posts_controller.rb:14
+  [1m[36mPost Create (1.4ms)[0m  [1m[32mINSERT INTO "posts" ("body", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["body", "we are trying once more "], ["author_id", 1], ["created_at", "2021-05-12 19:52:44.111082"], ["updated_at", "2021-05-12 19:52:44.111082"]]
+  ↳ app/controllers/api/posts_controller.rb:14
+  [1m[36mActiveStorage::Attachment Create (6.7ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "photo"], ["record_type", "Post"], ["record_id", 26], ["blob_id", 9], ["created_at", "2021-05-12 19:52:44.116416"]]
+  ↳ app/controllers/api/posts_controller.rb:14
+  [1m[36mPost Update (0.8ms)[0m  [1m[33mUPDATE "posts" SET "updated_at" = $1 WHERE "posts"."id" = $2[0m  [["updated_at", "2021-05-12 19:52:44.127573"], ["id", 26]]
+  ↳ app/controllers/api/posts_controller.rb:14
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/posts_controller.rb:14
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 7f14076d-7f74-4a78-98fa-6c3efd4878a8) to Async(default) with arguments: #<GlobalID:0x00007fb7f92ddff8 @uri=#<URI::GID gid://dappedup/ActiveStorage::Blob/9>>
+  Rendering api/posts/show.json.jbuilder
+  Rendered api/posts/_post.json.jbuilder (0.5ms)
+  Rendered api/posts/show.json.jbuilder (6.1ms)
+Completed 200 OK in 470ms (Views: 15.2ms | ActiveRecord: 24.2ms)
+
+
+  [1m[36mActiveStorage::Blob Load (2.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ /home/anug/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7f14076d-7f74-4a78-98fa-6c3efd4878a8] Performing ActiveStorage::AnalyzeJob (Job ID: 7f14076d-7f74-4a78-98fa-6c3efd4878a8) from Async(default) with arguments: #<GlobalID:0x00007fb7f920b508 @uri=#<URI::GID gid://dappedup/ActiveStorage::Blob/9>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7f14076d-7f74-4a78-98fa-6c3efd4878a8] [36m  S3 Storage (112.8ms) [0m[34mDownloaded file from key: ZnbCDRMvELkCRL3waDFaVV6X[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7f14076d-7f74-4a78-98fa-6c3efd4878a8] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7f14076d-7f74-4a78-98fa-6c3efd4878a8]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7f14076d-7f74-4a78-98fa-6c3efd4878a8]   ↳ /home/anug/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7f14076d-7f74-4a78-98fa-6c3efd4878a8]   [1m[36mActiveStorage::Blob Update (0.7ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 9]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7f14076d-7f74-4a78-98fa-6c3efd4878a8]   ↳ /home/anug/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7f14076d-7f74-4a78-98fa-6c3efd4878a8]   [1m[35m (4.7ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7f14076d-7f74-4a78-98fa-6c3efd4878a8]   ↳ /home/anug/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7f14076d-7f74-4a78-98fa-6c3efd4878a8] Performed ActiveStorage::AnalyzeJob (Job ID: 7f14076d-7f74-4a78-98fa-6c3efd4878a8) from Async(default) in 161.6ms
+Started GET "/" for ::1 at 2021-05-12 16:23:30 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YxORKZDzdHAt9mquCpx_Wg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (18.4ms)
+Completed 200 OK in 4447ms (Views: 4439.2ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 16:23:35 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (4.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (4.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (72.5ms)
+Completed 500 Internal Server Error in 203ms (ActiveRecord: 8.7ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder___698122274581410419_70214001428720'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder___698122274581410419_70214001428720'
+
+Started GET "/" for ::1 at 2021-05-12 16:23:42 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YxORKZDzdHAt9mquCpx_Wg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (1.0ms)
+  Rendered static_pages/root.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 129ms (Views: 122.5ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 16:23:42 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (21.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (3.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (53.8ms)
+Completed 500 Internal Server Error in 165ms (ActiveRecord: 24.4ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder___698122274581410419_70214008056080'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder___698122274581410419_70214008056080'
+
+Started GET "/" for ::1 at 2021-05-12 16:26:23 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YxORKZDzdHAt9mquCpx_Wg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 184ms (Views: 174.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 16:26:24 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (2.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (4.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (83.1ms)
+Completed 500 Internal Server Error in 226ms (ActiveRecord: 6.9ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder___698122274581410419_70214005026560'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder___698122274581410419_70214005026560'
+
+Started GET "/" for ::1 at 2021-05-12 16:37:31 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YxORKZDzdHAt9mquCpx_Wg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 221ms (Views: 214.9ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 16:37:32 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (3.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (7.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (51.4ms)
+Completed 500 Internal Server Error in 166ms (ActiveRecord: 11.5ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder___698122274581410419_70214000334780'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder___698122274581410419_70214000334780'
+
+Started GET "/" for ::1 at 2021-05-12 16:38:48 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YxORKZDzdHAt9mquCpx_Wg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 205ms (Views: 186.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 16:38:49 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (14.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (2.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (48.8ms)
+Completed 500 Internal Server Error in 183ms (ActiveRecord: 17.0ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder___698122274581410419_70214007002640'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder___698122274581410419_70214007002640'
+
+Started GET "/" for ::1 at 2021-05-12 16:38:59 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YxORKZDzdHAt9mquCpx_Wg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 227ms (Views: 221.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 16:39:00 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (19.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (6.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (126.8ms)
+Completed 500 Internal Server Error in 181ms (ActiveRecord: 25.3ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder___698122274581410419_70214003877780'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder___698122274581410419_70214003877780'
+
+Started GET "/" for ::1 at 2021-05-12 16:39:26 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YxORKZDzdHAt9mquCpx_Wg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 176ms (Views: 172.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 16:39:27 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (9.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (2.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (96.4ms)
+Completed 500 Internal Server Error in 222ms (ActiveRecord: 11.3ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder___698122274581410419_70214064152760'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder___698122274581410419_70214064152760'
+
+Started GET "/" for ::1 at 2021-05-12 16:40:26 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YxORKZDzdHAt9mquCpx_Wg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 192ms (Views: 189.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 16:40:27 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (38.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (1.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (113.0ms)
+Completed 500 Internal Server Error in 176ms (ActiveRecord: 39.2ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder___698122274581410419_70214005870680'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder___698122274581410419_70214005870680'
+
+Started GET "/" for ::1 at 2021-05-12 16:41:20 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YxORKZDzdHAt9mquCpx_Wg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 183ms (Views: 170.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 16:41:21 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (33.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (1.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (99.2ms)
+Completed 500 Internal Server Error in 196ms (ActiveRecord: 34.8ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder___698122274581410419_70214004605340'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder___698122274581410419_70214004605340'
+
+Started GET "/" for ::1 at 2021-05-12 16:43:01 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YxORKZDzdHAt9mquCpx_Wg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 201ms (Views: 198.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 16:43:02 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (18.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (93.5ms)
+Completed 500 Internal Server Error in 242ms (ActiveRecord: 19.0ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder___698122274581410419_70214008053000'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder___698122274581410419_70214008053000'
+
+Started GET "/" for ::1 at 2021-05-12 16:43:19 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YxORKZDzdHAt9mquCpx_Wg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 172ms (Views: 162.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 16:43:20 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (29.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (1.9ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (60.6ms)
+Completed 500 Internal Server Error in 141ms (ActiveRecord: 30.9ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder___698122274581410419_70214005323700'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder___698122274581410419_70214005323700'
+
+Started GET "/" for ::1 at 2021-05-12 17:03:22 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YxORKZDzdHAt9mquCpx_Wg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (1.1ms)
+  Rendered static_pages/root.html.erb within layouts/application (27.6ms)
+Completed 200 OK in 235ms (Views: 227.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 17:03:23 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (46.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (9.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (161.2ms)
+Completed 500 Internal Server Error in 231ms (ActiveRecord: 56.1ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder___698122274581410419_70213998896880'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder___698122274581410419_70213998896880'
+
+Started GET "/" for ::1 at 2021-05-12 17:04:03 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YxORKZDzdHAt9mquCpx_Wg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (13.4ms)
+Completed 200 OK in 184ms (Views: 179.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 17:04:04 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (9.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (8.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (170.7ms)
+Completed 500 Internal Server Error in 303ms (ActiveRecord: 18.5ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder___698122274581410419_70214005936480'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder___698122274581410419_70214005936480'
+
+Started GET "/" for ::1 at 2021-05-12 17:04:14 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YxORKZDzdHAt9mquCpx_Wg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 164ms (Views: 152.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 17:04:15 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (17.0ms)
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 1.2ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder___698122274581410419_70214004298000'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder___698122274581410419_70214004298000'
+
+Started GET "/" for ::1 at 2021-05-12 17:05:22 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YxORKZDzdHAt9mquCpx_Wg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 217ms (Views: 213.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 17:05:23 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (5.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (36.6ms)
+Completed 500 Internal Server Error in 57ms (ActiveRecord: 5.6ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder___698122274581410419_70214007073940'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder___698122274581410419_70214007073940'
+
+Started GET "/" for ::1 at 2021-05-12 17:05:32 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YxORKZDzdHAt9mquCpx_Wg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (1.1ms)
+  Rendered static_pages/root.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 193ms (Views: 185.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 17:05:33 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (41.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (16.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (164.3ms)
+Completed 500 Internal Server Error in 279ms (ActiveRecord: 57.4ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder___698122274581410419_70213995760360'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder___698122274581410419_70213995760360'
+
+Started GET "/" for ::1 at 2021-05-12 17:14:13 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YxORKZDzdHAt9mquCpx_Wg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 195ms (Views: 188.3ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 17:14:14 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (43.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (26.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (150.4ms)
+Completed 500 Internal Server Error in 294ms (ActiveRecord: 69.9ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder___698122274581410419_70214008056400'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder___698122274581410419_70214008056400'
+
+Started GET "/" for ::1 at 2021-05-12 17:17:15 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YxORKZDzdHAt9mquCpx_Wg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 187ms (Views: 178.4ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 17:17:16 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (79.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (6.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (195.9ms)
+Completed 500 Internal Server Error in 284ms (ActiveRecord: 86.3ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder___698122274581410419_70214005614820'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder___698122274581410419_70214005614820'
+
+Started GET "/" for ::1 at 2021-05-12 17:17:26 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YxORKZDzdHAt9mquCpx_Wg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 258ms (Views: 250.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 17:17:27 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (6.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (1.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (171.0ms)
+Completed 500 Internal Server Error in 214ms (ActiveRecord: 7.7ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder___698122274581410419_70214004611960'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder___698122274581410419_70214004611960'
+
+Started GET "/" for ::1 at 2021-05-12 17:17:54 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YxORKZDzdHAt9mquCpx_Wg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 235ms (Views: 222.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 17:17:55 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (21.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (3.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (54.3ms)
+Completed 500 Internal Server Error in 192ms (ActiveRecord: 25.3ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder___698122274581410419_70214061474020'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder___698122274581410419_70214061474020'
+
+Started GET "/" for ::1 at 2021-05-12 17:32:06 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YxORKZDzdHAt9mquCpx_Wg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (1.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 815ms (Views: 809.3ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 17:32:08 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (53.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (22.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (242.3ms)
+Completed 500 Internal Server Error in 331ms (ActiveRecord: 91.0ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder___698122274581410419_70214005267700'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder___698122274581410419_70214005267700'
+
+Started GET "/" for ::1 at 2021-05-12 17:33:34 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YxORKZDzdHAt9mquCpx_Wg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (15.2ms)
+Completed 200 OK in 163ms (Views: 158.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 17:33:35 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (2.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (1.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (63.0ms)
+Completed 500 Internal Server Error in 228ms (ActiveRecord: 3.9ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder___698122274581410419_70214002480600'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder___698122274581410419_70214002480600'
+
+Started GET "/" for ::1 at 2021-05-12 17:34:13 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YxORKZDzdHAt9mquCpx_Wg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 190ms (Views: 186.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 17:34:15 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (1.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (92.9ms)
+Completed 500 Internal Server Error in 163ms (ActiveRecord: 2.3ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder___698122274581410419_70214007916420'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder___698122274581410419_70214007916420'
+
+Started GET "/" for ::1 at 2021-05-12 17:35:29 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YxORKZDzdHAt9mquCpx_Wg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (1.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 273ms (Views: 267.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 17:35:30 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (2.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (1.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (73.9ms)
+Completed 500 Internal Server Error in 432ms (ActiveRecord: 3.5ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder___698122274581410419_70214005244100'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder___698122274581410419_70214005244100'
+
+Started GET "/" for ::1 at 2021-05-12 17:36:04 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YxORKZDzdHAt9mquCpx_Wg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 198ms (Views: 192.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 17:36:05 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (10.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (2.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (148.2ms)
+Completed 500 Internal Server Error in 272ms (ActiveRecord: 13.3ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder___698122274581410419_70214002444300'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder___698122274581410419_70214002444300'
+
+Started GET "/" for ::1 at 2021-05-12 17:36:18 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YxORKZDzdHAt9mquCpx_Wg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 186ms (Views: 177.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 17:36:19 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (1.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (2.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (124.0ms)
+Completed 500 Internal Server Error in 160ms (ActiveRecord: 4.0ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder___698122274581410419_70214007829420'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder___698122274581410419_70214007829420'
+
+Started GET "/" for ::1 at 2021-05-12 17:38:20 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YxORKZDzdHAt9mquCpx_Wg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (17.4ms)
+Completed 200 OK in 202ms (Views: 195.0ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 17:38:21 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (4.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (5.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (196.7ms)
+Completed 500 Internal Server Error in 225ms (ActiveRecord: 9.9ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder___698122274581410419_70214005244400'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder___698122274581410419_70214005244400'
+
+Started GET "/" for ::1 at 2021-05-12 17:38:33 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YxORKZDzdHAt9mquCpx_Wg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (17.2ms)
+Completed 200 OK in 224ms (Views: 217.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 17:38:34 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (29.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (7.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (232.3ms)
+Completed 500 Internal Server Error in 350ms (ActiveRecord: 37.0ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder___698122274581410419_70214003215900'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder___698122274581410419_70214003215900'
+
+Started GET "/" for ::1 at 2021-05-12 17:38:42 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YxORKZDzdHAt9mquCpx_Wg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (1.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (20.1ms)
+Completed 200 OK in 240ms (Views: 236.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 17:38:43 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (1.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (31.2ms)
+Completed 500 Internal Server Error in 127ms (ActiveRecord: 1.8ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder___698122274581410419_70214008075240'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder___698122274581410419_70214008075240'
+
+Started GET "/" for ::1 at 2021-05-12 17:41:32 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YxORKZDzdHAt9mquCpx_Wg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (2.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (18.4ms)
+Completed 200 OK in 1668ms (Views: 1651.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 17:41:35 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (8.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (3.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (69.2ms)
+Completed 500 Internal Server Error in 162ms (ActiveRecord: 11.9ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder___698122274581410419_70214004967760'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder___698122274581410419_70214004967760'
+
+Started GET "/" for ::1 at 2021-05-12 17:42:59 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YxORKZDzdHAt9mquCpx_Wg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (1.0ms)
+  Rendered static_pages/root.html.erb within layouts/application (17.7ms)
+Completed 200 OK in 1505ms (Views: 1486.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 17:43:02 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (27.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (43.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (325.0ms)
+Completed 500 Internal Server Error in 411ms (ActiveRecord: 71.2ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder___698122274581410419_70214007362360'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder___698122274581410419_70214007362360'
+
+Started GET "/" for ::1 at 2021-05-12 17:43:15 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YxORKZDzdHAt9mquCpx_Wg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (1.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 292ms (Views: 283.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 17:43:16 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (7.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (1.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (71.0ms)
+Completed 500 Internal Server Error in 350ms (ActiveRecord: 8.4ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder___698122274581410419_70213991937520'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder___698122274581410419_70213991937520'
+
+Started GET "/" for ::1 at 2021-05-12 17:43:34 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YxORKZDzdHAt9mquCpx_Wg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (1.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 384ms (Views: 375.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 17:43:36 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (98.0ms)
+Completed 500 Internal Server Error in 218ms (ActiveRecord: 1.3ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder___698122274581410419_70214005614980'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder___698122274581410419_70214005614980'
+
+Started GET "/" for ::1 at 2021-05-12 17:43:44 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YxORKZDzdHAt9mquCpx_Wg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (1.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (23.3ms)
+Completed 200 OK in 580ms (Views: 569.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 17:43:45 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (34.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (14.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (374.8ms)
+Completed 500 Internal Server Error in 601ms (ActiveRecord: 48.1ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder___698122274581410419_70214007735780'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder___698122274581410419_70214007735780'
+
+Started GET "/" for ::1 at 2021-05-12 17:46:22 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YxORKZDzdHAt9mquCpx_Wg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (1.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (20.8ms)
+Completed 200 OK in 533ms (Views: 526.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 17:46:24 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (2.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (12.9ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (108.9ms)
+Completed 500 Internal Server Error in 321ms (ActiveRecord: 14.9ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder___698122274581410419_70214002786620'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder___698122274581410419_70214002786620'
+
+Started GET "/" for ::1 at 2021-05-12 18:06:49 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (6.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YxORKZDzdHAt9mquCpx_Wg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (1.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (56.3ms)
+Completed 200 OK in 440ms (Views: 383.7ms | ActiveRecord: 14.0ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 18:06:51 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (14.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (13.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (173.4ms)
+Completed 500 Internal Server Error in 274ms (ActiveRecord: 27.9ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder___698122274581410419_70214000457760'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder___698122274581410419_70214000457760'
+
+Started GET "/" for ::1 at 2021-05-12 18:07:17 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YxORKZDzdHAt9mquCpx_Wg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (2.1ms)
+  Rendered static_pages/root.html.erb within layouts/application (24.0ms)
+Completed 200 OK in 509ms (Views: 500.3ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 18:07:20 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (59.1ms)
+Completed 500 Internal Server Error in 218ms (ActiveRecord: 1.3ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder___698122274581410419_70214007557300'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder___698122274581410419_70214007557300'
+
+Started GET "/" for ::1 at 2021-05-12 18:12:23 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YxORKZDzdHAt9mquCpx_Wg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (19.9ms)
+Completed 200 OK in 349ms (Views: 334.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 18:12:24 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (4.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (7.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (136.7ms)
+Completed 500 Internal Server Error in 235ms (ActiveRecord: 12.4ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder___698122274581410419_70214002513580'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder___698122274581410419_70214002513580'
+
+Started GET "/" for ::1 at 2021-05-12 18:12:36 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YxORKZDzdHAt9mquCpx_Wg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (1.0ms)
+  Rendered static_pages/root.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 395ms (Views: 385.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 18:12:38 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (2.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (31.9ms)
+Completed 500 Internal Server Error in 99ms (ActiveRecord: 3.1ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder___698122274581410419_70214001097680'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder___698122274581410419_70214001097680'
+
+Started GET "/" for ::1 at 2021-05-12 18:12:53 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YxORKZDzdHAt9mquCpx_Wg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (1.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (23.8ms)
+Completed 200 OK in 448ms (Views: 440.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 18:12:55 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (64.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (1.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (330.0ms)
+Completed 500 Internal Server Error in 527ms (ActiveRecord: 65.7ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder___698122274581410419_70214007756200'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder___698122274581410419_70214007756200'
+
+Started GET "/" for ::1 at 2021-05-12 18:13:40 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YxORKZDzdHAt9mquCpx_Wg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 170ms (Views: 165.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 18:13:41 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (2.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (6.9ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (98.8ms)
+Completed 500 Internal Server Error in 305ms (ActiveRecord: 9.4ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder___698122274581410419_70214005487180'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder___698122274581410419_70214005487180'
+
+Started GET "/" for ::1 at 2021-05-12 18:14:50 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YxORKZDzdHAt9mquCpx_Wg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (1.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (20.7ms)
+Completed 200 OK in 345ms (Views: 325.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 18:14:52 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (70.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (120.9ms)
+Completed 500 Internal Server Error in 271ms (ActiveRecord: 71.1ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder___698122274581410419_70214003525660'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder___698122274581410419_70214003525660'
+
+Started GET "/" for ::1 at 2021-05-12 18:15:05 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YxORKZDzdHAt9mquCpx_Wg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (1.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 464ms (Views: 455.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 18:15:07 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (30.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (36.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (315.0ms)
+Completed 500 Internal Server Error in 591ms (ActiveRecord: 66.9ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder___698122274581410419_70214008415780'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder___698122274581410419_70214008415780'
+
+Started GET "/" for ::1 at 2021-05-12 18:18:43 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YxORKZDzdHAt9mquCpx_Wg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (18.4ms)
+Completed 200 OK in 1396ms (Views: 1378.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-12 18:18:45 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (13.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:5
+  Rendered api/posts/index.json.jbuilder (51.4ms)
+Completed 500 Internal Server Error in 226ms (ActiveRecord: 14.5ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/posts/index.json.jbuilder:5:in `block in _app_views_api_posts_index_json_jbuilder___698122274581410419_70214004878740'
+  app/views/api/posts/index.json.jbuilder:1:in `_app_views_api_posts_index_json_jbuilder___698122274581410419_70214004878740'
+
+Started POST "/api/posts" for ::1 at 2021-05-12 18:20:31 -0400
+Processing by Api::PostsController#create as JSON
+  Parameters: {"post"=>{"body"=>"Trying to figure out this upload thing", "photo"=>#<ActionDispatch::Http::UploadedFile:0x00007fb7f2211a68 @tempfile=#<Tempfile:/tmp/RackMultipart20210512-30586-4fsfq3.JPG>, @original_filename="Anug_Saha.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"post[photo]\"; filename=\"Anug_Saha.JPG\"\r\nContent-Type: image/jpeg\r\n">}}
+[36m  S3 Storage (197.2ms) [0m[32mUploaded file to key: EHqNLvnnSb6RN8GwvdiJQVNL (checksum: HwBxBkA01kziaHD5wHMMTg==)[0m
+  [1m[35m (2.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/posts_controller.rb:12
+  [1m[36mActiveStorage::Blob Create (38.9ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "EHqNLvnnSb6RN8GwvdiJQVNL"], ["filename", "Anug_Saha.JPG"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 68728], ["checksum", "HwBxBkA01kziaHD5wHMMTg=="], ["created_at", "2021-05-12 22:20:31.267771"]]
+  ↳ app/controllers/api/posts_controller.rb:12
+  [1m[35m (24.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/posts_controller.rb:12
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/posts_controller.rb:12
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/posts_controller.rb:12
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YxORKZDzdHAt9mquCpx_Wg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/posts_controller.rb:14
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/posts_controller.rb:14
+  [1m[36mPost Create (1.0ms)[0m  [1m[32mINSERT INTO "posts" ("body", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["body", "Trying to figure out this upload thing"], ["author_id", 1], ["created_at", "2021-05-12 22:20:31.490321"], ["updated_at", "2021-05-12 22:20:31.490321"]]
+  ↳ app/controllers/api/posts_controller.rb:14
+  [1m[36mActiveStorage::Attachment Create (5.8ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "photo"], ["record_type", "Post"], ["record_id", 27], ["blob_id", 10], ["created_at", "2021-05-12 22:20:31.496801"]]
+  ↳ app/controllers/api/posts_controller.rb:14
+  [1m[36mPost Update (1.1ms)[0m  [1m[33mUPDATE "posts" SET "updated_at" = $1 WHERE "posts"."id" = $2[0m  [["updated_at", "2021-05-12 22:20:31.510237"], ["id", 27]]
+  ↳ app/controllers/api/posts_controller.rb:14
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/posts_controller.rb:14
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: a313ddc3-241d-4ee7-b9a1-4055e916690a) to Async(default) with arguments: #<GlobalID:0x00007fb7f17cb428 @uri=#<URI::GID gid://dappedup/ActiveStorage::Blob/10>>
+  Rendering api/posts/show.json.jbuilder
+  [1m[36mActiveStorage::Blob Load (11.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendered api/posts/_post.json.jbuilder (0.8ms)
+  ↳ /home/anug/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+  Rendered api/posts/show.json.jbuilder (7.0ms)
+Completed 200 OK in 536ms (Views: 30.1ms | ActiveRecord: 83.1ms)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a313ddc3-241d-4ee7-b9a1-4055e916690a] Performing ActiveStorage::AnalyzeJob (Job ID: a313ddc3-241d-4ee7-b9a1-4055e916690a) from Async(default) with arguments: #<GlobalID:0x00007fb7f179a3c8 @uri=#<URI::GID gid://dappedup/ActiveStorage::Blob/10>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a313ddc3-241d-4ee7-b9a1-4055e916690a] [36m  S3 Storage (85.6ms) [0m[34mDownloaded file from key: EHqNLvnnSb6RN8GwvdiJQVNL[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a313ddc3-241d-4ee7-b9a1-4055e916690a] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a313ddc3-241d-4ee7-b9a1-4055e916690a]   [1m[35m (1.8ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a313ddc3-241d-4ee7-b9a1-4055e916690a]   ↳ /home/anug/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a313ddc3-241d-4ee7-b9a1-4055e916690a]   [1m[36mActiveStorage::Blob Update (3.2ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 10]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a313ddc3-241d-4ee7-b9a1-4055e916690a]   ↳ /home/anug/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a313ddc3-241d-4ee7-b9a1-4055e916690a]   [1m[35m (13.1ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a313ddc3-241d-4ee7-b9a1-4055e916690a]   ↳ /home/anug/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a313ddc3-241d-4ee7-b9a1-4055e916690a] Performed ActiveStorage::AnalyzeJob (Job ID: a313ddc3-241d-4ee7-b9a1-4055e916690a) from Async(default) in 415.26ms

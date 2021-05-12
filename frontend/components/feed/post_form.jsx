@@ -1,5 +1,6 @@
 import React from 'react'; 
 import PostIndexContainer from './post_index_container';
+import UserSideCardContainer from './user_sidecard_container'
 
 class PostForm extends React.Component{ 
     constructor(props){ 
@@ -37,19 +38,31 @@ class PostForm extends React.Component{
 
     render(){ 
         return ( 
-            <div>
-                 <form onSubmit={this.handleSubmit}>
-                    <label> 
-                        <textarea placeholder={this.props.formType} 
-                            value= {this.state.body} 
-                            onChange={this.update('body')}
-                        />
-                    </label>
-                    <br />
-                    <input type='file' onChange={this.handleFile}/>
-                    <input type='submit' value= 'Post' />
-                 </form>
-                 <PostIndexContainer />
+            <div className="feed-page">
+                <div className="profile-card">
+                    <UserSideCardContainer />
+                </div>
+                <div className="feed-section">
+                    <div className="post-box">
+                        <form onSubmit={this.handleSubmit}>
+                        <label> 
+                            <textarea className="post-field"
+                                placeholder={this.props.formType} 
+                                value= {this.state.body} 
+                                onChange={this.update('body')}
+                            />
+                        </label>
+                        <br />
+                        <div className="post-upload-btn">
+                            <input type='file' onChange={this.handleFile}/>
+                            <input className="post-btn" type='submit' value= 'Post' />
+                        </div>
+                        </form>
+                    </div>
+                    <div className="post-feed">
+                        <PostIndexContainer />
+                    </div>
+                </div>
             </div>
         )
     }
