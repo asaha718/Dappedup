@@ -1,5 +1,4 @@
-@posts.each do |post|
-    json.set! post.id do
-      json.partial! 'post', post: post
-    end
+json.array! @posts do |post|
+  json.extract! post, :id, :body
+  json.photoUrl url_for(post.photo)
 end

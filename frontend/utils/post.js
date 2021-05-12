@@ -32,3 +32,12 @@ export const deletePost= (postId)=> (
         method: 'DELETE'
     })
 )
+
+// export const uploadPhoto= ()=> (
+//     $.ajax({ 
+//         url: '/api/posts', 
+//         method:'POST', 
+//         contentType: false, 
+//         processData: false
+//     })
+// )

@@ -5,12 +5,28 @@ class PostForm extends React.Component{
     constructor(props){ 
         super(props);
         this.state= this.props.post; 
-        this.handleSubmit=this.handleSubmit.bind(this); 
+        this.handleSubmit=this.handleSubmit.bind(this);
+        this.handleFile=this.handleFile.bind(this) 
     }
 
     handleSubmit(event){
         event.preventDefault() 
-        this.props.createPost(this.state); 
+        const formData = new FormData();
+        formData.append('post[body]', this.state.body); 
+        formData.append('post[photo]', this.state.photoFile);
+        $.ajax({ 
+            url: '/api/posts', 
+            method:'POST',
+            data: formData, 
+            contentType: false, 
+            processData: false
+        });
+        this.props.createPost(this.state);
+        this.setState({body: ''})
+    }
+
+    handleFile(e){ 
+        this.setState({photoFile: e.currentTarget.files[0]})
     }
 
     update(field){ 
@@ -24,9 +40,13 @@ class PostForm extends React.Component{
             <div>
                  <form onSubmit={this.handleSubmit}>
                     <label> 
-                        <textarea placeholder={this.props.formType} value= {this.state.body} onChange={this.update('body')}/>
+                        <textarea placeholder={this.props.formType} 
+                            value= {this.state.body} 
+                            onChange={this.update('body')}
+                        />
                     </label>
                     <br />
+                    <input type='file' onChange={this.handleFile}/>
                     <input type='submit' value= 'Post' />
                  </form>
                  <PostIndexContainer />
