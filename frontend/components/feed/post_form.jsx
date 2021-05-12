@@ -10,19 +10,19 @@ class PostForm extends React.Component{
     }
 
     handleSubmit(event){
-        event.preventDefault() 
+        event.preventDefault(); 
         const formData = new FormData();
         formData.append('post[body]', this.state.body); 
         formData.append('post[photo]', this.state.photoFile);
-        $.ajax({ 
-            url: '/api/posts', 
-            method:'POST',
-            data: formData, 
-            contentType: false, 
-            processData: false
-        });
-        this.props.createPost(this.state);
-        this.setState({body: ''})
+        // $.ajax({ 
+        //     url: '/api/posts', 
+        //     method:'POST',
+        //     data: formData, 
+        //     contentType: false, 
+        //     processData: false
+        // });
+        this.props.createPost(formData);
+        this.setState({body: '', photoFile: null})
     }
 
     handleFile(e){ 
