@@ -22,8 +22,9 @@ class PostForm extends React.Component{
         //     contentType: false, 
         //     processData: false
         // });
+        debugger
         this.props.createPost(formData);
-        this.setState({body: '', photoFile: null})
+        this.setState({body: ''})
     }
 
     handleFile(e){ 

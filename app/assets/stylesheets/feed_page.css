@@ -31,6 +31,7 @@ textarea {
     cursor: pointer;
     padding: 10px 20px; 
     border-radius: 40px;
+    margin-bottom: 10px;
 }
 
 .post-btn:hover{ 
@@ -70,4 +71,14 @@ textarea {
     padding-bottom: 5px;
 }
 
+/* POST INDEX ITEMS */
+
+.post-contents { 
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px 15px;
+    margin-bottom: 6px;
+}
 
