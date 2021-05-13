@@ -55,7 +55,12 @@ class PostForm extends React.Component{
                         </label>
                         <br />
                         <div className="post-upload-btn">
-                            <input type='file' onChange={this.handleFile}/>
+                            <div className="upload-photo-icon">
+                                <label for="file-input">
+                                    <img src="https://icon-library.net//images/photo-placeholder-icon/photo-placeholder-icon-0.jpg"/>
+                                </label>
+                                <input id="file-input" type='file' onChange={this.handleFile}></input>
+                            </div>
                             <input className="post-btn" type='submit' value= 'Post' />
                         </div>
                         </form>

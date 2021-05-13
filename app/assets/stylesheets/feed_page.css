@@ -82,3 +82,19 @@ textarea {
     margin-bottom: 6px;
 }
 
+.post-contents img { 
+    max-width: 100%;
+}
+
+.upload-photo-icon>input{ 
+    display: none;
+}
+.upload-photo-icon img{ 
+    cursor: pointer;
+    width: 25px;
+    height: 20px;
+}
+
+.upload-photo-icon img:hover{ 
+    opacity: 0.9;
+}

@@ -7,11 +7,12 @@ const PostIndexItem= ({post, updatePost, deletePost}) => {
             <div className='post-contents'>
                 <div className="post-items">
                     {post.body}
-                    {post.photo}
+                    <br />
+                    <img src={post.photoUrl}/>
                 </div>
                 <div className="delete-post-btn-ctn">
-                    <button className='delete-post-btn' onClick={()=> deletePost(post.id)}>
-                        delete
+                    <button className='delete-post-btn' onClick={()=> deletePost(post.id)} >
+                        <i class="fa fa-trash"></i>
                     </button>
                 </div>
             </div>     
