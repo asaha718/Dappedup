@@ -16,7 +16,10 @@ body {
     text-align: center;
     
 }
-
+.user-profile-page{ 
+    height: 78vh;
+    width: 100vw;
+}
 .user-profile-page .fullname{ 
     font-size: 2.4rem;
     font-family: 'Noto Sans KR';

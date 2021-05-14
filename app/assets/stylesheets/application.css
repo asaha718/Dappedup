@@ -101,14 +101,6 @@ header {
     filter: brightness(85%); 
 }
 
-    /* .login-input{ 
-        border: 0;
-        border-bottom: 1px solid #b4becb;
-        width: 100%;
-        font-size: 16px;
-        padding: 3px;
-    } */
-
 a { 
     text-decoration: none;
     color: black;
@@ -201,4 +193,26 @@ textarea {
 
 .login-btn:hover { 
     background-color:  #0850eb;
+}
+
+/* FOOTER */
+
+footer img{
+    height: 80px;
+    width: 250px; 
+}
+.contact-footer{ 
+    display: flex;
+    justify-content: space-around;
+}
+.contact-footer h3{ 
+    font-family: 'Noto Sans KR'; 
+    font-size: 10px;
+}
+
+.personal-contact-card>img{ 
+   height: 60px;
+   width: 80px;
+   border-radius: 20%;
+   padding: 2px; 
 }

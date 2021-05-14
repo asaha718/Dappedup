@@ -7,6 +7,7 @@ import HomePageContainer from "./home/home_container"
 import UserProfileContainer from "./profile/user_profile_container"
 import {AuthRoute, ProtectedRoute} from "../utils/route_util"
 import PostFormContainer from "./feed/create_post_form_container"
+import ContactInfo from "./contact/contact"
 
 
 const noMatchPage=()=> { 
@@ -32,6 +33,9 @@ const App = () => (
         <Route component={noMatchPage} />
 
       </Switch>
+      <footer>
+        <ContactInfo /> 
+      </footer>
   </div>
 );
 
