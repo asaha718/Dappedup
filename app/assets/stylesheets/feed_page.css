@@ -38,6 +38,10 @@ textarea {
     opacity: 0.8;
 }
 
+.post-img-preview img { 
+    height: 400px;
+    width: 350px;
+}
 
 /* USER SIDE CARD CONTAINER */
 

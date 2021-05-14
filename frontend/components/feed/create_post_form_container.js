@@ -5,7 +5,8 @@ import PostForm from './post_form';
 const mSTP= state =>({ 
     post: { 
         body: '', 
-        photoFile: null
+        photoFile: null,
+        photoUrl: null
     }, 
     formType: 'Start a post'
 }); 
