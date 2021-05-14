@@ -38,9 +38,13 @@ textarea {
     opacity: 0.8;
 }
 
+.post-text { 
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 5px;
+}
 .post-img-preview img { 
-    height: 400px;
-    width: 350px;
+    height: 300px;
+    width: 250px;
 }
 
 /* USER SIDE CARD CONTAINER */
@@ -101,4 +105,12 @@ textarea {
 
 .upload-photo-icon img:hover{ 
     opacity: 0.9;
+}
+
+.user-img-post { 
+    height: 30px;
+    width: 30px;
+}
+.user-img-post img { 
+    border-radius: 50%;
 }

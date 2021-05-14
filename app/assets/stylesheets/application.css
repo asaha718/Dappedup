@@ -47,6 +47,12 @@ header {
     color: #0850eb;
 }
 
+.feed-btn a { 
+    font-size: 13px;  
+}
+.feed-btn a:hover{ 
+    opacity: .8;
+}
 
 .login-form-container {
     display: flex; 
