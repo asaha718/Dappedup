@@ -21513,3 +21513,303 @@ Processing by Api::PostsController#index as JSON
 Completed 200 OK in 187ms (Views: 133.0ms | ActiveRecord: 53.6ms)
 
 
+Started GET "/" for ::1 at 2021-05-14 16:05:30 -0400
+  [1m[35m (11.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/anug/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (4.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Zm75IwxGRPCC3eZUjTt9Sg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (114.0ms)
+Completed 200 OK in 5845ms (Views: 5800.9ms | ActiveRecord: 39.6ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-14 16:05:37 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (4.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (4.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 49], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 50], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (3.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 51], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (1.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (1.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 52], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 53], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:3
+  Rendered api/posts/index.json.jbuilder (593.9ms)
+Completed 200 OK in 699ms (Views: 572.4ms | ActiveRecord: 31.1ms)
+
+
+Started GET "/" for ::1 at 2021-05-14 16:08:30 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Zm75IwxGRPCC3eZUjTt9Sg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (7.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (26.0ms)
+Completed 200 OK in 791ms (Views: 783.5ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-14 16:08:31 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (4.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (60.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 49], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (14.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 50], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (3.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (15.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 51], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (3.9ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (8.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 52], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (10.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 53], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:3
+  Rendered api/posts/index.json.jbuilder (161.3ms)
+Completed 200 OK in 203ms (Views: 73.8ms | ActiveRecord: 120.1ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBKZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--730d12c6daa009b7c6560be421d22a4a34198dd5/pikachu.jfif" for ::1 at 2021-05-14 16:08:31 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBKUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--c03808fbe446f03b7b525858b0b899550d6aac7f/eevee.jfif" for ::1 at 2021-05-14 16:08:31 -0400
+Processing by ActiveStorage::BlobsController#show as 
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBKZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--730d12c6daa009b7c6560be421d22a4a34198dd5", "filename"=>"pikachu"}
+  [1m[36mActiveStorage::Blob Load (5.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ /home/anug/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+Processing by ActiveStorage::BlobsController#show as 
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBKUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--c03808fbe446f03b7b525858b0b899550d6aac7f", "filename"=>"eevee"}
+[36m  S3 Storage (98.3ms) [0m[34mGenerated URL for file at key: SXGtpui43EkeotgmwxiqYQhb (https://active-storage-dappedup-dev.s3.amazonaws.com/SXGtpui43EkeotgmwxiqYQhb?response-content-disposition=inline%3B%20filename%3D%22pikachu.jfif%22%3B%20filename%2A%3DUTF-8%27%27pikachu.jfif&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZNYGTDWXT457LRFO%2F20210514%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210514T200832Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=5eaa5a32d436cca59c59d22c13f2d6a02fd0d694cc3e568201f6606619220f89)[0m
+Redirected to https://active-storage-dappedup-dev.s3.amazonaws.com/SXGtpui43EkeotgmwxiqYQhb?response-content-disposition=inline%3B%20filename%3D%22pikachu.jfif%22%3B%20filename%2A%3DUTF-8%27%27pikachu.jfif&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZNYGTDWXT457LRFO%2F20210514%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210514T200832Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=5eaa5a32d436cca59c59d22c13f2d6a02fd0d694cc3e568201f6606619220f89
+Completed 302 Found in 118ms (ActiveRecord: 5.7ms)
+
+
+  [1m[36mActiveStorage::Blob Load (15.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ /home/anug/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (3.0ms) [0m[34mGenerated URL for file at key: igNenGEkv2PDGGyzkeFEhejN (https://active-storage-dappedup-dev.s3.amazonaws.com/igNenGEkv2PDGGyzkeFEhejN?response-content-disposition=inline%3B%20filename%3D%22eevee.jfif%22%3B%20filename%2A%3DUTF-8%27%27eevee.jfif&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZNYGTDWXT457LRFO%2F20210514%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210514T200832Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=93b7d6bbeb6c76ea4303bdbe46ddb5c1ab503a3653d6bf365fce1acaaa9d609e)[0m
+Redirected to https://active-storage-dappedup-dev.s3.amazonaws.com/igNenGEkv2PDGGyzkeFEhejN?response-content-disposition=inline%3B%20filename%3D%22eevee.jfif%22%3B%20filename%2A%3DUTF-8%27%27eevee.jfif&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZNYGTDWXT457LRFO%2F20210514%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210514T200832Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=93b7d6bbeb6c76ea4303bdbe46ddb5c1ab503a3653d6bf365fce1acaaa9d609e
+Completed 302 Found in 60ms (ActiveRecord: 48.3ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-14 16:09:04 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (4.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (7.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 49], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (3.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 50], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (2.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (4.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 51], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (3.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (3.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 52], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (1.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 53], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:3
+  Rendered api/posts/index.json.jbuilder (85.8ms)
+Completed 200 OK in 135ms (Views: 104.5ms | ActiveRecord: 30.5ms)
+
+
+Started GET "/" for ::1 at 2021-05-14 16:10:02 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Zm75IwxGRPCC3eZUjTt9Sg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (16.6ms)
+Completed 200 OK in 687ms (Views: 680.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for ::1 at 2021-05-14 16:21:03 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Zm75IwxGRPCC3eZUjTt9Sg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (1.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (16.3ms)
+Completed 200 OK in 753ms (Views: 745.7ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/" for ::1 at 2021-05-14 16:22:14 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Zm75IwxGRPCC3eZUjTt9Sg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (1.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 802ms (Views: 791.3ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/" for ::1 at 2021-05-14 16:25:44 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Zm75IwxGRPCC3eZUjTt9Sg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (2.0ms)
+  Rendered static_pages/root.html.erb within layouts/application (17.6ms)
+Completed 200 OK in 666ms (Views: 658.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-14 16:25:54 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (4.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (6.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 49], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (4.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 50], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (4.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (2.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 51], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (1.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (2.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 52], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (5.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 53], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:3
+  Rendered api/posts/index.json.jbuilder (86.5ms)
+Completed 200 OK in 134ms (Views: 103.7ms | ActiveRecord: 29.8ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBKZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--730d12c6daa009b7c6560be421d22a4a34198dd5/pikachu.jfif" for ::1 at 2021-05-14 16:25:54 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBKUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--c03808fbe446f03b7b525858b0b899550d6aac7f/eevee.jfif" for ::1 at 2021-05-14 16:25:54 -0400
+Processing by ActiveStorage::BlobsController#show as 
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBKZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--730d12c6daa009b7c6560be421d22a4a34198dd5", "filename"=>"pikachu"}
+  [1m[36mActiveStorage::Blob Load (1.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ /home/anug/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (3.1ms) [0m[34mGenerated URL for file at key: SXGtpui43EkeotgmwxiqYQhb (https://active-storage-dappedup-dev.s3.amazonaws.com/SXGtpui43EkeotgmwxiqYQhb?response-content-disposition=inline%3B%20filename%3D%22pikachu.jfif%22%3B%20filename%2A%3DUTF-8%27%27pikachu.jfif&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZNYGTDWXT457LRFO%2F20210514%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210514T202554Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=d8ebb07d8a66fbf3493b002fb5032cf81f6bf25f8a357db8dbe90f13febe5271)[0m
+Redirected to https://active-storage-dappedup-dev.s3.amazonaws.com/SXGtpui43EkeotgmwxiqYQhb?response-content-disposition=inline%3B%20filename%3D%22pikachu.jfif%22%3B%20filename%2A%3DUTF-8%27%27pikachu.jfif&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZNYGTDWXT457LRFO%2F20210514%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210514T202554Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=d8ebb07d8a66fbf3493b002fb5032cf81f6bf25f8a357db8dbe90f13febe5271
+Completed 302 Found in 8ms (ActiveRecord: 1.6ms)
+
+
+Processing by ActiveStorage::BlobsController#show as 
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBKUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--c03808fbe446f03b7b525858b0b899550d6aac7f", "filename"=>"eevee"}
+  [1m[36mActiveStorage::Blob Load (5.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ /home/anug/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (4.8ms) [0m[34mGenerated URL for file at key: igNenGEkv2PDGGyzkeFEhejN (https://active-storage-dappedup-dev.s3.amazonaws.com/igNenGEkv2PDGGyzkeFEhejN?response-content-disposition=inline%3B%20filename%3D%22eevee.jfif%22%3B%20filename%2A%3DUTF-8%27%27eevee.jfif&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZNYGTDWXT457LRFO%2F20210514%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210514T202555Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=e22bd9f3940516cad0e6307d138580bf601e068d909bf1adb5e0218e9e61bd1c)[0m
+Redirected to https://active-storage-dappedup-dev.s3.amazonaws.com/igNenGEkv2PDGGyzkeFEhejN?response-content-disposition=inline%3B%20filename%3D%22eevee.jfif%22%3B%20filename%2A%3DUTF-8%27%27eevee.jfif&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZNYGTDWXT457LRFO%2F20210514%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210514T202555Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=e22bd9f3940516cad0e6307d138580bf601e068d909bf1adb5e0218e9e61bd1c
+Completed 302 Found in 15ms (ActiveRecord: 5.8ms)
+
+
+Started GET "/" for ::1 at 2021-05-14 16:46:08 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (4.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Zm75IwxGRPCC3eZUjTt9Sg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (1.0ms)
+  Rendered static_pages/root.html.erb within layouts/application (45.4ms)
+Completed 200 OK in 259ms (Views: 245.8ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-14 16:46:11 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (29.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (32.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 49], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 50], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (4.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (6.9ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 51], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (11.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (5.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 52], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (8.9ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 53], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:3
+  Rendered api/posts/index.json.jbuilder (189.0ms)
+Completed 200 OK in 262ms (Views: 161.9ms | ActiveRecord: 99.3ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBKZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--730d12c6daa009b7c6560be421d22a4a34198dd5/pikachu.jfif" for ::1 at 2021-05-14 16:46:12 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBKUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--c03808fbe446f03b7b525858b0b899550d6aac7f/eevee.jfif" for ::1 at 2021-05-14 16:46:12 -0400
+Processing by ActiveStorage::BlobsController#show as 
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBKZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--730d12c6daa009b7c6560be421d22a4a34198dd5", "filename"=>"pikachu"}
+  [1m[36mActiveStorage::Blob Load (10.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ /home/anug/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (2.5ms) [0m[34mGenerated URL for file at key: SXGtpui43EkeotgmwxiqYQhb (https://active-storage-dappedup-dev.s3.amazonaws.com/SXGtpui43EkeotgmwxiqYQhb?response-content-disposition=inline%3B%20filename%3D%22pikachu.jfif%22%3B%20filename%2A%3DUTF-8%27%27pikachu.jfif&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZNYGTDWXT457LRFO%2F20210514%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210514T204612Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=076fa6f98e16992d1f1052a9359a5392b223e98be53f20f2fe19b64865d1676a)[0m
+Redirected to https://active-storage-dappedup-dev.s3.amazonaws.com/SXGtpui43EkeotgmwxiqYQhb?response-content-disposition=inline%3B%20filename%3D%22pikachu.jfif%22%3B%20filename%2A%3DUTF-8%27%27pikachu.jfif&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZNYGTDWXT457LRFO%2F20210514%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210514T204612Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=076fa6f98e16992d1f1052a9359a5392b223e98be53f20f2fe19b64865d1676a
+Completed 302 Found in 18ms (ActiveRecord: 10.6ms)
+
+
+Processing by ActiveStorage::BlobsController#show as 
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBKUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--c03808fbe446f03b7b525858b0b899550d6aac7f", "filename"=>"eevee"}
+  [1m[36mActiveStorage::Blob Load (4.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ /home/anug/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (5.4ms) [0m[34mGenerated URL for file at key: igNenGEkv2PDGGyzkeFEhejN (https://active-storage-dappedup-dev.s3.amazonaws.com/igNenGEkv2PDGGyzkeFEhejN?response-content-disposition=inline%3B%20filename%3D%22eevee.jfif%22%3B%20filename%2A%3DUTF-8%27%27eevee.jfif&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZNYGTDWXT457LRFO%2F20210514%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210514T204612Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=257cd3dc43975fa1870f1618ba509cb52b94943914c4bef2399bf728d998796f)[0m
+Redirected to https://active-storage-dappedup-dev.s3.amazonaws.com/igNenGEkv2PDGGyzkeFEhejN?response-content-disposition=inline%3B%20filename%3D%22eevee.jfif%22%3B%20filename%2A%3DUTF-8%27%27eevee.jfif&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZNYGTDWXT457LRFO%2F20210514%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210514T204612Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=257cd3dc43975fa1870f1618ba509cb52b94943914c4bef2399bf728d998796f
+Completed 302 Found in 16ms (ActiveRecord: 4.7ms)
+
+
+Started GET "/" for ::1 at 2021-05-14 17:00:56 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Zm75IwxGRPCC3eZUjTt9Sg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (19.3ms)
+Completed 200 OK in 2312ms (Views: 2301.5ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-05-14 17:00:59 -0400
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (32.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (57.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 49], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (16.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 50], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (26.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (15.9ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 51], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (23.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (20.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 52], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (2.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 53], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:3
+  Rendered api/posts/index.json.jbuilder (294.4ms)
+Completed 200 OK in 397ms (Views: 200.4ms | ActiveRecord: 194.9ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBKZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--730d12c6daa009b7c6560be421d22a4a34198dd5/pikachu.jfif" for ::1 at 2021-05-14 17:01:00 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBKUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--c03808fbe446f03b7b525858b0b899550d6aac7f/eevee.jfif" for ::1 at 2021-05-14 17:01:00 -0400
+Processing by ActiveStorage::BlobsController#show as 
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBKZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--730d12c6daa009b7c6560be421d22a4a34198dd5", "filename"=>"pikachu"}
+  [1m[36mActiveStorage::Blob Load (16.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  ↳ /home/anug/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (2.0ms) [0m[34mGenerated URL for file at key: SXGtpui43EkeotgmwxiqYQhb (https://active-storage-dappedup-dev.s3.amazonaws.com/SXGtpui43EkeotgmwxiqYQhb?response-content-disposition=inline%3B%20filename%3D%22pikachu.jfif%22%3B%20filename%2A%3DUTF-8%27%27pikachu.jfif&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZNYGTDWXT457LRFO%2F20210514%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210514T210100Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=1abf660060b99f1d0ac63eef44712b16ffdac14d95d301f4e8762b47f9cd16a1)[0m
+Redirected to https://active-storage-dappedup-dev.s3.amazonaws.com/SXGtpui43EkeotgmwxiqYQhb?response-content-disposition=inline%3B%20filename%3D%22pikachu.jfif%22%3B%20filename%2A%3DUTF-8%27%27pikachu.jfif&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZNYGTDWXT457LRFO%2F20210514%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210514T210100Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=1abf660060b99f1d0ac63eef44712b16ffdac14d95d301f4e8762b47f9cd16a1
+Completed 302 Found in 21ms (ActiveRecord: 16.3ms)
+
+
+Processing by ActiveStorage::BlobsController#show as 
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBKUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--c03808fbe446f03b7b525858b0b899550d6aac7f", "filename"=>"eevee"}
+  [1m[36mActiveStorage::Blob Load (6.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ /home/anug/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (4.4ms) [0m[34mGenerated URL for file at key: igNenGEkv2PDGGyzkeFEhejN (https://active-storage-dappedup-dev.s3.amazonaws.com/igNenGEkv2PDGGyzkeFEhejN?response-content-disposition=inline%3B%20filename%3D%22eevee.jfif%22%3B%20filename%2A%3DUTF-8%27%27eevee.jfif&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZNYGTDWXT457LRFO%2F20210514%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210514T210100Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=0038c0790c041e821c8c2b68362d6e567fde2198aa119ffb51f22d8aa4422608)[0m
+Redirected to https://active-storage-dappedup-dev.s3.amazonaws.com/igNenGEkv2PDGGyzkeFEhejN?response-content-disposition=inline%3B%20filename%3D%22eevee.jfif%22%3B%20filename%2A%3DUTF-8%27%27eevee.jfif&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZNYGTDWXT457LRFO%2F20210514%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210514T210100Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=0038c0790c041e821c8c2b68362d6e567fde2198aa119ffb51f22d8aa4422608
+Completed 302 Found in 18ms (ActiveRecord: 7.1ms)
+
+

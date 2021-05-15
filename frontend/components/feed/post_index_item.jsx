@@ -1,6 +1,9 @@
 import React from 'react'; 
+import {Link} from 'react-router-dom'; 
+import EditPostItem from './edit_post_item'; 
 
 const PostIndexItem= ({post, updatePost, deletePost}) => { 
+    <EditPostItem post={post} updatePost={updatePost}/>
     return( 
         <div>
             <li>
@@ -14,6 +17,8 @@ const PostIndexItem= ({post, updatePost, deletePost}) => {
                     </div>
                     <br />
                     <img src={post.photoUrl}/>
+                </div>
+                <div className="edit-post-btn-container">
                 </div>
                 <div className="delete-post-btn-ctn">
                     <button className='delete-post-btn' onClick={()=> deletePost(post.id)} >
