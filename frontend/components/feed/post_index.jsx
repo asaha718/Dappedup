@@ -11,12 +11,19 @@ class PostIndex extends React.Component{
     }
 
     render(){ 
-        let {posts, updatePost, deletePost}= this.props;
+        let {posts, updatePost, deletePost, closeModal, openModal}= this.props;
         return( 
             <div>
                 <ul>
                     { 
-                        posts.map(post=> <PostIndexItem post={post} updatePost={updatePost} deletePost={deletePost} key={post.id}/>)
+                        posts.map(post=> <PostIndexItem post={post} 
+                                            updatePost={updatePost} 
+                                            deletePost={deletePost} 
+                                            key={post.id} 
+                                            closeModal={closeModal} 
+                                            openModal={openModal}
+                                        />
+                                    )
                     }
                 </ul>
             </div>

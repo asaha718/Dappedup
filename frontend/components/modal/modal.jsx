@@ -1,17 +1,24 @@
 import React from 'react'; 
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
-import EditPostItem from '../feed/edit_post_item';
+import EditPostContainer from '../feed/edit_post_container';
 
 const Modal= ({ modal, closeModal})=> { 
     if (!modal){ 
         return null; 
     }
-
+    let component;
+    switch (modal) {
+      case 'edit':
+        component = <EditPostContainer /> ;
+        break;
+      default:
+        return null;
+    }
     return ( 
         <div className="modal-background" onClick={closeModal}>
             <div className="modal-child" onClick={e => e.stopPropagation()}>
-                <EditPostItem /> 
+                {component}
             </div>
         </div>
     )

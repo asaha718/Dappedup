@@ -16,10 +16,15 @@ class EditPostItem extends React.Component{
         this.props.updatePost(this.state)
     }
 
+    componentDidMount(){ 
+        this.props.fetchPost(this.props.match.params.postId)
+    }
+
     render(){ 
         return ( 
             <div>
                 <form onSubmit={this.handleSubmit}>
+                    <div onClick={this.props.closeModal} className="close-x">X</div>
                     <h2>Edit Post</h2>
                     <label>Body: 
                         <textarea value={this.state.body} onChange={this.update['body']}/>
