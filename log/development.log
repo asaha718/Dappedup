@@ -27869,3 +27869,23 @@ Processing by Api::PostsController#index as JSON
 Completed 200 OK in 287ms (Views: 266.3ms | ActiveRecord: 19.8ms)
 
 
+Started DELETE "/api/session" for ::1 at 2021-05-17 18:13:51 -0400
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4_B1_db9qRdJg_rgA67rJQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ikqsmu1u3k1OLChrMQiNVg"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:50
+  [1m[35m (2.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:34
+  [1m[36mUser Exists (2.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "user@demo.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:34
+  [1m[36mUser Update (18.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "ikqsmu1u3k1OLChrMQiNVg"], ["updated_at", "2021-05-17 22:13:52.077641"], ["id", 1]]
+  ↳ app/models/user.rb:34
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:34
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (3.4ms)
+  Rendered api/users/show.json.jbuilder (20.5ms)
+Completed 200 OK in 186ms (Views: 87.1ms | ActiveRecord: 29.7ms)
+
+
