@@ -19,17 +19,23 @@ class EditPostItem extends React.Component{
 
     render(){ 
         return ( 
-            <div>
+            <div className="edit-post-form">
                 <form onSubmit={this.handleSubmit}>
-                    <div onClick={this.props.closeModal} className="close-x">X</div>
-                    <h2>Edit Post</h2>
+                    <div className="edit-post-modal-header">
+                        <h2>Edit Post</h2>
+                        <div className="close-x-ctn">
+                            <div onClick={this.props.closeModal} className="close-x">x</div>
+                        </div>
+                    </div>
                     <label>Body: 
                         <textarea value={this.state.body} onChange={this.update("body")}/>
                     </label>
                     {/* <label>Image: 
-                        <input type='file' value={this.state.photoUrl} onChange={this.update("photoUrl")}/>
+                        <input type='file' value={this.state.photoUrl} 
+                        onChange={this.update("photoUrl")}
+                        />
                     </label> */}
-                    <input type="submit" value="update"/>
+                    <input className="update-post-btn" type="submit" value="update"/>
                 </form>
             </div>
         )

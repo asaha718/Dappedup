@@ -26,16 +26,20 @@ textarea {
 }
 .post-btn{ 
     font-size: 16px; 
-    color: white;
-    background-color: blue;
     cursor: pointer;
-    padding: 10px 20px; 
-    border-radius: 40px;
+    border-radius: 20px;
+    display:block;
+    background-color: #0850eb;
+    color: white;
+    border: 2px solid #0850eb;
+    transition-duration: 0.4s;
     margin-bottom: 10px;
+    padding: 5px 10px; 
 }
 
 .post-btn:hover{ 
-    opacity: 0.8;
+    background-color: rgba(255, 255, 255, 0.856);
+    color: black;
 }
 
 .post-text { 
@@ -115,6 +119,39 @@ textarea {
     border-radius: 50%;
 }
 
+.edit-post-btn, .delete-post-btn { 
+    height: 22px;
+    width: 60px;
+    cursor: pointer;
+    border-radius: 12px;
+    display:block;
+    background-color: rgba(255, 255, 255, 0.856);
+    color: black;
+    border: 2px solid #0850eb;
+    transition-duration: 0.4s;
+}
+
+.edit-post-btn:hover, .delete-post-btn:hover{ 
+    background-color: #0850eb;
+    color: white;
+}
+
+.update-post-btn { 
+    cursor: pointer;
+    border-radius: 12px;
+    display:block;
+    background-color: #0850eb;
+    color: white;
+    border: 2px solid #0850eb;
+    transition-duration: 0.4s;
+    float: right;
+}
+
+.update-post-btn:hover { 
+    background-color: rgba(255, 255, 255, 0.856);
+    color: black;
+}
+
 .modal-background {
     position: fixed;
     top: 0;
@@ -126,8 +163,39 @@ textarea {
 }
 
 .modal-child {
+    background-color: white;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    border-radius: 12px;
+    padding: 2px; 
+}
+
+.edit-post-form{ 
+    padding: 15px 8px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.edit-post-modal-header{ 
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 5px;
+}
+
+.edit-post-form textarea { 
+    border: none; 
+}
+
+.close-x-ctn {
+    text-align: center;
+    height: 20px;
+    width: 20px; 
+    border-radius: 50%;
+    padding: 2px; 
+    cursor: pointer;
+}
+
+.close-x-ctn:hover{ 
+    background-color: rgb(207, 207, 207);
 }
