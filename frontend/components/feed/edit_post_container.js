@@ -5,9 +5,12 @@ import { withRouter } from 'react-router';
 import { openModal, closeModal } from '../../actions/modal_actions'; 
 import { fetchPost, updatePost} from '../../actions/post_actions'; 
 
-const mSTP= (state, ownProps) => ({
-    post: state.entities.posts //[ownProps.match.params.postId]- currently not working. cant find ownProps
-}); 
+const mSTP= (state, ownProps) => {
+    // debugger
+    return {
+    post: state.entities.posts[ownProps.postId]
+
+}}; 
 
 const mDTP= (dispatch) => ({ 
     fetchPost: (postId)=> dispatch(fetchPost(postId)), 
@@ -16,4 +19,4 @@ const mDTP= (dispatch) => ({
     closeModal: ()=> dispatch(closeModal())
 })
 
-export default withRouter(connect(mSTP, mDTP)(EditPostItem)); 
+export default connect(mSTP, mDTP)(EditPostItem); 

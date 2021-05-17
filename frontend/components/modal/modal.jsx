@@ -3,14 +3,14 @@ import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import EditPostContainer from '../feed/edit_post_container';
 
-const Modal= ({ modal, closeModal})=> { 
+const Modal= ({ modal, closeModal, id})=> { 
     if (!modal){ 
         return null; 
     }
     let component;
     switch (modal) {
       case 'edit':
-        component = <EditPostContainer /> ;
+        component = <EditPostContainer postId={id} /> ;
         break;
       default:
         return null;
@@ -24,9 +24,10 @@ const Modal= ({ modal, closeModal})=> {
     )
 }
 
-const mSTP = state => {
+const mSTP = (state, ownProps) => {
     return {
-      modal: state.ui.modal
+      modal: state.ui.modal.modal, 
+      id: state.ui.modal.id
     };
 };
   

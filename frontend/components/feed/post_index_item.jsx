@@ -18,7 +18,7 @@ const PostIndexItem= ({post, updatePost, deletePost, closeModal, openModal}) => 
                     <img src={post.photoUrl}/>
                 </div>
                 <div className="edit-post-btn-container">
-                    <button onClick={() => openModal('edit')}>edit</button>
+                    <button onClick={() => openModal({modal: 'edit', id: post.id})}>edit</button>
                 </div>
                 <div className="delete-post-btn-ctn">
                     <button className='delete-post-btn' onClick={()=> deletePost(post.id)} >
