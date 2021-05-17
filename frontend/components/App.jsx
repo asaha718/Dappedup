@@ -20,7 +20,7 @@ const App = () => (
   <div>
     <Modal />
       <header>
-        <Link to="/" className="header-link">
+        <Link to="/profile" className="header-link">
           <h1>DappedUp</h1>
         </Link>
         <GreetingContainer />
@@ -31,9 +31,7 @@ const App = () => (
         <Route exact path="/" component={HomePageContainer}/>
         <ProtectedRoute path="/profile" component={UserProfileContainer}/>
         <ProtectedRoute path="/feed" component={PostFormContainer}/>
-        {/* <ProtectedRoute path="/posts/:postId/edit" component={EditPostItem}/> */}
         <Route component={noMatchPage} />
-
       </Switch>
       <footer>
         <ContactInfo /> 

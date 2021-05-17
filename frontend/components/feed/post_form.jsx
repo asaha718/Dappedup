@@ -43,10 +43,10 @@ class PostForm extends React.Component{
         const preview = this.state.photoUrl ? <img src={this.state.photoUrl} /> : null; 
         return ( 
             <div className="feed-page">
-                <div className="profile-card">
+                <div className="feedctn profile-card">
                     <UserSideCardContainer />
                 </div>
-                <div className="feed-section">
+                <div className="feedctn feed-section">
                     <div className="post-box">
                         <form onSubmit={this.handleSubmit}>
                         <label> 
@@ -74,6 +74,8 @@ class PostForm extends React.Component{
                     <div className="post-feed">
                         <PostIndexContainer />
                     </div>
+                </div>
+                <div className="feedctn news-section">
                 </div>
             </div>
         )
