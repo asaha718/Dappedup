@@ -18,10 +18,10 @@ export const createJob= (job)=> (
     })
 );
 
-export const updateEdu= (job)=> ( 
+export const updateJob= (job)=> ( 
     $.ajax({ 
         url: `/api/job/${job.id}`,
-        method: 'POST',
+        method: 'PATCH',
         data: job
     })
 );
