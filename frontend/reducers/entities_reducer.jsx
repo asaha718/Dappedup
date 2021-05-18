@@ -2,10 +2,14 @@ import { combineReducers } from "redux";
 
 import usersReducer from "./users_reducer";
 import postsReducer from './posts_reducer';
+import educationReducer from './edus_reducer'; 
+import jobReducer from './jobs_reducer'; 
 
 const entitiesReducer = combineReducers({
   users: usersReducer, 
-  posts: postsReducer
+  posts: postsReducer, 
+  educations: educationReducer, 
+  jobs: jobReducer
 });
 
 export default entitiesReducer;

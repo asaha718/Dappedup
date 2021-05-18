@@ -22,6 +22,6 @@ export const updateEdu= (edu)=> (
     $.ajax({ 
         url: `/api/education/${edu.id}`,
         method: 'PATCH',
-        data: edu
+        data: {edu}
     })
 );

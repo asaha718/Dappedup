@@ -22,6 +22,6 @@ export const updateJob= (job)=> (
     $.ajax({ 
         url: `/api/job/${job.id}`,
         method: 'PATCH',
-        data: job
+        data: {job}
     })
 );

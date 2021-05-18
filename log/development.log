@@ -27889,3 +27889,155 @@ Processing by Api::SessionsController#destroy as JSON
 Completed 200 OK in 186ms (Views: 87.1ms | ActiveRecord: 29.7ms)
 
 
+  [1m[35m (10.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Destroy (12.8ms)[0m  [1m[31mDELETE FROM "users"[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "qBaM_jjNkX-jCdd8MsUeYg"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:50
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@demo.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mUser Create (22.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "bio", "location", "job_title", "created_at", "updated_at", "full_name") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["email", "user@demo.com"], ["password_digest", "$2a$12$9F4qepUxM6FmPNcvsv5QxurEGgbRjKwoQf9BJDOn3ivOQ8kQwjlw."], ["session_token", "qBaM_jjNkX-jCdd8MsUeYg"], ["bio", "A am trained in the modern art of demoing web applications. Feel free to contact me for any demo needs."], ["location", "Demo Land"], ["job_title", "Professonal Demo Artiest"], ["created_at", "2021-05-18 04:59:40.564346"], ["updated_at", "2021-05-18 04:59:40.564346"], ["full_name", "Demo Person"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:23
+  [1m[36mJob Load (33.2ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mUser Load (4.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mJob Load (1.6ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+Started GET "/" for ::1 at 2021-05-18 01:10:23 -0400
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/anug/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (20.1ms)
+Started GET "/" for ::1 at 2021-05-18 01:10:27 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 8206ms (Views: 8198.5ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 11980ms (Views: 11969.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session" for ::1 at 2021-05-18 01:11:23 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"user@demo.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (4.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@demo.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:18
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "cOIfwvQToKcDyLttOSApmg"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:50
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:34
+  [1m[36mUser Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "user@demo.com"], ["id", 15], ["LIMIT", 1]]
+  ↳ app/models/user.rb:34
+  [1m[36mUser Update (28.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "cOIfwvQToKcDyLttOSApmg"], ["updated_at", "2021-05-18 05:11:24.442433"], ["id", 15]]
+  ↳ app/models/user.rb:34
+  [1m[35m (13.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:34
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (1.2ms)
+  Rendered api/users/show.json.jbuilder (6.2ms)
+Completed 200 OK in 802ms (Views: 30.3ms | ActiveRecord: 74.1ms)
+
+
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mEducation Load (65.2ms)[0m  [1m[34mSELECT "educations".* FROM "educations"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mUser Load (5.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mEducation Create (6.9ms)[0m  [1m[32mINSERT INTO "educations" ("id", "user_id", "school", "field_of_study", "start_date", "end_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["id", 1], ["user_id", 15], ["school", "PTHS"], ["field_of_study", "training"], ["start_date", "2015-01-09"], ["end_date", "2019-06-16"], ["created_at", "2021-05-18 05:21:16.258214"], ["updated_at", "2021-05-18 05:21:16.258214"]]
+  [1m[35m (9.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mEducation Create (31.3ms)[0m  [1m[32mINSERT INTO "educations" ("user_id", "school", "field_of_study", "start_date", "end_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 15], ["school", "PTHS"], ["field_of_study", "dance"], ["start_date", "2000-01-09"], ["end_date", "2000-06-16"], ["created_at", "2021-05-18 05:26:00.414353"], ["updated_at", "2021-05-18 05:26:00.414353"]]
+  [1m[35m (0.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mEducation Create (0.6ms)[0m  [1m[32mINSERT INTO "educations" ("id", "user_id", "school", "field_of_study", "start_date", "end_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["id", 2], ["user_id", 15], ["school", "PTHS"], ["field_of_study", "dance"], ["start_date", "2000-01-09"], ["end_date", "2000-06-16"], ["created_at", "2021-05-18 05:27:20.598659"], ["updated_at", "2021-05-18 05:27:20.598659"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (6.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Destroy (32.9ms)[0m  [1m[31mDELETE FROM "users"[0m
+  ↳ db/seeds.rb:9
+  [1m[36mEducation Destroy (3.2ms)[0m  [1m[31mDELETE FROM "educations"[0m
+  ↳ db/seeds.rb:10
+  [1m[36mJob Destroy (5.8ms)[0m  [1m[31mDELETE FROM "jobs"[0m
+  ↳ db/seeds.rb:11
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hvotR1IUBvgmIUgI3rpjvw"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:50
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@demo.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (2.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "bio", "location", "job_title", "created_at", "updated_at", "full_name") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["email", "user@demo.com"], ["password_digest", "$2a$12$Ymf7stwSEnA30aS5Jh9Oa.q1x5GHQ2w0x4U0knESkP7LhonHTWl1O"], ["session_token", "hvotR1IUBvgmIUgI3rpjvw"], ["bio", "A am trained in the modern art of demoing web applications. Feel free to contact me for any demo needs."], ["location", "Demo Land"], ["job_title", "Professonal Demo Artiest"], ["created_at", "2021-05-18 05:29:25.212525"], ["updated_at", "2021-05-18 05:29:25.212525"], ["full_name", "Demo Person"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (27.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mEducation Create (2.5ms)[0m  [1m[32mINSERT INTO "educations" ("user_id", "school", "field_of_study", "start_date", "end_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 16], ["school", "Pallet Town High School"], ["field_of_study", "Pokemon Trainer"], ["start_date", "2015-01-09"], ["end_date", "2019-06-16"], ["created_at", "2021-05-18 05:29:25.357734"], ["updated_at", "2021-05-18 05:29:25.357734"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ db/seeds.rb:26
+  [1m[36mJob Create (6.5ms)[0m  [1m[32mINSERT INTO "jobs" ("user_id", "title", "field", "company", "description", "start_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["user_id", 16], ["title", "Pokemon Trainer"], ["field", "Environmental Fitness"], ["company", "Self Employed"], ["description", "I aquire wild Pokemon to train and collect Gym badges."], ["start_date", "2019-06-17"], ["created_at", "2021-05-18 05:29:25.451848"], ["updated_at", "2021-05-18 05:29:25.451848"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[36mJob Load (39.7ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mJob Load (2.9ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mJob Load (0.5ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mEducation Load (2.4ms)[0m  [1m[34mSELECT "educations".* FROM "educations"[0m
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Destroy (21.5ms)[0m  [1m[31mDELETE FROM "users"[0m
+  ↳ db/seeds.rb:9
+  [1m[36mEducation Destroy (4.4ms)[0m  [1m[31mDELETE FROM "educations"[0m
+  ↳ db/seeds.rb:10
+  [1m[36mJob Destroy (4.4ms)[0m  [1m[31mDELETE FROM "jobs"[0m
+  ↳ db/seeds.rb:11
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ozLPMjh3UQx7ZtDfE3aOMQ"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:50
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@demo.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Create (1.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "bio", "location", "job_title", "created_at", "updated_at", "full_name") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["email", "user@demo.com"], ["password_digest", "$2a$12$nnPVJDiM56UpN0yhVDsoheTMIwawYLJlCdn07vhmQ50IJHKmmN1EK"], ["session_token", "ozLPMjh3UQx7ZtDfE3aOMQ"], ["bio", "A am trained in the modern art of demoing web applications. Feel free to contact me for any demo needs."], ["location", "Demo Land"], ["job_title", "Professonal Demo Artiest"], ["created_at", "2021-05-18 05:35:23.175728"], ["updated_at", "2021-05-18 05:35:23.175728"], ["full_name", "Demo Person"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mEducation Create (1.7ms)[0m  [1m[32mINSERT INTO "educations" ("user_id", "school", "field_of_study", "start_date", "end_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 17], ["school", "Pallet Town High School"], ["field_of_study", "Pokemon Trainer"], ["start_date", "2015-01-09"], ["end_date", "2019-06-16"], ["created_at", "2021-05-18 05:35:23.225618"], ["updated_at", "2021-05-18 05:35:23.225618"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ db/seeds.rb:26
+  [1m[36mJob Create (1.0ms)[0m  [1m[32mINSERT INTO "jobs" ("user_id", "title", "field", "company", "location", "description", "start_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["user_id", 17], ["title", "Pokemon Trainer"], ["field", "Environmental Fitness"], ["company", "Self Employed"], ["location", "Worldwide"], ["description", "I aquire wild Pokemon to train and collect Gym badges."], ["start_date", "2019-06-17"], ["created_at", "2021-05-18 05:35:23.260965"], ["updated_at", "2021-05-18 05:35:23.260965"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
