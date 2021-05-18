@@ -21,6 +21,7 @@ class Api::PostsController < ApplicationController
     end
 
     def update
+        # debugger
         @post = Post.find_by(id: params[:id])
         if @post.update(post_params)
             render :show

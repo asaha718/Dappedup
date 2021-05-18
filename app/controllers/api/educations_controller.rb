@@ -1,6 +1,8 @@
 class Api::EducationsController < ApplicationController
     def index
         @educations= Education.all
+
+        #all education associated with that userId
         render :index
     end
 
@@ -25,7 +27,7 @@ class Api::EducationsController < ApplicationController
         if @education.update(edu_params)
             render :show
         else
-            render json:@education.errors.full_messages. status: 422
+            render json:@education.errors.full_messages, status: 422
         end
     end
 

@@ -2,13 +2,13 @@ export const fetchPosts= () => (
     $.ajax({ 
         url: '/api/posts'
     })
-)
+);
 
 export const fetchPost= (postId)=> ( 
     $.ajax({ 
         url: `/api/posts/${postId}`
     })
-)
+);
 
 export const createPost= (post)=> ( 
     $.ajax({ 
@@ -18,7 +18,7 @@ export const createPost= (post)=> (
         processData: false, 
         data: post
     })
-)
+);
 
 export const updatePost= (post)=> ( 
     $.ajax({ 
@@ -26,14 +26,14 @@ export const updatePost= (post)=> (
         method: 'PATCH', 
         data: {post}
     })
-)
+);
 
 export const deletePost= (postId)=> ( 
     $.ajax({ 
         url: `/api/posts/${postId}`, 
         method: 'DELETE'
     })
-)
+);
 
 // export const uploadPhoto= ()=> (
 //     $.ajax({ 

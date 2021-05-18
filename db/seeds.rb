@@ -6,24 +6,25 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.delete_all 
-Education.delete_all
-Job.delete_all
+User.destroy_all
+Post.destroy_all 
+Education.destroy_all
+Job.destroy_all
 
-demoUser= User.create(email: 'user@demo.com', 
+demo_user= User.create(email: 'user@demo.com', 
     password: "123456", 
     full_name: 'Demo Person', 
     bio: 'A am trained in the modern art of demoing web applications. Feel free to contact me for any demo needs.', 
     location: 'Demo Land', 
     job_title: 'Professonal Demo Artiest')
 
-demoUserEdu= Education.create(user_id: demoUser.id, 
+demo_user_edu= Education.create(user_id: User.first.id, 
     school: 'Pallet Town High School', 
     field_of_study: 'Pokemon Trainer', 
     start_date: '2015/01/09', 
     end_date: '2019/06/16')
 
-demoUserJob= Job.create(user_id: demoUser.id,
+demo_user_job= Job.create(user_id: User.first.id,
     title: "Pokemon Trainer", 
     field: "Environmental Fitness", 
     company: "Self Employed",

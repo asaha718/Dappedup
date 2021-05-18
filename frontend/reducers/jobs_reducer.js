@@ -10,7 +10,7 @@ const jobReducer = (oldState={}, action) => {
         case RECEIVE_ALL_JOBS:
             return action.jobs;
         case RECEIVE_JOB: 
-            newState= merge({}, oldState, {[action.job.id]: action.job})
+            newState= merge({}, oldState, {[action.job.id]: action.job});
             return newState;
         default:
             return oldState 

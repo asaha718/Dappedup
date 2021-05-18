@@ -2,7 +2,6 @@ import React from 'react';
 
 class EditPostItem extends React.Component{ 
     constructor(props){ 
-        // debugger
         super(props)
         this.state= props.post; 
         this.handleSubmit= this.handleSubmit.bind(this); 
@@ -17,7 +16,7 @@ class EditPostItem extends React.Component{
         this.props.updatePost(this.state).then(this.props.closeModal())
     }
 
-    render(){ 
+    render(){
         return ( 
             <div className="edit-post-form">
                 <form onSubmit={this.handleSubmit}>
@@ -30,11 +29,6 @@ class EditPostItem extends React.Component{
                     <label>Body: 
                         <textarea value={this.state.body} onChange={this.update("body")}/>
                     </label>
-                    {/* <label>Image: 
-                        <input type='file' value={this.state.photoUrl} 
-                        onChange={this.update("photoUrl")}
-                        />
-                    </label> */}
                     <input className="update-post-btn" type="submit" value="update"/>
                 </form>
             </div>

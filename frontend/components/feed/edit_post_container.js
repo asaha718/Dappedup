@@ -6,7 +6,6 @@ import { openModal, closeModal } from '../../actions/modal_actions';
 import { fetchPost, updatePost} from '../../actions/post_actions'; 
 
 const mSTP= (state, ownProps) => {
-    // debugger
     return {
     post: state.entities.posts[ownProps.postId]
 

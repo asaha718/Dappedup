@@ -15,7 +15,13 @@ class UserProfile extends React.Component{
         }    
     }
 
+    //componentddimoutn- fetch current user education 
+    componentDidMount(){ 
+        this.props.fetchAllEdu()
+    }
+    
     render(){
+        console.log(this.props.education)
         return ( 
             <div className="user-profile-page">
                 <div className="user-presentational">
