@@ -7,7 +7,7 @@ const EduIndexItem=({ edu, updateEdu})=> {
                 <div className="institution-name">
                     <h3>{edu.school}</h3>
                 </div>
-                <div className="edu-info-cnt">
+                <div className="edu-info-ctn">
                     <p>{edu.field_of_study}</p>
                     <p>{edu.start_date} to {edu.end_date}</p>
                 </div>

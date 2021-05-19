@@ -22,7 +22,7 @@ class Api::JobsController < ApplicationController
 
     def update
         @job= Job.find_by(id: params[:id])
-        if @job.update(edu_params)
+        if @job.update(job_params)
             render :show
         else
             render json:@job.errors.full_messages, status: 422

@@ -18,7 +18,6 @@ class UserProfile extends React.Component{
     }
 
     render(){
-        console.log(this.props.jobs)
         return ( 
             <div className="user-profile-page">
                 <div className="user-presentational">
@@ -46,13 +45,13 @@ class UserProfile extends React.Component{
                                                 updateProfile={this.props.updateProfile} 
                                                 handleClick={this.handleClick()}
                                             /> : null}
-                <div className="user-education-ctn">
-                    <h2>Education:</h2>
-                    <EduIndexContainer /> 
-                </div>
                 <div className="user-jobs-ctn">
                     <h2>Experience </h2>
                     <JobIndexContainer />
+                </div>
+                <div className="user-education-ctn">
+                    <h2>Education </h2>
+                    <EduIndexContainer /> 
                 </div>
             </div> 
         ) 

@@ -8,7 +8,7 @@ const JobIndexItem= ({job, updatePost}) => {
                     <h3>{job.title}</h3>
                     <h3>{job.company}</h3>
                 </div>
-                <div className="job-info-cnt">
+                <div className="job-info-ctn">
                     <p>{job.field}</p>
                     <p>{job.location}</p>
                     <p>{job.start_date} to {job.end_date}</p>

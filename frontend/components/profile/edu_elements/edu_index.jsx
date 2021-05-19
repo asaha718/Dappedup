@@ -14,7 +14,9 @@ class EduIndex extends React.Component{
         let { educations, updateEdu}= this.props
         return ( 
             <div>
-                { educations.map(edu=> <EduIndexItem key={edu.id} edu={edu} updateEdu={updateEdu} />)}
+                <ul>
+                    { educations.map(edu=> <EduIndexItem key={edu.id} edu={edu} updateEdu={updateEdu} />)}
+                </ul>
             </div>
         )
     }
