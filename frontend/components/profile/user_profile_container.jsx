@@ -4,6 +4,7 @@ import { updateProfile } from '../../actions/profile_actions';
 import UserProfile from './user_profile'; 
 import EditProfileForm from './edit_profile'
 import { fetchAllEdu } from '../../actions/edu_actions';
+import { fetchAllJobs } from '../../actions/job_actions';
 
 const mSTP= (state) => {
     return {
@@ -12,7 +13,7 @@ const mSTP= (state) => {
     } 
 }
 
-const mDTP= dispatch => ({
+const mDTP= dispatch => ({ 
     fetchAllEdu: ()=> dispatch(fetchAllEdu()),  
     updateProfile: userId => dispatch(updateProfile(userId))
 })

@@ -2,11 +2,11 @@ import { connect } from 'react-redux';
 import PostIndex from './post_index'; 
 import { fetchPosts, updatePost, deletePost } from '../../actions/post_actions'; 
 import { openModal, closeModal } from '../../actions/modal_actions'; 
-import {orderPosts} from '../../utils/selector'; 
+import {orderItems} from '../../utils/selector'; 
 // import {withRouter} from 'react-router';
 
 const mSTP = state => ({ 
-    posts: orderPosts(state.entities.posts)
+    posts: orderItems(state.entities.posts)
 
 }); 
 

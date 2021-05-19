@@ -1,7 +1,7 @@
-export const orderPosts= (posts) => { 
+export const orderItems= (items) => { 
     // const arrPosts= Object.values(posts); 
     return ( 
-        Object.values(posts).reverse()
+        Object.values(items).reverse()
     )
 }
 

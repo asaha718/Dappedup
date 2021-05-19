@@ -25,7 +25,7 @@ class Api::JobsController < ApplicationController
         if @job.update(edu_params)
             render :show
         else
-            render json:@job.errors.full_messages. status: 422
+            render json:@job.errors.full_messages, status: 422
         end
     end
 

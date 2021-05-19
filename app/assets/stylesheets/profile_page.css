@@ -41,7 +41,7 @@ body {
     margin: 5px;
 }
 
-.profile-about{
+.profile-about, .user-education-ctn{
     padding: 8px; 
     margin: auto; 
     margin-top: 10px;
@@ -53,11 +53,29 @@ body {
     height: 100px;
 }
 
-.profile-about h3{ 
+.user-education-ctn{ 
+    flex-direction: row;
+}
+.profile-about h3, .user-education-ctn h2{ 
     font-size: 18px;
     font-family: 'Noto Sans KR';
     margin-bottom: 10px;
 }
+
+.user-education-ctn .institution-name { 
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.user-education-ctn .edu-info-cnt{ 
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.institution-name h3, .edu-info-cnt p{ 
+    margin-bottom: 4px;
+}
+
 .profile-pic{ 
     height: 100px;
     width: 100px;
@@ -103,3 +121,4 @@ body {
     border-spacing: 1px;
     border-radius: 5px;
 }
+

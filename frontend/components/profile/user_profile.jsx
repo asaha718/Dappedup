@@ -1,5 +1,6 @@
 import React from 'react';
-import EditProfileForm from './edit_profile';  
+import EditProfileForm from './edit_profile'; 
+import JobIndexContainer from '../feed/job_elements/job_index_container' 
 
 class UserProfile extends React.Component{ 
     constructor(props){ 
@@ -15,13 +16,13 @@ class UserProfile extends React.Component{
         }    
     }
 
-    //componentddimoutn- fetch current user education 
     componentDidMount(){ 
-        this.props.fetchAllEdu()
+        this.props.fetchAllEdu();
+        this.props.fetchAllJobs()
     }
-    
+
     render(){
-        console.log(this.props.education)
+        console.log(this.props.jobs)
         return ( 
             <div className="user-profile-page">
                 <div className="user-presentational">
@@ -38,7 +39,7 @@ class UserProfile extends React.Component{
                     </div>
                 </div>
                 <div className="profile-about">
-                    <h3>About: </h3>
+                    <h3>About </h3>
                     <p> {this.props.profile.bio} </p>
                 </div>
                 <button className="edit-profile-btn" onClick={this.handleClick()}>
@@ -49,6 +50,20 @@ class UserProfile extends React.Component{
                                                 updateProfile={this.props.updateProfile} 
                                                 handleClick={this.handleClick()}
                                             /> : null}
+                <div className="user-education-ctn">
+                    <h2>Education:</h2>
+                    <div className="institution-name">
+                        <h3>{this.props.education.school}</h3>
+                    </div>
+                    <div className="edu-info-cnt">
+                        <p>{this.props.education.field_of_study}</p>
+                        <p>{this.props.education.start_date} to {this.props.education.end_date}</p>
+                    </div>
+                </div>
+                <div className="user-jobs-ctn">
+                    <h2>Experience </h2>
+                    <JobIndexContainer />
+                </div>
             </div> 
         ) 
     }
