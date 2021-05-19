@@ -17,7 +17,7 @@ const noMatchPage=()=> {
 }; 
 
 const App = () => (
-  <div>
+  <div className="application">
     <Modal />
       <header>
         <Link to="/profile" className="header-link">

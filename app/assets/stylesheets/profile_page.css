@@ -1,6 +1,5 @@
 body { 
     background-color: #f3f2ef;
-    position: relative;
 }
 
 .user-presentational{ 
@@ -17,8 +16,7 @@ body {
     
 }
 .user-profile-page{ 
-    height: 78vh;
-    width: 100vw;
+
 }
 .user-profile-page .fullname{ 
     font-size: 2.4rem;
@@ -107,6 +105,7 @@ body {
     color: black;
     border: 2px solid #0850eb;
     transition-duration: 0.4s;
+    border-radius: 20px;
 }
 
 .edit-profile-btn:hover { 
