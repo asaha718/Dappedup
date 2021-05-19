@@ -1,20 +1,16 @@
-import React from 'react'; 
 import {connect} from 'react-redux'; 
 import { updateProfile } from '../../actions/profile_actions';
 import UserProfile from './user_profile'; 
 import EditProfileForm from './edit_profile'
-import { fetchAllEdu } from '../../actions/edu_actions';
-import { fetchAllJobs } from '../../actions/job_actions';
+
 
 const mSTP= (state) => {
     return {
-        profile: state.entities.users[state.session.id],  
-        education: state.entities.educations
+        profile: state.entities.users[state.session.id]
     } 
 }
 
-const mDTP= dispatch => ({ 
-    fetchAllEdu: ()=> dispatch(fetchAllEdu()),  
+const mDTP= dispatch => ({  
     updateProfile: userId => dispatch(updateProfile(userId))
 })
 

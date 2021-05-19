@@ -1,6 +1,7 @@
 import React from 'react';
 import EditProfileForm from './edit_profile'; 
-import JobIndexContainer from '../feed/job_elements/job_index_container' 
+import JobIndexContainer from '../feed/job_elements/job_index_container'; 
+import EduIndexContainer from '../profile/edu_elements/edu_index_container'; 
 
 class UserProfile extends React.Component{ 
     constructor(props){ 
@@ -14,11 +15,6 @@ class UserProfile extends React.Component{
         }else{ 
             return () => this.setState({showForm: false})
         }    
-    }
-
-    componentDidMount(){ 
-        this.props.fetchAllEdu();
-        this.props.fetchAllJobs()
     }
 
     render(){
@@ -52,13 +48,7 @@ class UserProfile extends React.Component{
                                             /> : null}
                 <div className="user-education-ctn">
                     <h2>Education:</h2>
-                    <div className="institution-name">
-                        <h3>{this.props.education.school}</h3>
-                    </div>
-                    <div className="edu-info-cnt">
-                        <p>{this.props.education.field_of_study}</p>
-                        <p>{this.props.education.start_date} to {this.props.education.end_date}</p>
-                    </div>
+                    <EduIndexContainer /> 
                 </div>
                 <div className="user-jobs-ctn">
                     <h2>Experience </h2>

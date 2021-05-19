@@ -12,7 +12,6 @@ class JobIndex extends React.Component{
     
     render(){
         let {jobs, updateJob}= this.props; 
-        {console.log(jobs)} 
         return ( 
             <div>
                 <ul>
