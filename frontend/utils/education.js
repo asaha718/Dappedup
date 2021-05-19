@@ -10,18 +10,18 @@ export const fetchEdu=(eduId)=> (
     })
 ); 
 
-export const createEdu= (edu)=> ( 
+export const createEdu= (education)=> ( 
     $.ajax({ 
         url: '/api/educations',
         method: 'POST',
-        data: edu
+        data: {education}
     })
 );
 
-export const updateEdu= (edu)=> ( 
+export const updateEdu= (education)=> ( 
     $.ajax({ 
         url: `/api/educations/${edu.id}`,
         method: 'PATCH',
-        data: {edu}
+        data: {education}
     })
 );

@@ -1,14 +1,13 @@
 class Api::EducationsController < ApplicationController
     def index
         @educations= Education.all
-
         #all education associated with that userId
         render :index
     end
 
     def create
         @education=Education.new(edu_params)
-        @eduation.user_id= current_user.id
+        @education.user_id= current_user.id
 
         if @education.save
             render :show
@@ -32,6 +31,6 @@ class Api::EducationsController < ApplicationController
     end
 
     def edu_params
-        params.require(:education).permit(:school, :field_of_study, :start_date)
+        params.require(:education).permit(:school, :field_of_study, :start_date, :end_date)
     end
 end

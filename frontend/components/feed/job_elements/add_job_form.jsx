@@ -10,7 +10,7 @@ class AddJob extends React.Component{
     handleSubmit(e){ 
         e.preventDefault();
         const job= Object.assign({}, this.state);
-        this.props.createJob(job)
+        this.props.createJob(job).then(this.props.closeModal)
     }
 
     update(field){ 

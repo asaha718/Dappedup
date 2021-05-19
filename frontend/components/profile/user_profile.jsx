@@ -53,6 +53,9 @@ class UserProfile extends React.Component{
                     <JobIndexContainer />
                 </div>
                 <div className="user-education-ctn">
+                <button className='add-edu-btn' onClick={() => this.props.openModal({modal: 'addEdu'})}>
+                        add
+                    </button>
                     <h2>Education </h2>
                     <EduIndexContainer /> 
                 </div>

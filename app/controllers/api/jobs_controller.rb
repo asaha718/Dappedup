@@ -30,6 +30,6 @@ class Api::JobsController < ApplicationController
         end
     end
     def job_params
-        params.require(:job).permit(:title, :field, :company, :description, :start_date)
+        params.require(:job).permit(:title, :field, :company, :description, :start_date, :end_date)
     end    
 end
