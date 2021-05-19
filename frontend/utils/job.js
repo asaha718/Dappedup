@@ -12,15 +12,15 @@ export const fetchJob=(jobId)=> (
 
 export const createJob= (job)=> ( 
     $.ajax({ 
-        url: '/api/job',
+        url: '/api/jobs',
         method: 'POST',
-        data: job
+        data: {job}
     })
 );
 
 export const updateJob= (job)=> ( 
     $.ajax({ 
-        url: `/api/job/${job.id}`,
+        url: `/api/jobs/${job.id}`,
         method: 'PATCH',
         data: {job}
     })

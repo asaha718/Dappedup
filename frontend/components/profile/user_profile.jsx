@@ -46,6 +46,9 @@ class UserProfile extends React.Component{
                                                 handleClick={this.handleClick()}
                                             /> : null}
                 <div className="user-jobs-ctn">
+                    <button className='add-job-btn' onClick={() => this.props.openModal({modal: 'addJob'})}>
+                        add
+                    </button>
                     <h2>Experience </h2>
                     <JobIndexContainer />
                 </div>

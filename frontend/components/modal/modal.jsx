@@ -2,6 +2,7 @@ import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import EditPostContainer from '../feed/edit_post_container';
+import AddJobContainer from '../feed/job_elements/add_job_container';
 
 const Modal= ({ modal, closeModal, id})=> { 
     if (!modal){ 
@@ -12,6 +13,9 @@ const Modal= ({ modal, closeModal, id})=> {
       case 'edit':
         component = <EditPostContainer postId={id} /> ;
         break;
+      case 'addJob': 
+        component = <AddJobContainer />; 
+        break; 
       default:
         return null;
     }

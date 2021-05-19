@@ -12,7 +12,7 @@ export const fetchEdu=(eduId)=> (
 
 export const createEdu= (edu)=> ( 
     $.ajax({ 
-        url: '/api/education',
+        url: '/api/educations',
         method: 'POST',
         data: edu
     })
@@ -20,7 +20,7 @@ export const createEdu= (edu)=> (
 
 export const updateEdu= (edu)=> ( 
     $.ajax({ 
-        url: `/api/education/${edu.id}`,
+        url: `/api/educations/${edu.id}`,
         method: 'PATCH',
         data: {edu}
     })
