@@ -29,6 +29,18 @@ class Api::JobsController < ApplicationController
             render json:@job.errors.full_messages, status: 422
         end
     end
+
+    def destroy
+        @job= Job.find_by(id: params[:id])
+
+        if @job.destroy
+            render :show
+        else
+            render json:@job.errors.full_messages, status: 422
+        end
+
+    end
+
     def job_params
         params.require(:job).permit(:title, :field, :company, :description, :start_date, :end_date)
     end    

@@ -30,6 +30,17 @@ class Api::EducationsController < ApplicationController
         end
     end
 
+    def destroy
+        @education= Education.find_by(id: params[:id])
+
+        if @education.destroy
+            render :show
+        else
+            render json:@education.errors.full_messages, status: 422
+        end
+
+    end
+
     def edu_params
         params.require(:education).permit(:school, :field_of_study, :start_date, :end_date)
     end

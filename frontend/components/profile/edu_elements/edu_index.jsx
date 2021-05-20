@@ -11,11 +11,11 @@ class EduIndex extends React.Component{
     }
 
     render(){ 
-        let { educations, updateEdu}= this.props
+        let { educations, deleteEdu, updateEdu}= this.props
         return ( 
             <div>
                 <ul>
-                    { educations.map(edu=> <EduIndexItem key={edu.id} edu={edu} updateEdu={updateEdu} />)}
+                    { educations.map(edu=> <EduIndexItem key={edu.id} edu={edu} deleteEdu={deleteEdu} updateEdu={updateEdu} />)}
                 </ul>
             </div>
         )

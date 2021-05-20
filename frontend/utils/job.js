@@ -25,3 +25,10 @@ export const updateJob= (job)=> (
         data: {job}
     })
 );
+
+export const deleteJob= (jobId)=> ( 
+    $.ajax({ 
+        url: `/api/jobs/${jobId}`, 
+        method: 'DELETE'
+    })
+);

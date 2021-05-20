@@ -25,3 +25,10 @@ export const updateEdu= (education)=> (
         data: {education}
     })
 );
+
+export const deleteEdu= (eduId)=> ( 
+    $.ajax({ 
+        url: `/api/educations/${eduId}`, 
+        method: 'DELETE'
+    })
+);

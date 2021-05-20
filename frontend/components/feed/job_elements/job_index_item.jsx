@@ -1,6 +1,6 @@
 import React from 'react'; 
 
-const JobIndexItem= ({job, updatePost}) => { 
+const JobIndexItem= ({job, deleteJob ,updateJob}) => { 
     return(
         <div>
             <li>
@@ -15,6 +15,11 @@ const JobIndexItem= ({job, updatePost}) => {
                     <div className="work-description">
                         <p>{job.description}</p>
                     </div>
+                </div>
+                <div className="delete-job-btn-ctn">
+                    <button className='delete-job-btn' onClick={()=> deleteJob(job.id)} >
+                        <i className="fa fa-trash">delete</i>
+                    </button>
                 </div>
             </li>
         </div>
