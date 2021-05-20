@@ -141,8 +141,25 @@ textarea {
     transition-duration: 0.4s;
 }
 
-.edit-post-btn:hover, .delete-post-btn:hover{ 
+.delete-post-btn, .delete-job-btn, .delete-edu-btn { 
+    height: 22px;
+    width: 60px;
+    cursor: pointer;
+    border-radius: 12px;
+    display:block;
+    background-color: rgba(255, 255, 255, 0.856);
+    color: black;
+    border: 2px solid #eb0808;
+    transition-duration: 0.4s;
+}
+
+.edit-post-btn:hover, .delete-post-btn:hover, .add-edu-btn:hover, .add-job-btn:hover{ 
     background-color: #0850eb;
+    color: white;
+}
+
+.delete-post-btn:hover, .delete-job-btn:hover, .delete-edu-btn:hover { 
+    background-color: #eb0808;
     color: white;
 }
 

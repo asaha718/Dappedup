@@ -63,6 +63,23 @@ body {
     width: 400px;
 }
 
+.user-job-ctn-header, .user-edu-ctn-header{ 
+    display: flex;
+    justify-content: space-between;
+}
+
+.add-edu-btn, .add-job-btn { 
+    height: 20px;
+    width: 35px;
+    cursor: pointer;
+    border-radius: 12px;
+    display:block;
+    background-color: rgba(255, 255, 255, 0.856);
+    color: black;
+    border: 2px solid #0850eb;
+    transition-duration: 0.4s;
+}
+
 .profile-about h3, .user-education-ctn h2, .user-jobs-ctn h2{ 
     font-size: 18px;
     font-family: 'Noto Sans KR';

@@ -36,5 +36,5 @@ export const updateJob= (job) => (dispatch) => (
 );
 
 export const deleteJob= (jobId) => dispatch => ( 
-    jobApiUtil.deletejob(jobId).then((job) => dispatch(removeJob(job)))
+    JobApiUtil.deleteJob(jobId).then((job) => dispatch(removeJob(job)))
 );

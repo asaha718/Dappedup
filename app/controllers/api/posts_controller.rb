@@ -23,6 +23,7 @@ class Api::PostsController < ApplicationController
     def update
         # debugger
         @post = Post.find_by(id: params[:id])
+        #should only be able to update your own post 
         if @post.update(post_params)
             render :show
         else
@@ -32,7 +33,7 @@ class Api::PostsController < ApplicationController
 
     def destroy
         @post= Post.find_by(id: params[:id])
-
+        #should only be able to destroy your own post 
         if @post.destroy
             render :show
         else
