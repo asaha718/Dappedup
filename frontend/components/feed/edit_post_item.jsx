@@ -23,7 +23,7 @@ class EditPostItem extends React.Component{
                     <div className="edit-post-modal-header">
                         <h2>Edit Post</h2>
                         <div className="close-x-ctn">
-                            <div onClick={this.props.closeModal} className="close-x">x</div>
+                            <div onClick={this.props.closeModal} className="close-x">&times;</div>
                         </div>
                     </div>
                     <label>Body: 

@@ -148,3 +148,59 @@ body {
     border-radius: 5px;
 }
 
+/* User Experience and Edu form */
+
+.add-job-form, .add-edu-form{
+    padding: 2px 2px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.job-form-header, .edu-form-header{ 
+    display:flex; 
+    justify-content: space-between;
+    font-size: 20px;
+    padding: 24px 12px;
+    border-bottom: 1px solid gray; 
+}
+
+.job-form-header .close-x, .edu-form-header .close-x{ 
+    cursor: pointer;
+    color: rgb(114, 113, 113);
+}
+
+.add-job-form-contents, .add-edu-form-contents{
+    padding: 24px 12px;
+}
+
+.add-job-form-contents label, .add-edu-form-contents label { 
+    font-size: small;
+    color: rgb(143, 140, 140);
+}
+
+.add-job-form-contents input, .add-edu-form-contents input{
+    border: none;
+    background: none;
+    height: 25px;
+}
+.add-job-form-contents input:hover, .add-edu-form-contents input:hover{ 
+    border: 1px solid black;
+}
+
+.add-job-form-contents textarea{ 
+    border: .5px solid rgb(143, 140, 140);
+    background: none;
+}
+
+.add-job-form-contents textarea:hover{ 
+    border: 1px solid black;
+}
+
+.add-job-form-contents .save-job-btn, .add-edu-form-contents .save-edu-btn{
+    margin: 20px 0px;
+    cursor: pointer;
+    float: right;  
+    border-radius: 14px;
+    color: white;
+    border: 1px solid #0a66c2; 
+    background-color: #0a66c2;
+}

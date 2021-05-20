@@ -21,24 +21,30 @@ class AddEdu extends React.Component{
 
     render(){ 
         return (
-            <div>
+            <div className="add-edu-form">
+                <div className="edu-form-header">
+                    <h2>Add education</h2>
+                    <div onClick={this.props.closeModal} className="close-x">&times;</div>
+                </div>
                 <form onSubmit={this.handleSubmit}>
-                    <label>School: 
-                        <input type="text" value={this.state.school} onChange={this.update('school')} required/>
-                    </label>
-                    <label>
-                        Field of Study: 
-                        <input type='text' value={this.state.field_of_study} onChange={this.update('field_of_study')} required/>
-                    </label>
-                    <label>
-                        Start Date: 
-                        <input type='date' value={this.state.start_date} onChange={this.update('start_date')} required/>
-                    </label>
-                    <label>
-                        End Date: 
-                        <input type='date' value={this.state.end_date} onChange={this.update('end_date')} />
-                    </label>
-                    <input type="submit" value="Add Education" />
+                    <div className="add-edu-form-contents">
+                        <label>School: 
+                            <input type="text" value={this.state.school} onChange={this.update('school')} required/>
+                        </label>
+                        <label>
+                            Field of Study: 
+                            <input type='text' value={this.state.field_of_study} onChange={this.update('field_of_study')} required/>
+                        </label>
+                        <label>
+                            Start Date: 
+                            <input type='date' value={this.state.start_date} onChange={this.update('start_date')} required/>
+                        </label>
+                        <label>
+                            End Date: 
+                            <input type='date' value={this.state.end_date} onChange={this.update('end_date')} />
+                        </label>
+                        <input className="save-edu-btn" type="submit" value="Save" />
+                    </div>
                 </form>
 
             </div>
