@@ -2,7 +2,7 @@ import React from 'react';
 
 const JobIndexItem= ({job, deleteJob ,updateJob}) => { 
     return(
-        <div>
+        <div className="job-index-items">
             <li>
                 <div className="work-title">
                     <h3>{job.title}</h3>

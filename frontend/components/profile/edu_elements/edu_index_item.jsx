@@ -2,7 +2,7 @@ import React from 'react';
 
 const EduIndexItem=({ edu, deleteEdu, updateEdu})=> { 
     return (
-        <div>
+        <div className="edu-index-items">
             <li>
                 <div className="institution-name">
                     <h3>{edu.school}</h3>

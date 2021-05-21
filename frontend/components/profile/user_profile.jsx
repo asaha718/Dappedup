@@ -49,7 +49,7 @@ class UserProfile extends React.Component{
                     <div className="user-job-ctn-header">
                         <h2>Experience </h2>
                         <button className='add-job-btn' onClick={() => this.props.openModal({modal: 'addJob'})}>
-                            add
+                            +
                         </button>
                     </div>
                     <JobIndexContainer />
@@ -58,7 +58,7 @@ class UserProfile extends React.Component{
                     <div className="user-edu-ctn-header">
                         <h2>Education </h2>
                         <button className='add-edu-btn' onClick={() => this.props.openModal({modal: 'addEdu'})}>
-                            add
+                            +
                         </button>
                     </div>
                     <EduIndexContainer /> 

@@ -2,22 +2,27 @@ body {
     background-color: #f3f2ef;
 }
 
+.user-profile-page{ 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .user-presentational{ 
-    margin: auto;
-    margin-top: 20px; 
-    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding: 20px;
     background-color: white;
     border-style: outset;
     border-width: 2px;
     border-radius: 10px;
-    width: 300px;
-    height: 230px;
-    text-align: center;
-    
+    width: 68%;
+    margin:auto;
+    margin-top: 50px; 
 }
-.user-profile-page{ 
 
-}
 .user-profile-page .fullname{ 
     font-size: 2.4rem;
     font-family: 'Noto Sans KR';
@@ -40,15 +45,14 @@ body {
 }
 
 .profile-about{
-    padding: 8px; 
-    margin: auto; 
-    margin-top: 10px;
+    padding: 24px; 
+    margin: auto;
+    margin-top: 16px;
     background-color: white;
     border-style: outset;
     border-width: 2px;
     border-radius: 10px;
-    width: 400px;
-    height: 100px;
+    width: 67.5%;
 }
 
 .user-education-ctn, .user-jobs-ctn{ 
@@ -60,17 +64,17 @@ body {
     border-style: outset;
     border-width: 2px;
     border-radius: 10px;
-    width: 400px;
+    width: 70%;
 }
 
 .user-job-ctn-header, .user-edu-ctn-header{ 
     display: flex;
     justify-content: space-between;
+    padding: 24px 24px 5px 24px; 
 }
 
 .add-edu-btn, .add-job-btn { 
     height: 20px;
-    width: 35px;
     cursor: pointer;
     border-radius: 12px;
     display:block;
@@ -78,12 +82,13 @@ body {
     color: black;
     border: 2px solid #0850eb;
     transition-duration: 0.4s;
+    align-content: center;
 }
 
 .profile-about h3, .user-education-ctn h2, .user-jobs-ctn h2{ 
     font-size: 18px;
     font-family: 'Noto Sans KR';
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .user-education-ctn .institution-name, .user-jobs-ctn .work-title{ 
@@ -97,17 +102,24 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.institution-name h3, .edu-info-cnt p{ 
-    margin-bottom: 4px;
+.institution-name h3, .edu-info-ctn p, .work-title h3, .job-info-ctn p{ 
+    margin-bottom: 6px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .profile-pic{ 
     height: 100px;
     width: 100px;
-    margin: auto;
+    float: left;
 }
-.user-presentational img{ 
-    width: 100%;
+
+.user-presentational img{
+    width:100%; 
+    height: 100%; 
+}
+
+.job-index-items, .edu-index-items{ 
+    padding: 0px 24px 10px 24px;
 }
 
 /* User Form CSS */
