@@ -5,7 +5,7 @@ const HomePage= (props) => {
         <div className="home-body">
            <div className="welcome-content">
             <div className="welcome-message">
-                <h1>Welcome to your professional Community</h1>
+                <h1>Welcome to your professional community</h1>
             </div>
                
             <div className="home-messages">

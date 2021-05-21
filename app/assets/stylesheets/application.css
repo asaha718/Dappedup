@@ -49,6 +49,7 @@ header {
     display: flex;
     justify-content: space-between; 
     padding: 10px; 
+    margin: 0px 40px 0px 40px; 
 }
 
 .header-link { 
@@ -59,8 +60,8 @@ header {
 }
 
 
-.feed-btn a:hover{ 
-    opacity: .8;
+.feed-btn a:hover, a:hover{ 
+    color: rgba(var(--color-highlight), 1.5)
 }
 
 .login-form-container {
@@ -73,6 +74,10 @@ header {
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
     margin: 15px 680px;
     padding: 40px;
+}
+
+.signup-btn{ 
+    border-radius: 6px;
 }
 
 .signup-form-container{ 
@@ -184,7 +189,7 @@ textarea {
     font-size: large;
     color: #2977c9;
     font-weight: 200;
-    font-size: 4rem;
+    font-size: 3rem;
 }
 
 .home-body h3{
@@ -198,6 +203,7 @@ textarea {
 .home-body{
     display: flex;
     justify-content: space-evenly;
+    font-family: Arial, Helvetica, sans-serif;
     
 }
 
@@ -226,10 +232,19 @@ textarea {
 
 .login-btn{ 
     padding: 3px;
+    border:1px solid #0a66c2; 
+    border-radius: 20px;
+    margin-left: 10px;
+}
+
+.login-btn a{ 
+    color: 0a66c2;
+    font-weight: 500;
+    padding: 2px 12px 0px 12px;
 }
 
 .login-btn:hover { 
-    background-color:  #0850eb;
+    background-color:  #8fb0f5;
 }
 
 /* FOOTER */
@@ -243,14 +258,22 @@ footer img{
     justify-content: space-around;
     width: 100%;
 }
+
 .contact-footer h3{ 
     font-family: 'Noto Sans KR'; 
     font-size: 10px;
 }
 
+.personal-contact-card{ 
+    display:flex; 
+    flex-direction: column;
+    justify-content: center;
+}
 .personal-contact-card>img{ 
    height: 60px;
    width: 80px;
    border-radius: 20%;
-   padding: 2px; 
+   padding: 2px;
+   margin: auto; 
 }
+

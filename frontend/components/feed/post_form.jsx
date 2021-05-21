@@ -48,24 +48,24 @@ class PostForm extends React.Component{
                 </div>
                 <div className="feedctn feed-section">
                     <div className="post-box">
-                        <form onSubmit={this.handleSubmit}>
-                        <label> 
-                            <textarea className="post-field"
-                                placeholder={this.props.formType} 
-                                value= {this.state.body} 
-                                onChange={this.update('body')}
-                            />
-                        </label>
-                        <br />
-                        <div className="post-upload-btn">
-                            <div className="upload-photo-icon">
-                                <label htmlFor="file-input">
-                                    <img src="https://icon-library.net//images/photo-placeholder-icon/photo-placeholder-icon-0.jpg"/>
-                                </label>
-                                <input id="file-input" type='file' onChange={this.handleFile}></input>
+                        <form className="post-form" onSubmit={this.handleSubmit}>
+                            <label> 
+                                <textarea className="post-field"
+                                    placeholder={this.props.formType} 
+                                    value= {this.state.body} 
+                                    onChange={this.update('body')}
+                                />
+                            </label>
+                            <br />
+                            <div className="post-upload-btn">
+                                <div className="upload-photo-icon">
+                                    <label className="photo-icon" htmlFor="file-input">
+                                        <img src="https://icon-library.net//images/photo-placeholder-icon/photo-placeholder-icon-0.jpg"/><p>Photo</p>
+                                    </label> 
+                                    <input id="file-input" type='file' onChange={this.handleFile}></input>
+                                </div>
+                                <input className="post-btn" type='submit' value= 'Post' />
                             </div>
-                            <input className="post-btn" type='submit' value= 'Post' />
-                        </div>
                         </form>
                     </div>
                     <div className="post-img-preview">
