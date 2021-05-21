@@ -77,7 +77,7 @@ const Modal= ({ modal, closeModal, id})=> {
         </div>
     )
 }
-user_profile.jsx
+//user_profile.jsx
 
                 <div className="user-jobs-ctn">
                     <div className="user-job-ctn-header">
