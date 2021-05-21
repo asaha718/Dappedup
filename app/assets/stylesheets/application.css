@@ -58,9 +58,7 @@ header {
     color: #0850eb;
 }
 
-.feed-btn a { 
-    font-size: 13px;  
-}
+
 .feed-btn a:hover{ 
     opacity: .8;
 }
@@ -98,13 +96,35 @@ header {
 }
 
 .header-button {
-    margin: auto;
-    padding: 10px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     cursor: pointer;
-    background-color: rgb(23, 92, 219);
-    border: none; 
-    border-radius: 5px;
+    background-color: #0a66c2;
     color: white;
+    border-radius: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+.header-button:hover{ 
+    opacity: 0.8;
+}
+
+.header-name{ 
+    margin: 0px 5px 0px 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: smaller;
+    color: rgb(102 102 102);
+}
+.header-name img{ 
+    height: 22px;
+    width: 22px;
+    margin: auto;
+    border-radius: 30px;
 }
 
 .session-submit:hover{ 
@@ -114,9 +134,15 @@ header {
 
 a { 
     text-decoration: none;
-    color: black;
+    color: rgb(102 102 102);
     padding: 5px;
-    font-family: 'Noto Sans KR'; 
+    font-family: 'Noto Sans KR';
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+}
+.fa{ 
+    margin: auto;
 }
 
 .login-signup{ 

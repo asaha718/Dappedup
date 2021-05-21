@@ -32,13 +32,7 @@ body {
     margin-top: 20px;
 }
 
-.header-name{ 
-    margin: 5px;
-    padding: 2px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight:650;  
-    
-}
+
 
 .user-info h3{ 
     margin: 5px;
@@ -115,7 +109,8 @@ body {
 
 .user-presentational img{
     width:100%; 
-    height: 100%; 
+    height: 100%;
+    border-radius: 50px; 
 }
 
 .job-index-items, .edu-index-items{ 
