@@ -73,13 +73,7 @@ header {
     display: flex;
     flex-direction: column; 
     justify-content: center;
-    /* text-align: center; */
     background-color: white;
-    /* color: #333;
-    border-radius: 20px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-    margin: 15px 680px;
-    padding: 40px; */
 }
 
 .login-form-box{ 
@@ -141,7 +135,7 @@ header {
     justify-content: center;
     font-family: Arial, Helvetica, sans-serif;
     font-size: smaller;
-    color: rgb(102 102 102);
+    color: rgb(102, 102, 102);
 }
 .header-name img{ 
     height: 22px;
