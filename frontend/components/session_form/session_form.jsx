@@ -123,34 +123,37 @@ class SessionForm extends React.Component {
         return ( 
           <div className="login-form-container">
               <form onSubmit={this.handleSubmit} className="login-form-box">
-              <div className="welcome-greeting">
-                <h2>Welcome to DappedUp!</h2>
-              </div>
-                <br/>
-                <div className="errors">
-                  {this.renderErrors()}
+                <div className="welcome-greeting">
+                  <h2>Sign in</h2>
+                  <p>Stay updated on your professional world</p>
                 </div>
-                <div className="login-form">
                   <br/>
-                  <label>Email:
-                    <input type="text"
-                      value={this.state.email}
-                      onChange={this.update('email')}
-                      className="login-input"
-                    />
-                  </label>
-                  <br/>
-                  <label>Password:
-                    <input type="password"
-                      value={this.state.password}
-                      onChange={this.update('password')}
-                      className="login-input"
-                    />
-                  </label>
-                  <br/>
-                  <input className="session-submit" type="submit" value="Sign in" />
-                  <div onClick={this.props.demoUser} className="session-submit">Demo Login</div>
-                </div>
+                  <div className="errors">
+                    {this.renderErrors()}
+                  </div>
+                  <div className="login-form">
+                    <br/>
+                    <label>Email:
+                      <input type="text"
+                        value={this.state.email}
+                        onChange={this.update('email')}
+                        className="login-input"
+                      />
+                    </label>
+                    <br/>
+                    <label>Password:
+                      <input type="password"
+                        value={this.state.password}
+                        onChange={this.update('password')}
+                        className="login-input"
+                      />
+                    </label>
+                    <br/>
+                    <div className="session-sbm-btn">
+                      <input className="session-submit" type="submit" value="Sign in" />
+                      <div onClick={this.props.demoUser} className="session-submit"><p>Demo Login</p></div>
+                    </div>
+                  </div>
               </form>
           </div>
 

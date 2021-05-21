@@ -33,11 +33,15 @@ h1 {
     width: 100%;
 }
 
-.welcome-greeting {
-    font-family: Cambria;  
-    font-size: 30px; 
-    font-weight: bold;
-    color:#2977c9;
+.welcome-greeting h2{
+    font-family: Arial, Helvetica, sans-serif; 
+    font-size: 26px; 
+    color: black;
+}
+.welcome-greeting p{ 
+    font-family: Arial, Helvetica, sans-serif; 
+    font-size: 12px; 
+    color: black;
 }
  
 h4 { 
@@ -65,15 +69,29 @@ header {
 }
 
 .login-form-container {
-    display: flex; 
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column; 
     justify-content: center;
-    text-align: center;
+    /* text-align: center; */
     background-color: white;
-    color: #333;
+    /* color: #333;
     border-radius: 20px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
     margin: 15px 680px;
-    padding: 40px;
+    padding: 40px; */
+}
+
+.login-form-box{ 
+    height: 320px;
+    width: 400px;
+    padding: 20px;
+    margin: auto;
+    margin-top: 136px;
+    margin-bottom: 146px; 
+    color: #333;
+    border-radius: 20px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
 .signup-btn{ 
@@ -169,9 +187,9 @@ textarea {
     box-sizing: border-box;
 }
 
-.session-submit { 
+.session-submit {
     width: 100%;
-    background-color:blue;
+    background-color:#0a66c2;
     color: white;
     padding: 10px 0; 
     margin: 8px 0;
@@ -179,7 +197,10 @@ textarea {
     border-radius: 50px;
     cursor: pointer;
 }
-
+.session-sbm-btn{ 
+    text-align: center;
+    font-size: 14px;
+}
 .session-submit:focus{ 
     outline: none;
     box-shadow: none;
@@ -204,7 +225,7 @@ textarea {
     display: flex;
     justify-content: space-evenly;
     font-family: Arial, Helvetica, sans-serif;
-    
+    margin: 26px 30px 0px 30px;
 }
 
 .welcome-content{ 
