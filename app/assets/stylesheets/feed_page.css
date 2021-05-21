@@ -6,7 +6,7 @@
     overflow: scroll;
   display: flex;
   flex-direction: row;
-  background-color: rgb(243 242 239); 
+  background-color: rgb(243, 242, 239); 
 }
 
 .feed-section {
