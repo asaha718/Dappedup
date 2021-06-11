@@ -155,6 +155,9 @@ class SessionForm extends React.Component {
                     </div>
                   </div>
               </form>
+                <div className="sign-up-redirect-ctn">
+                  <span> Not a member? {this.props.navLink} </span>  
+                </div>
           </div>
 
         )

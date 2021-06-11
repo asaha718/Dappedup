@@ -82,10 +82,17 @@ header {
     padding: 20px;
     margin: auto;
     margin-top: 136px;
-    margin-bottom: 146px; 
+    margin-bottom: 28px; 
     color: #333;
     border-radius: 20px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.sign-up-redirect-ctn{ 
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 100px; 
 }
 
 .signup-btn{ 
@@ -149,7 +156,7 @@ header {
     filter: brightness(85%); 
 }
 
-a { 
+.nav-link{ 
     text-decoration: none;
     color: rgb(102, 102, 102);
     padding: 5px;
@@ -158,6 +165,7 @@ a {
     flex-direction: column;
     justify-content: center; 
 }
+
 .fa{ 
     margin: auto;
 }
