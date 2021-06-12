@@ -1,4 +1,7 @@
-import React from 'react'; 
+import React from 'react';
+import linkedin from '../../../public/images/linkedIn_icon6.png'; 
+import angellist from '../../../public/images/angellist_icon2.png'; 
+import github from '../../../public/images/github_icon.png';  
 
 const ContactInfo= () => { 
     return ( 
@@ -9,11 +12,17 @@ const ContactInfo= () => {
             </div>
 
             <a href="https://linkedin.com/in/anug-saha-5bb43613a" target="_blank">
-                <img id="linkedin" src="https://www.logo.wine/a/logo/LinkedIn/LinkedIn-Wordmark-Black-Logo.wine.svg" />
+                <img src={linkedin} /> 
             </a>
+
             <a href="https://github.com/asaha718" target="_blank">
-                <img id="github" src="https://pngimg.com/uploads/github/github_PNG15.png" />
+            <img src={github} />
             </a>
+
+            <a href="https://angel.co/u/anug-saha-1" target="_blank">
+            <img src={angellist} />
+            </a>
+
         </div>
     )
 }

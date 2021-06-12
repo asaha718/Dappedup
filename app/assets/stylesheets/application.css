@@ -22,14 +22,16 @@ h1 {
     font-size: 20px;
 }
 .application{ 
-    position: relative;
-    padding-bottom: 100px;
+    /* position: relative; */
+    height: 100vh;
+    width: 100vw; 
+    /* padding-bottom: 100px; */
 }
 
 .application footer{ 
     position: absolute;
-    bottom: 0px;
-    height: 100px;
+    bottom: 0;
+    height: 80px;
     width: 100%;
 }
 
@@ -273,8 +275,8 @@ textarea {
 /* FOOTER */
 
 footer img{
-    height: 80px;
-    width: 250px; 
+    height: 30px;
+    width: 30px; 
 }
 .contact-footer{ 
     display: flex;
