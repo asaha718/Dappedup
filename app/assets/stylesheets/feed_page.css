@@ -2,11 +2,11 @@
 
 /* POST FORM CONTAINER- FEED SECTION*/
 .feed-page { 
-    height: 80vh;
+    height: 88vh;
     overflow: scroll;
-  display: flex;
-  flex-direction: row;
-  background-color: rgb(243, 242, 239); 
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(243, 242, 239); 
 }
 
 .feed-section {

@@ -30,8 +30,6 @@ h1 {
 
 .application footer{ 
     position: absolute;
-    bottom: 0;
-    height: 80px;
     width: 100%;
 }
 
@@ -76,6 +74,7 @@ header {
     flex-direction: column; 
     justify-content: center;
     background-color: white;
+    height: 89vh;
 }
 
 .login-form-box{ 
@@ -115,6 +114,7 @@ header {
     display: flex;
     justify-content: center;
     background-color: rgb(238, 241, 241);
+    height: 90vh;
 }
 
 .errors{ 
