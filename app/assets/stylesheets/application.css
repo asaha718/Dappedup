@@ -24,7 +24,7 @@ h1 {
 .application{ 
     /* position: relative; */
     height: 100vh;
-    width: 100vw; 
+    /* width: 100vw;  */
     /* padding-bottom: 100px; */
 }
 
@@ -271,6 +271,16 @@ textarea {
 .login-btn:hover { 
     background-color:  #8fb0f5;
 }
+/* HOME PAGE */
+
+.home-anchor{
+    background-color: #dbe7e9; 
+    display: flex;
+    justify-content: center;
+}
+.home-anchor img{ 
+    padding: 10px 0px 6px 0px; 
+}
 
 /* FOOTER */
 
@@ -282,6 +292,7 @@ footer img{
     display: flex;
     justify-content: space-around;
     width: 100%;
+    margin-top: 4px;
 }
 
 .contact-footer h3{ 

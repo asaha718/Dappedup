@@ -14,16 +14,22 @@ const ImageSlider = () => {
 
     return(
         <div className="slider-imgs">
-            <IoArrowBackSharp className="left-arrow" onClick={prevSlide}/> 
-            <IoArrowForwardSharp className="right-arrow" onClick={nextSlide}/> 
+            <div className="arrows">
+                <IoArrowBackSharp className="arrow left-arrow" onClick={prevSlide}/> 
+                <IoArrowForwardSharp className="arrow right-arrow" onClick={nextSlide}/> 
+            </div>
             {
-            SliderData.map((img, idx) => { 
-                return(
-                    <div className={ idx === current ? "slide active" : "slide"} key={idx}>
-                        {idx === current && (<img src={img.image} className="img"/>)}
-                    </div>
-                )
-            })
+                SliderData.map((img, idx) => { 
+                    return(
+                        <div className={ idx === current ? "slide active" : "slide"} key={idx}>
+                            <div className="caption">
+                                {idx === current && (<h3> {img.captionHeader} </h3>)}
+                                {idx === current && (<p> {img.captionBody} </p>)}
+                            </div>
+                            {idx === current && (<img src={img.image} className="img" />)}
+                        </div>
+                    )
+                })
             }
         </div>
     )

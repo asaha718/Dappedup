@@ -5,13 +5,19 @@ import laughing from '../../../../public/images/laughing.jpg'
 
 export const SliderData = [
     { 
-        image: linkedin
+        image: linkedin, 
+        captionHeader: "Dapped Up", 
+        captionBody: "A clone of LinkedIn"
     }, 
     { 
-        image: zoom
+        image: zoom, 
+        captionHeader: "Connect with industry professionals", 
+        captionBody: "Stay to date on industry"
     }, 
     { 
-        image: laughing
+        image: laughing, 
+        captionHeader: "Have some fun", 
+        captionBody: "Test out some familiar features"
     }
 
 ]

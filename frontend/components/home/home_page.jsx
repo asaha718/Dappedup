@@ -1,7 +1,7 @@
 import React from 'react';
 import ImageSlider from './slider/imageSlider';
 // import { Carousel } from 'react-responsive-carousel';
-// import linkedin from '../../../public/images/linkedin.jpg'; 
+import working from '../../../public/images/working_office.png'; 
 // import zoom from '../../../public/images/zoom.jpg'; 
 // import laughing from '../../../public/images/laughing.jpg'
 
@@ -26,7 +26,11 @@ const HomePage= (props) => {
 
             </div>
 
-            <ImageSlider /> 
+            <ImageSlider />
+
+            <div className="home-anchor">
+                <img src={working} />
+            </div> 
         </div>
     )
 
