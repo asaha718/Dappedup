@@ -49,13 +49,16 @@ class SessionForm extends React.Component {
       if (this.props.formType=== 'Signup'){ 
         return (
           <div className="signup-page">
+            <div className="logo">
+              <Link to="/profile" className="header-link">
+                  <h2>DappedUp</h2>
+                </Link>
+            </div>
+            <div className="welcome-greeting">
+              <h2>Make the most of your professional life</h2>
+            </div>
             <div className="signup-form-container">
               <form onSubmit={this.handleSubmit} className="signup-form-box">
-                <div className="welcome-greeting">
-                  <h2>Make the most of your professional life</h2>
-                </div>
-                <br/>
-                {/* <h4>Please {this.props.formType} or {this.props.navLink}</h4> */}
                 <div className="errors">
                   {this.renderErrors()}
                 </div>
@@ -115,10 +118,10 @@ class SessionForm extends React.Component {
                   <br/>
                   <input className="session-submit" type="submit" value={this.props.formType} />
                 </div>
-              </form>
-              <div className="login-redirect-ctn">
+                <div className="sign-up-redirect-ctn">
                   <span> Already a member? {this.props.navLink} </span>  
                 </div>
+              </form>
             </div>
           </div>
           );
@@ -164,7 +167,7 @@ class SessionForm extends React.Component {
                     </div>
                   </div>
               </form>
-                <div className="sign-up-redirect-ctn">
+                <div className="login-redirect-ctn">
                   <span> Not a member? {this.props.navLink} </span>  
                 </div>
           </div>
