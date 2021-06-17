@@ -1,6 +1,6 @@
 import React from "react";
 import GreetingContainer from "./greeting/greeting_container"; 
-import {Link, Redirect, Route, Switch} from "react-router-dom"; 
+import {Link, Redirect, Route, Switch, BrowserRouter, withRouter} from "react-router-dom"; 
 import LoginFormContainer from "./session_form/login_form_container"; 
 import SignupFormContainer from "./session_form/signup_form_container";
 import HomePageContainer from "./home/home_container";
@@ -16,15 +16,21 @@ const noMatchPage=()=> {
   )
 }; 
 
-const App = () => (
+const App = (props) => {
+  let header= <header>
+                <Link to="/profile" className="header-link">
+                  <h1>DappedUp</h1>
+                </Link>
+                <GreetingContainer />
+              </header>; 
+  return( 
   <div className="application">
     <Modal />
-      <header>
-        <Link to="/profile" className="header-link">
-          <h1>DappedUp</h1>
-        </Link>
-        <GreetingContainer />
-      </header>
+    
+      {
+        props.location.pathname === "/login" || props.location.pathname === "/signup" ? null : header
+      }
+
       <Switch>
         <AuthRoute path="/login" component={LoginFormContainer} />
         <AuthRoute path="/signup" component={SignupFormContainer} />
@@ -37,6 +43,8 @@ const App = () => (
         <ContactInfo /> 
       </footer>
   </div>
-);
 
-export default App;
+  )
+};
+
+export default withRouter(App);
