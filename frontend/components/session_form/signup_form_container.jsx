@@ -7,7 +7,7 @@ import SessionForm from './session_form';
 const mSTP= ({ errors })=> ({ 
     errors: errors.session, 
     formType: 'Signup', 
-    navLink: <Link to="/login">Login instead</Link>
+    navLink: <Link to="/login">Log in</Link>
 })
 
 const mDTP= (dispatch)=> ({ 

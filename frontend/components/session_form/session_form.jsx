@@ -1,4 +1,5 @@
-import React from 'react'; 
+import React from 'react';
+import { Link } from 'react-router-dom'; 
 
 class SessionForm extends React.Component {
     constructor(props) {
@@ -115,6 +116,9 @@ class SessionForm extends React.Component {
                   <input className="session-submit" type="submit" value={this.props.formType} />
                 </div>
               </form>
+              <div className="login-redirect-ctn">
+                  <span> Already a member? {this.props.navLink} </span>  
+                </div>
             </div>
           </div>
           );
@@ -122,6 +126,11 @@ class SessionForm extends React.Component {
       }else if( this.props.formType==='Login'){ 
         return ( 
           <div className="login-form-container">
+            <div className="logo">
+              <Link to="/profile" className="header-link">
+                  <h2>DappedUp</h2>
+                </Link>
+            </div>
               <form onSubmit={this.handleSubmit} className="login-form-box">
                 <div className="welcome-greeting">
                   <h2>Sign in</h2>

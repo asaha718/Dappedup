@@ -40,8 +40,9 @@ h1 {
 }
 .welcome-greeting p{ 
     font-family: Arial, Helvetica, sans-serif; 
-    font-size: 12px; 
+    font-size: 16px; 
     color: black;
+    margin-top: 10px;
 }
  
 h4 { 
@@ -72,28 +73,45 @@ header {
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
     flex-direction: column; 
-    justify-content: center;
+    align-content: center;
     background-color: white;
-    height: 89vh;
+    height: 95vh;
+}
+
+.login-form-container .logo{ 
+    margin: auto auto 5px auto;
+    width: 400px; 
+}
+
+.logo h2{ 
+    float: left;
+    font-size: 20px;
 }
 
 .login-form-box{ 
     height: 320px;
     width: 400px;
     padding: 20px;
-    margin: auto;
-    margin-top: 136px;
+    margin: 10px auto auto auto;
     margin-bottom: 28px; 
     color: #333;
     border-radius: 20px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
+span a{ 
+    text-decoration: none;
+    color: black;
+}
+
+span a:hover{ 
+    background-color: #4399ee41;
+    border-radius: 16px;
+}
+
+
 .sign-up-redirect-ctn{ 
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 100px; 
+    margin: 10px auto auto auto; 
 }
 
 .signup-btn{ 
