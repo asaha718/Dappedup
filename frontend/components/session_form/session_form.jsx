@@ -50,7 +50,7 @@ class SessionForm extends React.Component {
         return (
           <div className="signup-page">
             <div className="logo">
-              <Link to="/profile" className="header-link">
+              <Link to="/" className="header-link">
                   <h2>DappedUp</h2>
                 </Link>
             </div>
@@ -59,9 +59,6 @@ class SessionForm extends React.Component {
             </div>
             <div className="signup-form-container">
               <form onSubmit={this.handleSubmit} className="signup-form-box">
-                <div className="errors">
-                  {this.renderErrors()}
-                </div>
                 <div className="signup-form">
                   <br/>
                   <label>Email:
@@ -79,6 +76,9 @@ class SessionForm extends React.Component {
                       className="signup-input"
                     />
                   </label>
+                  <div className="errors">
+                    {this.renderErrors()}
+                  </div>
                   <br/>
                   <label>Full Name:
                     <input type="text"
@@ -130,7 +130,7 @@ class SessionForm extends React.Component {
         return ( 
           <div className="login-form-container">
             <div className="logo">
-              <Link to="/profile" className="header-link">
+              <Link to="/" className="header-link">
                   <h2>DappedUp</h2>
                 </Link>
             </div>
