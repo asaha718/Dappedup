@@ -93,7 +93,7 @@
     font-weight: bold;
 }
 
-.user-education-ctn .edu-info-cnt, .user-jobs-ctn .job-info-ctn{ 
+.edu-info-ctn, .user-jobs-ctn .job-info-ctn{ 
     font-size: 13px;
     font-family: Arial, Helvetica, sans-serif;
 }
