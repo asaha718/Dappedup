@@ -13,7 +13,7 @@ class EditProfileForm extends React.Component {
 
     handleSubmit(e){ 
         e.preventDefault()
-        this.props.updateProfile(this.state).then(this.props.handleClick()) 
+        this.props.updateProfile(this.state).then(this.props.closeModal()) 
     }
 
     render(){
