@@ -15,10 +15,10 @@ const Greeting = ({ currentUser, logout }) => {
   const personalGreeting = () => (
     <hgroup className="header-group">
       <div className="feed-btn">
-        <Link to="/feed"><i className="fa fa-home"></i>Home</Link>
+        <Link to="/feed"><i className="fa fa-home">Home</i></Link>
       </div>
       <div className="profile-btn">
-        <Link to="/profile"><i className="fa fa-user"></i>Profile</Link>
+        <Link to="/profile"><i className="fa fa-user">Profile</i></Link>
       </div>
       <div className="header-name">
         <img src="https://i.pinimg.com/originals/18/d9/e1/18d9e1307018dbc76750ca7d5124fccd.png"/> 

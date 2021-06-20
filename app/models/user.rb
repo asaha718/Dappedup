@@ -12,6 +12,8 @@ class User < ApplicationRecord
     has_many :educations, 
     foreign_key: :user_id, 
     class_name: :Education
+
+    has_one_attached :profile_pic
     
     
     def self.find_by_credentials(email, password)
