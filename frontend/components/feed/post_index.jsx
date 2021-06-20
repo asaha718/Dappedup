@@ -7,11 +7,12 @@ class PostIndex extends React.Component{
     }
 
     componentDidMount(){ 
-        this.props.fetchPosts()
+        this.props.fetchPosts(); 
+        this.props.fetchProfiles()
     }
 
     render(){ 
-        let {posts, updatePost, deletePost, closeModal, openModal}= this.props;
+        let {posts, updatePost, deletePost, closeModal, openModal, current_userId}= this.props;
         return( 
             <div>
                 <ul>
@@ -22,6 +23,7 @@ class PostIndex extends React.Component{
                                             key={post.id} 
                                             closeModal={closeModal} 
                                             openModal={openModal}
+                                            current_userId={current_userId}
                                         />
                                     )
                     }

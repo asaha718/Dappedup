@@ -2,7 +2,21 @@ import React from 'react';
 import {Link} from 'react-router-dom'; 
 import EditPostItem from './edit_post_item'; 
 
-const PostIndexItem= ({post, updatePost, deletePost, closeModal, openModal}) => { 
+const PostIndexItem= ({post, updatePost, deletePost, closeModal, openModal, current_userId}) => { 
+    const userOpt= post.author_id === current_userId ?                 
+    <div className="post-option-btns">
+        <div className="edit-post-btn-ctn">
+            <button className='edit-post-btn' onClick={() => openModal({modal: 'edit', id: post.id})}>
+                <i className="fa fa-edit">edit</i>
+            </button>
+        </div>
+        <div className="delete-post-btn-ctn">
+            <button className='delete-post-btn' onClick={()=> deletePost(post.id)} >
+                <i className="fa fa-trash">delete</i>
+            </button>
+        </div> 
+    </div> : null ; 
+    
     return( 
         <div>
             <li>
@@ -17,18 +31,7 @@ const PostIndexItem= ({post, updatePost, deletePost, closeModal, openModal}) => 
                     <br />
                     <img src={post.photoUrl}/>
                 </div>
-                <div className="post-option-btns">
-                    <div className="edit-post-btn-ctn">
-                        <button className='edit-post-btn' onClick={() => openModal({modal: 'edit', id: post.id})}>
-                            <i className="fa fa-edit">edit</i>
-                        </button>
-                    </div>
-                    <div className="delete-post-btn-ctn">
-                        <button className='delete-post-btn' onClick={()=> deletePost(post.id)} >
-                            <i className="fa fa-trash">delete</i>
-                        </button>
-                    </div>
-                </div>
+                {userOpt}
             </div>     
             </li>
         </div>

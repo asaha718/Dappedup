@@ -4,6 +4,12 @@
 //     })
 // )
 
+export const fetchProfiles= ()=> (
+    $.ajax({ 
+        url: '/api/users'
+    })
+); 
+
 export const updateProfile= user => ( 
     $.ajax({ 
         method:'PATCH',
