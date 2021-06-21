@@ -15,7 +15,7 @@ const PostIndexItem= ({post, updatePost, deletePost, closeModal, openModal, curr
                 <i className="fa fa-trash">delete</i>
             </button>
         </div> 
-    </div> : null ; 
+    </div> : <p> </p> ; 
     
     return( 
         <div>

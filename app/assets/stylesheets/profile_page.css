@@ -54,8 +54,7 @@
 .user-education-ctn, .user-jobs-ctn{ 
     flex-direction: row;
     padding: 8px; 
-    margin: auto; 
-    margin-top: 10px;
+    margin: 10px auto; 
     background-color: white;
     border-style: outset;
     border-width: 2px;
