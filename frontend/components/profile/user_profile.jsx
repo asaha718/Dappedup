@@ -1,20 +1,10 @@
 import React from 'react';
-import EditProfileForm from './edit_profile'; 
 import JobIndexContainer from '../feed/job_elements/job_index_container'; 
 import EduIndexContainer from '../profile/edu_elements/edu_index_container'; 
 
 class UserProfile extends React.Component{ 
     constructor(props){ 
-        super(props)  
-        this.state = {showForm: false} 
-    }
-
-    handleClick(){ 
-        if (this.state.showForm === false){ 
-            return () => this.setState({showForm: true}) 
-        }else{ 
-            return () => this.setState({showForm: false})
-        }    
+        super(props)   
     }
 
     render(){
@@ -28,23 +18,21 @@ class UserProfile extends React.Component{
                         <h1>{this.props.profile.full_name}</h1>
                     </div>
                     <div className="user-info">
-                        <h3>{this.props.profile.email}</h3>
-                        <h3>{this.props.profile.job_title}</h3>
-                        <h3>{this.props.profile.location}</h3>
+                        <div className="user-info-contents">
+                            <h3>{this.props.profile.email}</h3>
+                            <h3>{this.props.profile.job_title}</h3>
+                            <h3>{this.props.profile.location}</h3>
+                        </div>
+                        <button className="edit-profile-btn" onClick={() => this.props.openModal({modal: 'editProfile'})}>
+                            <i className="fa fa-edit">edit</i> 
+                        </button>
                     </div>
                 </div>
                 <div className="profile-about">
                     <h3>About </h3>
                     <p> {this.props.profile.bio} </p>
                 </div>
-                <button className="edit-profile-btn" onClick={this.handleClick()}>
-                     Edit Profile 
-                </button>
-                    {this.state.showForm ? <EditProfileForm 
-                                                profile= {this.props.profile} 
-                                                updateProfile={this.props.updateProfile} 
-                                                handleClick={this.handleClick()}
-                                            /> : null}
+
                 <div className="user-jobs-ctn">
                     <div className="user-job-ctn-header">
                         <h2>Experience </h2>

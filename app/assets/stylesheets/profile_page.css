@@ -5,6 +5,7 @@
     justify-content: center;
     font-family: Arial, Helvetica, sans-serif;
     background-color: rgb(243, 242, 239);
+    height: 96vh;
 }
 
 .user-presentational{ 
@@ -17,7 +18,7 @@
     border-width: 2px;
     border-radius: 10px;
     width: 68%;
-    margin:auto;
+    margin: 0px auto 0px auto;
     margin-top: 50px; 
 }
 
@@ -30,7 +31,11 @@
     margin-top: 20px;
 }
 
-
+.user-info{ 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 
 .user-info h3{ 
     margin: 5px;
@@ -38,7 +43,7 @@
 
 .profile-about{
     padding: 24px; 
-    margin: auto;
+    margin: 0px auto 16px auto;
     margin-top: 16px;
     background-color: white;
     border-style: outset;
@@ -50,8 +55,7 @@
 .user-education-ctn, .user-jobs-ctn{ 
     flex-direction: row;
     padding: 8px; 
-    margin: auto; 
-    margin-top: 10px;
+    margin: 10px auto; 
     background-color: white;
     border-style: outset;
     border-width: 2px;
@@ -89,7 +93,7 @@
     font-weight: bold;
 }
 
-.user-education-ctn .edu-info-cnt, .user-jobs-ctn .job-info-ctn{ 
+.edu-info-ctn, .user-jobs-ctn .job-info-ctn{ 
     font-size: 13px;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -118,9 +122,8 @@
 /* User Form CSS */
 
 .edit-profile-btn { 
+    height: 32px;
     cursor: pointer;
-    margin: 20px auto;
-    padding: 5px 10px;
     display:block;
     background-color: rgba(255, 255, 255, 0.856);
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
@@ -142,25 +145,14 @@
     font-size: 20px;
 }
 
-.edit-user-form{
-    background-color: white; 
-    margin: 20px 200px;
-    padding: 5px; 
-    border-style: double;
-    border-color: black;
-    border-width: 5px;
-    border-spacing: 1px;
-    border-radius: 5px;
-}
-
 /* User Experience and Edu form */
 
-.add-job-form, .add-edu-form{
+.add-job-form, .add-edu-form, .edit-user-form{
     padding: 2px 2px;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.job-form-header, .edu-form-header{ 
+.job-form-header, .edu-form-header, .edit-profile-form-header{ 
     display:flex; 
     justify-content: space-between;
     font-size: 20px;
@@ -168,26 +160,29 @@
     border-bottom: 1px solid gray; 
 }
 
-.job-form-header .close-x, .edu-form-header .close-x{ 
+.job-form-header .close-x, .edu-form-header .close-x, .edit-profile-form-header .close-x{ 
     cursor: pointer;
     color: rgb(114, 113, 113);
 }
 
-.add-job-form-contents, .add-edu-form-contents{
+.add-job-form-contents, .add-edu-form-contents, .edit-profile-form-contents{
     padding: 24px 12px;
 }
 
-.add-job-form-contents label, .add-edu-form-contents label { 
+.add-job-form-contents label, .add-edu-form-contents label, .edit-profile-form-contents label{ 
     font-size: small;
     color: rgb(143, 140, 140);
 }
 
-.add-job-form-contents input, .add-edu-form-contents input{
+.add-job-form-contents input, .add-edu-form-contents input, .edit-profile-form-contents input{
     border: none;
     background: none;
     height: 25px;
 }
-.add-job-form-contents input:hover, .add-edu-form-contents input:hover{ 
+
+.add-job-form-contents input:hover, 
+.add-edu-form-contents input:hover, 
+.edit-profile-form-contents input:hover{ 
     border: 1px solid black;
 }
 
@@ -200,7 +195,9 @@
     border: 1px solid black;
 }
 
-.add-job-form-contents .save-job-btn, .add-edu-form-contents .save-edu-btn{
+.add-job-form-contents .save-job-btn, 
+.add-edu-form-contents .save-edu-btn, 
+.edit-profile-form-contents .save-profile-btn {
     margin: 20px 0px;
     cursor: pointer;
     float: right;  

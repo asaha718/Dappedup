@@ -40,7 +40,12 @@ class PostForm extends React.Component{
     }
 
     render(){ 
-        const preview = this.state.photoUrl ? <img src={this.state.photoUrl} /> : null; 
+        const preview = this.state.photoUrl ? <div className= "img-preview-box">
+                                                <h3>Preview</h3> 
+                                                <img src={this.state.photoUrl} />
+                                                <p>click post when ready!</p> 
+                                            </div> 
+                                                : null; 
         return ( 
             <div className="feed-page">
                 <div className="feedctn profile-card">

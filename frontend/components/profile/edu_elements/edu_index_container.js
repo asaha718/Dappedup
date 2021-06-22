@@ -6,7 +6,8 @@ import EduIndex from './edu_index';
 
 const mSTP= state =>{ 
     return { 
-    educations: orderItems(state.entities.educations)
+    educations: orderItems(state.entities.educations), 
+    currentUserId: state.session.id
 }}; 
 
 const mDTP= dispatch => ({ 

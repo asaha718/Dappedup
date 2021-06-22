@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_16_213048) do
+ActiveRecord::Schema.define(version: 2021_06_19_183915) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,9 +41,9 @@ ActiveRecord::Schema.define(version: 2021_05_16_213048) do
     t.string "school", null: false
     t.string "field_of_study", null: false
     t.date "start_date", null: false
-    t.date "end_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "end_date"
     t.index ["user_id"], name: "index_educations_on_user_id"
   end
 
@@ -55,9 +55,9 @@ ActiveRecord::Schema.define(version: 2021_05_16_213048) do
     t.string "location"
     t.text "description", null: false
     t.date "start_date", null: false
-    t.date "end_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "end_date"
     t.index ["user_id"], name: "index_jobs_on_user_id"
   end
 

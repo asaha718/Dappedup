@@ -11,11 +11,25 @@ class JobIndex extends React.Component{
     }
     
     render(){
-        let {jobs, deleteJob ,updateJob}= this.props; 
+        let {jobs, deleteJob ,updateJob, currentUserId}= this.props; 
         return ( 
             <div>
                 <ul>
-                    { jobs.map(job => <JobIndexItem key={job.id} job={job} updateJob={updateJob} deleteJob={deleteJob}/>)}
+                    {
+
+                    jobs.map((job) => { 
+                        if(job.user_id=== currentUserId)
+                        return (
+
+                            <JobIndexItem key={job.id} 
+                                        job={job} 
+                                        updateJob={updateJob} 
+                                        deleteJob={deleteJob}/>
+                        ) 
+                     
+                    
+                    })
+                    }
                 </ul>
             </div>
         )
