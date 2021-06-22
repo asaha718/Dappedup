@@ -5,8 +5,10 @@ import { fetchAllJobs, updateJob, deleteJob } from '../../../actions/job_actions
 import JobIndex from './job_index'; 
 
 const mSTP= state =>{ 
+    console.log(state); 
     return { 
-    jobs: orderItems(state.entities.jobs)
+    jobs: orderItems(state.entities.jobs), 
+    currentUserId: state.session.id
 }}; 
 
 const mDTP= dispatch => ({ 

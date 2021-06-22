@@ -39802,3 +39802,547 @@ Completed 200 OK in 319ms (Views: 289.3ms | ActiveRecord: 27.6ms)
 Completed 200 OK in 405ms (Views: 354.5ms | ActiveRecord: 49.5ms)
 
 
+Started GET "/" for ::1 at 2021-06-21 15:41:17 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (6.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "jozlbeo6PqRlyTM2M6XfIg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (115.3ms)
+Completed 200 OK in 224ms (Views: 171.9ms | ActiveRecord: 49.4ms)
+
+
+Started GET "/api/jobs" for ::1 at 2021-06-21 15:41:18 -0400
+Started GET "/api/educations" for ::1 at 2021-06-21 15:41:18 -0400
+Processing by Api::JobsController#index as JSON
+Processing by Api::EducationsController#index as JSON
+  Rendering api/jobs/index.json.jbuilder
+  [1m[36mJob Load (6.6ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/api/jobs/index.json.jbuilder:1
+  Rendering api/educations/index.json.jbuilder
+  [1m[36mEducation Load (5.2ms)[0m  [1m[34mSELECT "educations".* FROM "educations"[0m
+  ↳ app/views/api/educations/index.json.jbuilder:1
+  Rendered api/jobs/index.json.jbuilder (40.6ms)
+Completed 200 OK in 233ms (Views: 67.9ms | ActiveRecord: 12.4ms)
+
+
+  Rendered api/educations/index.json.jbuilder (86.6ms)
+Completed 200 OK in 121ms (Views: 58.4ms | ActiveRecord: 43.3ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-06-21 17:27:55 -0400
+Started GET "/api/users" for ::1 at 2021-06-21 17:27:55 -0400
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/anug/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+  ↳ /home/anug/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+
+LoadError - Unable to autoload constant Api::UsersController, expected /home/anug/Dappedup/app/controllers/api/users_controller.rb to define it:
+
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (4.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:11
+  [1m[36mActiveStorage::Attachment Load (2.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 60], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:14
+  [1m[36mActiveStorage::Blob Load (2.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:14
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 61], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:14
+  Rendered api/posts/index.json.jbuilder (198.4ms)
+Completed 200 OK in 255ms (Views: 179.6ms | ActiveRecord: 40.0ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBLZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--57875a84a5e2118e3ae16f0a6354b2f42cb5b1a3/ASHeadshot.jpg" for ::1 at 2021-06-21 17:27:56 -0400
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBLZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--57875a84a5e2118e3ae16f0a6354b2f42cb5b1a3", "filename"=>"ASHeadshot"}
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ /home/anug/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (12.1ms) [0m[34mGenerated URL for file at key: tCLpMWoW8Rj4vpfnJ3sP7jaF (https://active-storage-dappedup-dev.s3.amazonaws.com/tCLpMWoW8Rj4vpfnJ3sP7jaF?response-content-disposition=inline%3B%20filename%3D%22ASHeadshot.jpg%22%3B%20filename%2A%3DUTF-8%27%27ASHeadshot.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZNYGTDWXT457LRFO%2F20210621%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210621T212756Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=79bb55b96033897d710b5b3b7336bda1a2517a913ff79c455e5ba1ef9bcf9a01)[0m
+Redirected to https://active-storage-dappedup-dev.s3.amazonaws.com/tCLpMWoW8Rj4vpfnJ3sP7jaF?response-content-disposition=inline%3B%20filename%3D%22ASHeadshot.jpg%22%3B%20filename%2A%3DUTF-8%27%27ASHeadshot.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZNYGTDWXT457LRFO%2F20210621%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210621T212756Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=79bb55b96033897d710b5b3b7336bda1a2517a913ff79c455e5ba1ef9bcf9a01
+Completed 302 Found in 23ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/api/jobs" for ::1 at 2021-06-21 17:28:34 -0400
+Started GET "/api/educations" for ::1 at 2021-06-21 17:28:34 -0400
+Processing by Api::JobsController#index as JSON
+Processing by Api::EducationsController#index as JSON
+  Rendering api/jobs/index.json.jbuilder
+  Rendering api/educations/index.json.jbuilder
+  [1m[36mJob Load (3.0ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/api/jobs/index.json.jbuilder:1
+  [1m[36mEducation Load (3.3ms)[0m  [1m[34mSELECT "educations".* FROM "educations"[0m
+  ↳ app/views/api/educations/index.json.jbuilder:1
+  Rendered api/jobs/index.json.jbuilder (26.0ms)
+  Rendered api/educations/index.json.jbuilder (34.1ms)
+Completed 200 OK in 64ms (Views: 45.6ms | ActiveRecord: 8.7ms)
+
+
+Completed 200 OK in 64ms (Views: 33.0ms | ActiveRecord: 19.1ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-06-21 17:28:41 -0400
+Started GET "/api/users" for ::1 at 2021-06-21 17:28:41 -0400
+Processing by Api::UsersController#index as JSON
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mPost Load (1.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:11
+  [1m[36mActiveStorage::Attachment Load (1.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 60], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:14
+  [1m[36mActiveStorage::Blob Load (11.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  Rendering api/users/index.json.jbuilder
+  ↳ app/views/api/posts/index.json.jbuilder:14
+  [1m[36mUser Load (6.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 61], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/users/index.json.jbuilder:1
+  ↳ app/views/api/posts/index.json.jbuilder:14
+  Rendered api/posts/index.json.jbuilder (48.2ms)
+Completed 200 OK in 67ms (Views: 49.8ms | ActiveRecord: 16.3ms)
+
+
+  Rendered api/users/index.json.jbuilder (35.3ms)
+Completed 200 OK in 91ms (Views: 34.0ms | ActiveRecord: 13.8ms)
+
+
+Started GET "/api/jobs" for ::1 at 2021-06-21 17:30:09 -0400
+Started GET "/api/educations" for ::1 at 2021-06-21 17:30:09 -0400
+Processing by Api::JobsController#index as JSON
+Processing by Api::EducationsController#index as JSON
+  Rendering api/jobs/index.json.jbuilder
+  Rendering api/educations/index.json.jbuilder
+  [1m[36mJob Load (6.8ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/api/jobs/index.json.jbuilder:1
+  [1m[36mEducation Load (0.7ms)[0m  [1m[34mSELECT "educations".* FROM "educations"[0m
+  Rendered api/jobs/index.json.jbuilder (11.8ms)
+Completed 200 OK in 31ms (Views: 23.3ms | ActiveRecord: 6.8ms)
+
+
+  ↳ app/views/api/educations/index.json.jbuilder:1
+  Rendered api/educations/index.json.jbuilder (11.9ms)
+Completed 200 OK in 27ms (Views: 26.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2021-06-22 10:01:53 -0400
+  [1m[35m (8.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/anug/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (21.5ms)
+Started GET "/" for ::1 at 2021-06-22 10:01:57 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 10398ms (Views: 10389.3ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 14209ms (Views: 14201.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-06-22 10:05:49 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 1888ms (Views: 1882.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session" for ::1 at 2021-06-22 10:06:03 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"user@demo.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (6.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@demo.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:24
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "S7lCrbRLtTpeHEGQ4GoohA"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:56
+  [1m[35m (26.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "user@demo.com"], ["id", 24], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Update (13.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "S7lCrbRLtTpeHEGQ4GoohA"], ["updated_at", "2021-06-22 14:06:03.909229"], ["id", 24]]
+  ↳ app/models/user.rb:40
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:40
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.9ms)
+  Rendered api/users/show.json.jbuilder (6.1ms)
+Completed 200 OK in 764ms (Views: 21.4ms | ActiveRecord: 141.5ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-06-22 10:06:04 -0400
+Started GET "/api/users" for ::1 at 2021-06-22 10:06:04 -0400
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+Processing by Api::PostsController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  [1m[36mUser Load (138.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/users/index.json.jbuilder:1
+  Rendered api/users/index.json.jbuilder (185.1ms)
+  [1m[36mPost Load (21.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:11
+Completed 200 OK in 216ms (Views: 76.6ms | ActiveRecord: 138.4ms)
+
+
+  [1m[36mActiveStorage::Attachment Load (4.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 60], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:14
+  [1m[36mActiveStorage::Blob Load (3.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:14
+  [1m[36mActiveStorage::Attachment Load (1.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 61], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:14
+  Rendered api/posts/index.json.jbuilder (341.9ms)
+Completed 200 OK in 483ms (Views: 328.7ms | ActiveRecord: 62.4ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBLZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--57875a84a5e2118e3ae16f0a6354b2f42cb5b1a3/ASHeadshot.jpg" for ::1 at 2021-06-22 10:06:04 -0400
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBLZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--57875a84a5e2118e3ae16f0a6354b2f42cb5b1a3", "filename"=>"ASHeadshot"}
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ /home/anug/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (18.4ms) [0m[34mGenerated URL for file at key: tCLpMWoW8Rj4vpfnJ3sP7jaF (https://active-storage-dappedup-dev.s3.amazonaws.com/tCLpMWoW8Rj4vpfnJ3sP7jaF?response-content-disposition=inline%3B%20filename%3D%22ASHeadshot.jpg%22%3B%20filename%2A%3DUTF-8%27%27ASHeadshot.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZNYGTDWXT457LRFO%2F20210622%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210622T140604Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=d7701a1f7a9b86b7e2e275e323d09c6b6d13806cddaa2d8c861d98619cf430b9)[0m
+Redirected to https://active-storage-dappedup-dev.s3.amazonaws.com/tCLpMWoW8Rj4vpfnJ3sP7jaF?response-content-disposition=inline%3B%20filename%3D%22ASHeadshot.jpg%22%3B%20filename%2A%3DUTF-8%27%27ASHeadshot.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZNYGTDWXT457LRFO%2F20210622%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210622T140604Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=d7701a1f7a9b86b7e2e275e323d09c6b6d13806cddaa2d8c861d98619cf430b9
+Completed 302 Found in 34ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/api/jobs" for ::1 at 2021-06-22 10:06:10 -0400
+Started GET "/api/educations" for ::1 at 2021-06-22 10:06:10 -0400
+Processing by Api::JobsController#index as JSON
+Processing by Api::EducationsController#index as JSON
+  Rendering api/jobs/index.json.jbuilder
+  Rendering api/educations/index.json.jbuilder
+  [1m[36mJob Load (5.7ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  [1m[36mEducation Load (5.1ms)[0m  [1m[34mSELECT "educations".* FROM "educations"[0m
+  ↳ app/views/api/educations/index.json.jbuilder:1
+  ↳ app/views/api/jobs/index.json.jbuilder:1
+  Rendered api/jobs/index.json.jbuilder (53.3ms)
+Completed 200 OK in 143ms (Views: 94.3ms | ActiveRecord: 13.7ms)
+
+
+  Rendered api/educations/index.json.jbuilder (75.4ms)
+Completed 200 OK in 148ms (Views: 64.1ms | ActiveRecord: 46.5ms)
+
+
+Started DELETE "/api/session" for ::1 at 2021-06-22 10:07:00 -0400
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "S7lCrbRLtTpeHEGQ4GoohA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fQQUHE5saLjDl8cWmt6Gkg"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:56
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "user@demo.com"], ["id", 24], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Update (2.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "fQQUHE5saLjDl8cWmt6Gkg"], ["updated_at", "2021-06-22 14:07:00.913151"], ["id", 24]]
+  ↳ app/models/user.rb:40
+  [1m[35m (9.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:40
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (1.1ms)
+  Rendered api/users/show.json.jbuilder (6.0ms)
+Completed 200 OK in 63ms (Views: 28.9ms | ActiveRecord: 14.8ms)
+
+
+Started POST "/api/session" for ::1 at 2021-06-22 10:07:13 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"Tom@tom.com", "password"=>"[FILTERED]", "bio"=>"", "location"=>"", "job_title"=>"", "full_name"=>""}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "Tom@tom.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:24
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ftkm4hb3sapI5twtV0tblg"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:56
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "Tom@tom.com"], ["id", 26], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Update (29.0ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "ftkm4hb3sapI5twtV0tblg"], ["updated_at", "2021-06-22 14:07:13.985731"], ["id", 26]]
+  ↳ app/models/user.rb:40
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:40
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered api/users/show.json.jbuilder (5.4ms)
+Completed 200 OK in 728ms (Views: 22.9ms | ActiveRecord: 32.5ms)
+
+
+Started GET "/api/posts" for ::1 at 2021-06-22 10:07:14 -0400
+Started GET "/api/users" for ::1 at 2021-06-22 10:07:14 -0400
+Processing by Api::PostsController#index as JSON
+Processing by Api::UsersController#index as JSON
+  Rendering api/posts/index.json.jbuilder
+  Rendering api/users/index.json.jbuilder
+  [1m[36mPost Load (9.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/api/posts/index.json.jbuilder:11
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/api/users/index.json.jbuilder:1
+  Rendered api/users/index.json.jbuilder (17.1ms)
+Completed 200 OK in 37ms (Views: 35.2ms | ActiveRecord: 1.7ms)
+
+
+  [1m[36mActiveStorage::Attachment Load (6.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 60], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:14
+  [1m[36mActiveStorage::Blob Load (2.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:14
+  [1m[36mActiveStorage::Attachment Load (4.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 61], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/api/posts/index.json.jbuilder:14
+  Rendered api/posts/index.json.jbuilder (72.0ms)
+Completed 200 OK in 96ms (Views: 73.9ms | ActiveRecord: 22.1ms)
+
+
+Started GET "/api/jobs" for ::1 at 2021-06-22 10:07:17 -0400
+Started GET "/api/educations" for ::1 at 2021-06-22 10:07:17 -0400
+Processing by Api::JobsController#index as JSON
+Processing by Api::EducationsController#index as JSON
+  Rendering api/jobs/index.json.jbuilder
+  Rendering api/educations/index.json.jbuilder
+  [1m[36mJob Load (9.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/api/jobs/index.json.jbuilder:1
+  Rendered api/jobs/index.json.jbuilder (15.3ms)
+Completed 200 OK in 51ms (Views: 41.5ms | ActiveRecord: 9.1ms)
+
+
+  [1m[36mEducation Load (6.0ms)[0m  [1m[34mSELECT "educations".* FROM "educations"[0m
+  ↳ app/views/api/educations/index.json.jbuilder:1
+  Rendered api/educations/index.json.jbuilder (22.7ms)
+Completed 200 OK in 54ms (Views: 47.4ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/" for ::1 at 2021-06-22 11:03:15 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (9.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ftkm4hb3sapI5twtV0tblg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (1.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (35.7ms)
+Completed 200 OK in 2058ms (Views: 2038.6ms | ActiveRecord: 9.8ms)
+
+
+Started GET "/" for ::1 at 2021-06-22 11:14:01 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ftkm4hb3sapI5twtV0tblg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (1.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (45.4ms)
+Completed 200 OK in 1677ms (Views: 1662.9ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/" for ::1 at 2021-06-22 11:15:04 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ftkm4hb3sapI5twtV0tblg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (1.1ms)
+  Rendered static_pages/root.html.erb within layouts/application (19.5ms)
+Completed 200 OK in 1942ms (Views: 1938.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/jobs" for ::1 at 2021-06-22 11:15:07 -0400
+Started GET "/api/educations" for ::1 at 2021-06-22 11:15:07 -0400
+Processing by Api::EducationsController#index as JSON
+  Rendering api/educations/index.json.jbuilder
+Processing by Api::JobsController#index as JSON
+  Rendering api/jobs/index.json.jbuilder
+  [1m[36mEducation Load (17.0ms)[0m  [1m[34mSELECT "educations".* FROM "educations"[0m
+  ↳ app/views/api/educations/index.json.jbuilder:1
+  [1m[36mJob Load (8.7ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  Rendered api/educations/index.json.jbuilder (195.9ms)
+Completed 200 OK in 315ms (Views: 297.2ms | ActiveRecord: 17.0ms)
+
+
+  ↳ app/views/api/jobs/index.json.jbuilder:1
+  Rendered api/jobs/index.json.jbuilder (158.2ms)
+Completed 200 OK in 192ms (Views: 182.3ms | ActiveRecord: 8.7ms)
+
+
+Started GET "/api/educations" for ::1 at 2021-06-22 11:39:38 -0400
+Started GET "/api/jobs" for ::1 at 2021-06-22 11:39:38 -0400
+Processing by Api::JobsController#index as JSON
+Processing by Api::EducationsController#index as JSON
+  Rendering api/jobs/index.json.jbuilder
+  Rendering api/educations/index.json.jbuilder
+  [1m[36mEducation Load (9.2ms)[0m  [1m[34mSELECT "educations".* FROM "educations"[0m
+  ↳ app/views/api/educations/index.json.jbuilder:1
+  Rendered api/educations/index.json.jbuilder (13.7ms)
+Completed 200 OK in 43ms (Views: 32.7ms | ActiveRecord: 9.2ms)
+
+
+  [1m[36mJob Load (11.5ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/api/jobs/index.json.jbuilder:1
+  Rendered api/jobs/index.json.jbuilder (59.8ms)
+Completed 200 OK in 91ms (Views: 78.7ms | ActiveRecord: 11.5ms)
+
+
+Started GET "/" for ::1 at 2021-06-22 11:39:40 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ftkm4hb3sapI5twtV0tblg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (23.7ms)
+Completed 200 OK in 802ms (Views: 795.9ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/api/jobs" for ::1 at 2021-06-22 11:39:42 -0400
+Started GET "/api/educations" for ::1 at 2021-06-22 11:39:42 -0400
+Processing by Api::JobsController#index as JSON
+Processing by Api::EducationsController#index as JSON
+  Rendering api/jobs/index.json.jbuilder
+  Rendering api/educations/index.json.jbuilder
+  [1m[36mJob Load (4.5ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/api/jobs/index.json.jbuilder:1
+  Rendered api/jobs/index.json.jbuilder (83.3ms)
+Completed 200 OK in 156ms (Views: 150.8ms | ActiveRecord: 4.5ms)
+
+
+  [1m[36mEducation Load (4.1ms)[0m  [1m[34mSELECT "educations".* FROM "educations"[0m
+  ↳ app/views/api/educations/index.json.jbuilder:1
+  Rendered api/educations/index.json.jbuilder (76.0ms)
+Completed 200 OK in 174ms (Views: 169.8ms | ActiveRecord: 4.1ms)
+
+
+Started POST "/api/educations" for ::1 at 2021-06-22 11:49:09 -0400
+Processing by Api::EducationsController#create as JSON
+  Parameters: {"education"=>{"school"=>"Harvard Uni", "field_of_study"=>"Computer Science", "start_date"=>"2014-02-22", "end_date"=>"2018-08-22"}}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ftkm4hb3sapI5twtV0tblg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/educations_controller.rb:12
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/api/educations_controller.rb:12
+  [1m[36mEducation Create (18.2ms)[0m  [1m[32mINSERT INTO "educations" ("user_id", "school", "field_of_study", "start_date", "created_at", "updated_at", "end_date") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 26], ["school", "Harvard Uni"], ["field_of_study", "Computer Science"], ["start_date", "2014-02-22"], ["created_at", "2021-06-22 15:49:09.191472"], ["updated_at", "2021-06-22 15:49:09.191472"], ["end_date", "2018-08-22"]]
+  ↳ app/controllers/api/educations_controller.rb:12
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/educations_controller.rb:12
+  Rendering api/educations/show.json.jbuilder
+  Rendered api/educations/show.json.jbuilder (0.8ms)
+Completed 200 OK in 74ms (Views: 13.5ms | ActiveRecord: 23.9ms)
+
+
+Started GET "/" for ::1 at 2021-06-22 11:50:35 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ftkm4hb3sapI5twtV0tblg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 105ms (Views: 98.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/jobs" for ::1 at 2021-06-22 11:50:36 -0400
+Started GET "/api/educations" for ::1 at 2021-06-22 11:50:36 -0400
+Processing by Api::JobsController#index as JSON
+  Rendering api/jobs/index.json.jbuilder
+  [1m[36mJob Load (18.9ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/api/jobs/index.json.jbuilder:1
+  Rendered api/jobs/index.json.jbuilder (50.6ms)
+Completed 200 OK in 87ms (Views: 67.6ms | ActiveRecord: 18.9ms)
+
+
+Processing by Api::EducationsController#index as JSON
+  Rendering api/educations/index.json.jbuilder
+  [1m[36mEducation Load (9.0ms)[0m  [1m[34mSELECT "educations".* FROM "educations"[0m
+  ↳ app/views/api/educations/index.json.jbuilder:1
+  Rendered api/educations/index.json.jbuilder (16.5ms)
+Completed 200 OK in 31ms (Views: 20.7ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/" for ::1 at 2021-06-22 11:52:18 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ftkm4hb3sapI5twtV0tblg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 1000ms (Views: 995.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/jobs" for ::1 at 2021-06-22 11:52:20 -0400
+Started GET "/api/educations" for ::1 at 2021-06-22 11:52:20 -0400
+Processing by Api::JobsController#index as JSON
+  Rendering api/jobs/index.json.jbuilder
+  [1m[36mJob Load (24.3ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/api/jobs/index.json.jbuilder:1
+  Rendered api/jobs/index.json.jbuilder (159.1ms)
+Completed 200 OK in 310ms (Views: 285.1ms | ActiveRecord: 24.3ms)
+
+
+Processing by Api::EducationsController#index as JSON
+  Rendering api/educations/index.json.jbuilder
+  [1m[36mEducation Load (2.4ms)[0m  [1m[34mSELECT "educations".* FROM "educations"[0m
+  ↳ app/views/api/educations/index.json.jbuilder:1
+  Rendered api/educations/index.json.jbuilder (9.0ms)
+Completed 200 OK in 23ms (Views: 20.0ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for ::1 at 2021-06-22 12:26:17 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (5.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ftkm4hb3sapI5twtV0tblg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (0.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (39.2ms)
+Completed 200 OK in 238ms (Views: 227.5ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/api/educations" for ::1 at 2021-06-22 12:26:18 -0400
+Started GET "/api/jobs" for ::1 at 2021-06-22 12:26:18 -0400
+Processing by Api::EducationsController#index as JSON
+  Rendering api/educations/index.json.jbuilder
+Processing by Api::JobsController#index as JSON
+  [1m[36mEducation Load (50.7ms)[0m  [1m[34mSELECT "educations".* FROM "educations"[0m
+  Rendering api/jobs/index.json.jbuilder
+  ↳ app/views/api/educations/index.json.jbuilder:1
+  Rendered api/educations/index.json.jbuilder (124.7ms)
+Completed 200 OK in 319ms (Views: 267.4ms | ActiveRecord: 50.7ms)
+
+
+  [1m[36mJob Load (43.1ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/api/jobs/index.json.jbuilder:1
+  Rendered api/jobs/index.json.jbuilder (111.3ms)
+Completed 200 OK in 140ms (Views: 96.6ms | ActiveRecord: 43.1ms)
+
+
+Started GET "/" for ::1 at 2021-06-22 12:27:34 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ftkm4hb3sapI5twtV0tblg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (1.0ms)
+  Rendered static_pages/root.html.erb within layouts/application (16.9ms)
+Completed 200 OK in 238ms (Views: 225.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/api/jobs" for ::1 at 2021-06-22 12:27:35 -0400
+Started GET "/api/educations" for ::1 at 2021-06-22 12:27:35 -0400
+Processing by Api::JobsController#index as JSON
+Processing by Api::EducationsController#index as JSON
+  Rendering api/jobs/index.json.jbuilder
+  Rendering api/educations/index.json.jbuilder
+  [1m[36mJob Load (14.8ms)[0m  [1m[34mSELECT "jobs".* FROM "jobs"[0m
+  ↳ app/views/api/jobs/index.json.jbuilder:1
+  Rendered api/jobs/index.json.jbuilder (34.0ms)
+Completed 200 OK in 122ms (Views: 106.5ms | ActiveRecord: 14.8ms)
+
+
+  [1m[36mEducation Load (5.8ms)[0m  [1m[34mSELECT "educations".* FROM "educations"[0m
+  ↳ app/views/api/educations/index.json.jbuilder:1
+  Rendered api/educations/index.json.jbuilder (54.6ms)
+Completed 200 OK in 125ms (Views: 119.3ms | ActiveRecord: 5.8ms)
+
+
+Started DELETE "/api/session" for ::1 at 2021-06-22 12:28:10 -0400
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ftkm4hb3sapI5twtV0tblg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WjyVozqpCITzSWfPeuJVKw"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:56
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "Tom@tom.com"], ["id", 26], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Update (5.1ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "WjyVozqpCITzSWfPeuJVKw"], ["updated_at", "2021-06-22 16:28:10.342042"], ["id", 26]]
+  ↳ app/models/user.rb:40
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:40
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered api/users/show.json.jbuilder (4.1ms)
+Completed 200 OK in 52ms (Views: 14.6ms | ActiveRecord: 10.5ms)
+
+

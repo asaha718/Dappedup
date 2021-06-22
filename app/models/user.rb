@@ -13,6 +13,10 @@ class User < ApplicationRecord
     foreign_key: :user_id, 
     class_name: :Education
 
+    has_many :jobs, 
+    foreign_key: :user_id, 
+    class_name: :Job
+
     has_one_attached :profile_pic
     
     
