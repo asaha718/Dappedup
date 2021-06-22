@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom'; 
 import EditPostItem from './edit_post_item'; 
 
-const PostIndexItem= ({post, updatePost, deletePost, closeModal, openModal, current_userId}) => { 
+const PostIndexItem= ({post, updatePost, deletePost, closeModal, openModal, current_userId, users}) => { 
     const userOpt= post.author_id === current_userId ?                 
     <div className="post-option-btns">
         <div className="edit-post-btn-ctn">
@@ -15,13 +15,15 @@ const PostIndexItem= ({post, updatePost, deletePost, closeModal, openModal, curr
                 <i className="fa fa-trash">delete</i>
             </button>
         </div> 
-    </div> : <p> </p> ; 
-    
+    </div> : <p> </p> ;
+
     return( 
         <div>
             <li>
             <div className="post-contents">
                 <div className="user-img-post">
+                    <p>{users[post.author_id].full_name}</p>
+                    <p>{users[post.author_id].job_title}</p>
                     <img src="https://i.pinimg.com/originals/18/d9/e1/18d9e1307018dbc76750ca7d5124fccd.png"/>
                 </div>
                 <div className="post-items">

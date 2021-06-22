@@ -12,7 +12,7 @@ class PostIndex extends React.Component{
     }
 
     render(){ 
-        let {posts, updatePost, deletePost, closeModal, openModal, current_userId}= this.props;
+        let {posts, updatePost, deletePost, closeModal, openModal, current_userId, users}= this.props;
         return( 
             <div>
                 <ul>
@@ -24,6 +24,7 @@ class PostIndex extends React.Component{
                                             closeModal={closeModal} 
                                             openModal={openModal}
                                             current_userId={current_userId}
+                                            users={users}
                                         />
                                     )
                     }

@@ -6,7 +6,6 @@ import EditProfileForm from './edit_profile'
 
 
 const mSTP= (state) => {
-    // console.log(state)
     return {
         profile: state.entities.users[state.session.id]
     } 
