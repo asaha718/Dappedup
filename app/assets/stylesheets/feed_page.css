@@ -127,11 +127,28 @@ textarea {
 
 .post-contents { 
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    /* justify-content: space-between; */
     background-color: white;
     border-radius: 10px;
     padding: 10px 15px;
     margin-bottom: 6px;
+}
+
+.post-header{ 
+    display: flex;
+    justify-content: space-between;
+}
+
+.post-er-info{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 4px;
+}
+
+.post-img-ctn{ 
+    display: flex;
+    justify-content: center;
 }
 
 .post-contents img { 

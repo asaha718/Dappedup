@@ -21,19 +21,28 @@ const PostIndexItem= ({post, updatePost, deletePost, closeModal, openModal, curr
         <div>
             <li>
             <div className="post-contents">
-                <div className="user-img-post">
-                    <p>{users[post.author_id].full_name}</p>
-                    <p>{users[post.author_id].job_title}</p>
-                    <img src="https://i.pinimg.com/originals/18/d9/e1/18d9e1307018dbc76750ca7d5124fccd.png"/>
+                <div className="post-header">
+                    <div className="post-er-info">
+                        <div className="user-img-post">
+                            <img src="https://i.pinimg.com/originals/18/d9/e1/18d9e1307018dbc76750ca7d5124fccd.png"/>
+                        </div>
+                        <div className="post-er-id">
+                            <p>{users[post.author_id].full_name}</p>
+                            <p>{users[post.author_id].job_title}</p>
+                        </div>
+                    </div>
+                    
+                    {userOpt}
+
                 </div>
                 <div className="post-items">
                     <div className="post-text">
                         {post.body}
                     </div>
-                    <br />
-                    <img src={post.photoUrl}/>
+                    <div className="post-img-ctn">
+                        <img src={post.photoUrl}/>
+                    </div>
                 </div>
-                {userOpt}
             </div>     
             </li>
         </div>
