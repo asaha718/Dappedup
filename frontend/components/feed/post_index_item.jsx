@@ -16,7 +16,8 @@ const PostIndexItem= ({post, updatePost, deletePost, closeModal, openModal, curr
             </button>
         </div> 
     </div> : <p> </p> ;
-
+    let fullname = users[post.author_id] != undefined ? users[post.author_id].full_name : " "; 
+    
     return( 
         <div>
             <li>
@@ -27,8 +28,8 @@ const PostIndexItem= ({post, updatePost, deletePost, closeModal, openModal, curr
                             <img src="https://i.pinimg.com/originals/18/d9/e1/18d9e1307018dbc76750ca7d5124fccd.png"/>
                         </div>
                         <div className="post-er-id">
-                            {/* <p>{users[post.author_id].full_name}</p> */}
-                            {/* <p>{users[post.author_id].job_title}</p> causes error when posting but works on refresh*/ } 
+                            <p>{fullname}</p>
+                            <p>{users[post.author_id].job_title}</p>
                         </div>
                     </div>
                     

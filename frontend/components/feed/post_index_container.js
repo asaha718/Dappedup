@@ -7,7 +7,7 @@ import {orderItems} from '../../utils/selector';
 // import {withRouter} from 'react-router';
 
 const mSTP = state => {
-    console.log(state)
+    // console.log(state)
     return{ 
         posts: orderItems(state.entities.posts), 
         current_userId: state.session.id,
