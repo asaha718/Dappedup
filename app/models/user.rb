@@ -5,6 +5,8 @@ class User < ApplicationRecord
     after_initialize :ensure_session_token
     attr_reader :password
 
+    has_one_attached :profile_pic
+
     has_many :posts, 
     foreign_key: :author_id, 
     class_name: :Post
@@ -17,8 +19,23 @@ class User < ApplicationRecord
     foreign_key: :user_id, 
     class_name: :Job
 
-    has_one_attached :profile_pic
-    
+    has_many :active_connections, 
+    primary_key: :id,
+    foreign_key: :connecter_id,
+    class_name: :Connection
+
+    has_many :passive_connections,
+    primary_key: :id,
+    foreign_key: :connectee_id,
+    class_name: :Connection
+
+    has_many :followers, #users that are following this user
+    through: :passive_connections,
+    source: :connecter
+
+    has_many :followed, #users that this user is following
+    through: :active_connections,
+    source: :connectee
     
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
