@@ -17,6 +17,7 @@ const PostIndexItem= ({post, updatePost, deletePost, closeModal, openModal, curr
         </div> 
     </div> : <p> </p> ;
     let fullname = users[post.author_id] != undefined ? users[post.author_id].full_name : " "; 
+    let jobtitle = users[post.author_id] != undefined ? users[post.author_id].job_title : " "; 
     
     return( 
         <div>
@@ -29,7 +30,7 @@ const PostIndexItem= ({post, updatePost, deletePost, closeModal, openModal, curr
                         </div>
                         <div className="post-er-id">
                             <p>{fullname}</p>
-                            <p>{users[post.author_id].job_title}</p>
+                            <p>{jobtitle}</p>
                         </div>
                     </div>
                     

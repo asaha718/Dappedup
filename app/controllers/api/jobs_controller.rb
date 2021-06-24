@@ -6,7 +6,7 @@ class Api::JobsController < ApplicationController
 
     
     def show
-        @job= Job.includes(:user).find_by(id: params[:id])
+        @job= Job.find_by(id: params[:id])
         render :show
     end
     

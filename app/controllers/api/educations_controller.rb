@@ -17,7 +17,7 @@ class Api::EducationsController < ApplicationController
     end
 
     def show
-        @education= Education.includes(:user).find_by(id: params[:id])
+        @education= Education.find_by(id: params[:id])
         render :show
     end
 
