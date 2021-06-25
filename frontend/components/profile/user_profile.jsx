@@ -15,13 +15,13 @@ class UserProfile extends React.Component{
                         <img src="https://i.pinimg.com/originals/18/d9/e1/18d9e1307018dbc76750ca7d5124fccd.png"/>
                     </div>
                     <div className="fullname">
-                        <h1>{this.props.profile.full_name}</h1>
+                        <h1>{this.props.userProfile.full_name}</h1>
                     </div>
                     <div className="user-info">
                         <div className="user-info-contents">
-                            <h3>{this.props.profile.email}</h3>
-                            <h3>{this.props.profile.job_title}</h3>
-                            <h3>{this.props.profile.location}</h3>
+                            <h3>{this.props.userProfile.email}</h3>
+                            <h3>{this.props.userProfile.job_title}</h3>
+                            <h3>{this.props.userProfile.location}</h3>
                         </div>
                         <button className="edit-profile-btn" onClick={() => this.props.openModal({modal: 'editProfile'})}>
                             <i className="fa fa-edit">edit</i> 
@@ -30,7 +30,7 @@ class UserProfile extends React.Component{
                 </div>
                 <div className="profile-about">
                     <h3>About </h3>
-                    <p> {this.props.profile.bio} </p>
+                    <p> {this.props.userProfile.bio} </p>
                 </div>
 
                 <div className="user-jobs-ctn">

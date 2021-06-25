@@ -18,8 +18,8 @@ export const updateProfile= user => (
     })
 )
 
-// export const fetchProfile= userId =>(
-//     $.ajax({ 
-//         url: `/api/users/${userId}`
-//     })
-// )
+export const fetchProfile= userId =>(
+    $.ajax({ 
+        url: `/api/users/${userId}`
+    })
+)

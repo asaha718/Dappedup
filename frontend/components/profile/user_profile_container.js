@@ -5,9 +5,12 @@ import UserProfile from './user_profile';
 import EditProfileForm from './edit_profile'
 
 
-const mSTP= (state) => {
+const mSTP= (state, ownProps) => {
+    // console.log(ownProps);
+    const profileId= ownProps.match.params.id 
     return {
-        profile: state.entities.users[state.session.id]
+        currentUsersProfile: state.entities.users[state.session.id], 
+        userProfile: state.entities.users[profileId]
     } 
 }
 

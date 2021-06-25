@@ -17,8 +17,9 @@ const noMatchPage=()=> {
 }; 
 
 const App = (props) => {
+  // console.log(props)
   let header= <header>
-                <Link to="/profile" className="header-link">
+                <Link to="/feed" className="header-link">
                   <h1>DappedUp</h1>
                 </Link>
                 <GreetingContainer />
@@ -35,7 +36,7 @@ const App = (props) => {
         <AuthRoute path="/login" component={LoginFormContainer} />
         <AuthRoute path="/signup" component={SignupFormContainer} />
         <Route exact path="/" component={HomePageContainer}/>
-        <ProtectedRoute path="/profile" component={UserProfileContainer}/>
+        <ProtectedRoute path="/profile/:id" component={UserProfileContainer}/>
         <ProtectedRoute path="/feed" component={PostFormContainer}/>
         <Route component={noMatchPage} />
       </Switch>

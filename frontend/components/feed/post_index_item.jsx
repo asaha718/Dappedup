@@ -29,7 +29,9 @@ const PostIndexItem= ({post, updatePost, deletePost, closeModal, openModal, curr
                             <img src="https://i.pinimg.com/originals/18/d9/e1/18d9e1307018dbc76750ca7d5124fccd.png"/>
                         </div>
                         <div className="post-er-id">
-                            <p>{fullname}</p>
+                            <Link to={`/profile/${post.author_id}`}> 
+                                <p>{fullname}</p>
+                            </Link>
                             <p>{jobtitle}</p>
                         </div>
                     </div>
