@@ -11,13 +11,13 @@ class EduIndex extends React.Component{
     }
 
     render(){ 
-        let { educations, deleteEdu, updateEdu, currentUserId}= this.props
+        let { educations, deleteEdu, updateEdu, currentUserId, profileId}= this.props
         return ( 
             <div>
                 <ul>
                     { 
                     educations.map(edu=> { 
-                        if(edu.user_id=== currentUserId)
+                        if(edu.user_id === currentUserId)
                         return (
                             <EduIndexItem key={edu.id} 
                                         edu={edu} 

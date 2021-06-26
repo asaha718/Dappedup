@@ -7,6 +7,10 @@ class UserProfile extends React.Component{
         super(props)   
     }
 
+    componentDidMount(){ 
+        this.props.visitProfile(this.props.match.params.id)
+    }
+
     render(){
         return ( 
             <div className="user-profile-page">

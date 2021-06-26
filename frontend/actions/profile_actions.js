@@ -19,8 +19,8 @@ export const receiveAllUsers = users => ({
     users
 });
 
-export const visitProfile = userId => dispatch ( 
-    ProfileAPIUtil.fetchProfile(userId).then(userId=> dispatch(receiveProfile(userId)))
+export const visitProfile = userId => dispatch => ( 
+    ProfileAPIUtil.fetchProfile(userId).then(user=> dispatch(receiveProfile(user)))
 );
 
 export const updateProfile = userId => dispatch => ( 
