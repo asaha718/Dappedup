@@ -8,7 +8,7 @@ class UserProfile extends React.Component{
     }
 
     componentDidMount(){ 
-        this.props.visitProfile(this.props.match.params.id)
+        this.props.visitProfile(this.props.userId)
     }
 
     render(){
@@ -44,7 +44,7 @@ class UserProfile extends React.Component{
                             +
                         </button>
                     </div>
-                    <JobIndexContainer />
+                    <JobIndexContainer userId= {this.props.userId}/>
                 </div>
                 <div className="user-education-ctn">
                     <div className="user-edu-ctn-header">
@@ -53,7 +53,7 @@ class UserProfile extends React.Component{
                             +
                         </button>
                     </div>
-                    <EduIndexContainer /> 
+                    <EduIndexContainer userId={this.props.userId}/> 
                 </div>
             </div> 
         ) 

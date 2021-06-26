@@ -11,7 +11,7 @@ const entitiesReducer = combineReducers({
   posts: postsReducer, 
   educations: educationReducer, 
   jobs: jobReducer, 
-  profile: profilesReducer
+  profiles: profilesReducer
 });
 
 export default entitiesReducer;
