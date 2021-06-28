@@ -23,7 +23,7 @@ export const createConnection = userId => dispatch => (
     ConnectionAPIUtil.createConnection(userId).then(connecteeId=> dispatch(receiveConnection(connecteeId)))
 ); 
 
-export const removeConnection = userId => dispatch => (
+export const deleteConnection = userId => dispatch => (
     ConnectionAPIUtil.destroyConnection(userId).then(connecteeId=> dispatch(removeConnection(connecteeId)))
 ); 
 
