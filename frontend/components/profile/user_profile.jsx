@@ -26,6 +26,7 @@ class UserProfile extends React.Component{
                             <h3>{this.props.userProfile.email}</h3>
                             <h3>{this.props.userProfile.job_title}</h3>
                             <h3>{this.props.userProfile.location}</h3>
+                            {/* <p>Connections: {this.props.connections} </p> */}
                         </div>
                         <button className="edit-profile-btn" onClick={() => this.props.openModal({modal: 'editProfile'})}>
                             <i className="fa fa-edit">edit</i> 

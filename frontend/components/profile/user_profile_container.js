@@ -14,12 +14,6 @@ const mSTP= (state, ownProps) => {
         userId: ownProps.match.params.id, 
         currentUsersProfile: state.entities.users[state.session.id], 
         userProfile: state.entities.users[profileId], 
-        connected: state.entities.connections.current.followed, 
-        connections: [...new Set(state.entities.connections.profile.followed ? 
-            state.entities.connections.profile.followed.concat(
-            state.entities.connections.profile.followers ? state.entities.connections.profile.followers : []
-            ) : state.entities.connections.profile.followers ? state.entities.connections.profile.followers : [])
-        ].length
     } 
 }
 

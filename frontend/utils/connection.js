@@ -1,14 +1,14 @@
 export const fetchConnections=()=> ( 
     $.ajax({ 
-        url: `/api/connections/0`
+        url: `/api/connections/`
     })
 ); 
 
-export const createConnection=(connecteeId)=> ( 
+export const createConnection=(connection)=> ( 
     $.ajax({
         method: 'POST', 
         url: '/api/connections', 
-        data: { connection : {connectee_id: connecteeId} } 
+        data: { connection } 
     })
 ); 
 

@@ -20,12 +20,10 @@ class User < ApplicationRecord
     class_name: :Job
 
     has_many :active_connections, 
-    primary_key: :id,
     foreign_key: :connecter_id,
     class_name: :Connection
 
     has_many :passive_connections,
-    primary_key: :id,
     foreign_key: :connectee_id,
     class_name: :Connection
 
