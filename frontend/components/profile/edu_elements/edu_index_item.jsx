@@ -1,6 +1,7 @@
 import React from 'react'; 
 
-const EduIndexItem=({ edu, deleteEdu, updateEdu})=> { 
+const EduIndexItem=({ edu, deleteEdu, updateEdu})=> {
+    console.log("hello") 
     return (
         <div className="edu-index-items">
             <li>

@@ -12,26 +12,29 @@ class EduIndex extends React.Component{
 
     render(){ 
         let { educations, deleteEdu, updateEdu, currentUserId, profileId}= this.props; 
-        // console.log(profileId)
-        return ( 
-            <div>
-                <ul>
-                    { 
-                    educations.map(edu=> { 
-                        // console.log(profileId); 
-                        // console.log(edu.user_id); 
+        if (this.props.educations){ 
+            return ( 
+                <div>
+                    <ul>
+                        { 
+                        educations.map(edu=> { 
+                            // console.log(this.props.userId); 
+                            // console.log(edu.user_id); 
+                            
+                            // console.log(edu.user_id == this.props.userId) not the same data type
+                            if(this.props.userId == edu.user_id){
+                                return (<EduIndexItem key={edu.id} edu={edu} deleteEdu={deleteEdu} updateEdu={updateEdu} />)
+                            }
+    
+                            
+                            
+                        })
+                        }
+                    </ul>
+                </div>
+            )
 
-                        if(this.props.userId === edu.user_id) 
-                        return(
-                            <EduIndexItem key={edu.id} edu={edu} deleteEdu={deleteEdu} updateEdu={updateEdu} />
-
-                        )
-                        
-                    })
-                    }
-                </ul>
-            </div>
-        )
+        }
     }
 }
 
