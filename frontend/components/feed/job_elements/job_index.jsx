@@ -19,7 +19,7 @@ class JobIndex extends React.Component{
                     {
 
                     jobs.map((job) => { 
-                        if(job.user_id=== this.props.userId)
+                        if(job.user_id == this.props.userId) 
                         return (
 
                             <JobIndexItem key={job.id} 
