@@ -11,7 +11,7 @@ const mSTP= (state, ownProps) => {
     // console.log(ownProps);
     let profileId= ownProps.match.params.id 
     return {
-        userId: ownProps.match.params.id, 
+        userId: Number(ownProps.match.params.id), 
         currentUsersProfile: state.entities.users[state.session.id], 
         userProfile: state.entities.users[profileId], 
     } 

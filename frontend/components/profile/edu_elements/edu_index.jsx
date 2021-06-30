@@ -18,11 +18,11 @@ class EduIndex extends React.Component{
                     <ul>
                         { 
                         educations.map(edu=> { 
-                            // console.log(this.props.userId); 
-                            // console.log(edu.user_id); 
+                            // console.log(typeof this.props.userId); 
+                            // console.log(typeof edu.user_id); 
                             
                             // console.log(edu.user_id == this.props.userId) not the same data type
-                            if(this.props.userId == edu.user_id){
+                            if(this.props.userId === edu.user_id){
                                 return (<EduIndexItem key={edu.id} edu={edu} deleteEdu={deleteEdu} updateEdu={updateEdu} />)
                             }
     
