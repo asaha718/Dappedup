@@ -1,4 +1,5 @@
 import {connect} from 'react-redux'; 
+import { fetchProfiles } from '../../actions/profile_actions';
 import { updateProfile, visitProfile } from '../../actions/profile_actions';
 import { createConnection, deleteConnection, fetchProfileConnections } from '../../actions/connection_actions'; 
 import { openModal } from '../../actions/modal_actions'; 
@@ -9,7 +10,8 @@ import EditProfileForm from './edit_profile';
 
 const mSTP= (state, ownProps) => {
     // console.log(ownProps);
-    let profileId= ownProps.match.params.id 
+    // debugger
+    let profileId= Number(ownProps.match.params.id ); 
     return {
         userId: Number(ownProps.match.params.id), 
         currentUsersProfile: state.entities.users[state.session.id], 
@@ -20,7 +22,8 @@ const mSTP= (state, ownProps) => {
 const mDTP= dispatch => {
     // debugger
     return {
-    visitProfile: userId=> dispatch(visitProfile(userId)),  
+    visitProfile: userId=> dispatch(visitProfile(userId)), 
+    fetchProfiles: () => dispatch(fetchProfiles()),  
     updateProfile: userId => dispatch(updateProfile(userId)),
     createConnection: (userId)=> dispatch(createConnection(userId)),
     fetchProfileConnections: ()=> dispatch(fetchProfileConnections()), 

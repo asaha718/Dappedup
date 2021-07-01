@@ -1,7 +1,10 @@
 import React from 'react'; 
 
-const EduIndexItem=({ edu, deleteEdu, updateEdu})=> {
-    console.log("hello") 
+const EduIndexItem=({ edu, deleteEdu, currentUserId, updateEdu})=> {
+    const removeEdu= currentUserId === edu.user_id ?
+        <button className='delete-edu-btn' onClick={()=> deleteEdu(edu.id)} >
+            <i className="fa fa-trash">delete</i>
+        </button> : <p> </p>; 
     return (
         <div className="edu-index-items">
             <li>
@@ -13,9 +16,7 @@ const EduIndexItem=({ edu, deleteEdu, updateEdu})=> {
                     <p>{edu.start_date} to {edu.end_date}</p>
                 </div>
                 <div className="delete-edu-btn-ctn">
-                    <button className='delete-edu-btn' onClick={()=> deleteEdu(edu.id)} >
-                        <i className="fa fa-trash">delete</i>
-                    </button>
+                    {removeEdu}
                 </div>
             </li>
         </div>

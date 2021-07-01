@@ -1,6 +1,10 @@
 import React from 'react'; 
 
-const JobIndexItem= ({job, deleteJob ,updateJob}) => { 
+const JobIndexItem= ({job, deleteJob, currentUserId, updateJob}) => { 
+    const removeJob= currentUserId === job.user_id ?
+        <button className='delete-job-btn' onClick={()=> deleteJob(job.id)} >
+            <i className="fa fa-trash">delete</i>
+        </button> : <p> </p>; 
     return(
         <div className="job-index-items">
             <li>
@@ -17,9 +21,7 @@ const JobIndexItem= ({job, deleteJob ,updateJob}) => {
                     </div>
                 </div>
                 <div className="delete-job-btn-ctn">
-                    <button className='delete-job-btn' onClick={()=> deleteJob(job.id)} >
-                        <i className="fa fa-trash">delete</i>
-                    </button>
+                    {removeJob}
                 </div>
             </li>
         </div>

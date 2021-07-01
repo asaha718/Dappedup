@@ -25,7 +25,8 @@ class JobIndex extends React.Component{
                             <JobIndexItem key={job.id} 
                                         job={job} 
                                         updateJob={updateJob} 
-                                        deleteJob={deleteJob}/>
+                                        deleteJob={deleteJob}
+                                        currentUserId= {currentUserId}/>
                         ) 
                      
                     
