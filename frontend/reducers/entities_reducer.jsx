@@ -12,7 +12,7 @@ const entitiesReducer = combineReducers({
   posts: postsReducer, 
   educations: educationReducer, 
   jobs: jobReducer, 
-  profiles: profilesReducer, 
+  profiles: profilesReducer
   // connections: connectionReducer
 });
 
