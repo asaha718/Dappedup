@@ -19,21 +19,37 @@ class User < ApplicationRecord
     foreign_key: :user_id, 
     class_name: :Job
 
-    has_many :active_connections, 
-    foreign_key: :connecter_id,
-    class_name: :Connection
+    has_many :received_follows, # profile that is being followed. gets follow
+    foreign_key: :followed_user_id, 
+    class_name: :Follow
 
-    has_many :passive_connections,
-    foreign_key: :connectee_id,
-    class_name: :Connection
+    has_many :followers, #has many of the follower_ids
+    through: :received_follows, 
+    source: :follower
 
-    has_many :followers, #users that are following this user
-    through: :passive_connections,
-    source: :connecter
+    has_many :given_follows, #profile gives a follow
+    foreign_key: :follower_id, 
+    class_name: :Follow
 
-    has_many :followed, #users that this user is following
-    through: :active_connections,
-    source: :connectee
+    has_many :followings, #has many followed_user_ids
+    through: :given_follows,
+    source: :followed_user
+
+    # has_many :active_connections, 
+    # foreign_key: :connecter_id,
+    # class_name: :Connection
+
+    # has_many :passive_connections,
+    # foreign_key: :connectee_id,
+    # class_name: :Connection
+
+    # has_many :followers, #users that are following this user
+    # through: :passive_connections,
+    # source: :connecter
+
+    # has_many :followed, #users that this user is following
+    # through: :active_connections,
+    # source: :connectee
     
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)

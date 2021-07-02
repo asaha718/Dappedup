@@ -6,13 +6,15 @@ import educationReducer from './edus_reducer';
 import jobReducer from './jobs_reducer'; 
 import profilesReducer from "./profile_reducer";
 // import connectionReducer from "./connections_reducer";
+import followsReducer from "./follows_reducer";
 
 const entitiesReducer = combineReducers({
   users: usersReducer, 
   posts: postsReducer, 
   educations: educationReducer, 
   jobs: jobReducer, 
-  profiles: profilesReducer
+  profiles: profilesReducer, 
+  follows: followsReducer
   // connections: connectionReducer
 });
 

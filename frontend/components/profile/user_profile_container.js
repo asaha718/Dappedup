@@ -1,7 +1,8 @@
 import {connect} from 'react-redux'; 
 import { fetchProfiles } from '../../actions/profile_actions';
 import { updateProfile, visitProfile } from '../../actions/profile_actions';
-// import { createConnection, deleteConnection, fetchProfileConnections } from '../../actions/connection_actions'; 
+// import { createConnection, deleteConnection, fetchProfileConnections } from '../../actions/connection_actions';
+import { createFollow } from '../../actions/follow_actions'; 
 import { openModal } from '../../actions/modal_actions'; 
 import UserProfile from './user_profile'; 
 import EditProfileForm from './edit_profile'; 
@@ -9,7 +10,7 @@ import EditProfileForm from './edit_profile';
 
 
 const mSTP= (state, ownProps) => {
-    // console.log(ownProps);
+    console.log(state);
     // debugger
     let profileId= Number(ownProps.match.params.id ); 
     return {
@@ -25,6 +26,7 @@ const mDTP= dispatch => {
     visitProfile: userId=> dispatch(visitProfile(userId)), 
     fetchProfiles: () => dispatch(fetchProfiles()),  
     updateProfile: userId => dispatch(updateProfile(userId)),
+    createFollow: id => dispatch(createFollow(id)),
     // createConnection: (userId)=> dispatch(createConnection(userId)),
     // fetchProfileConnections: ()=> dispatch(fetchProfileConnections()), 
     // deleteConnection: (userId)=> dispatch(deleteConnection(userId)), 
