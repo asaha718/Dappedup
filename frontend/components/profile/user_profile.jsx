@@ -4,12 +4,28 @@ import EduIndexContainer from '../profile/edu_elements/edu_index_container';
 
 class UserProfile extends React.Component{ 
     constructor(props){ 
-        super(props)   
-    }
+        super(props); 
+        this.state= { 
+            status: ''
+        }; 
+        this.handleFollow= this.handleFollow.bind(this);   
+    }; 
 
     componentDidMount(){ 
-        this.props.visitProfile(this.props.userId); 
+        this.props.fetchCurrentUserFollows()
         this.props.fetchProfiles()
+        .then(()=> this.props.visitProfile(this.props.userId))
+        .then(()=> {if (this.props.followed) this.setState({status: this.props.followed.includes(this.props.userProfile ? this.props.userProfile.id : this.props.userId) ? 'Unfollow' : 'Follow'})})
+    }
+
+    handleFollow(userId){ 
+        return (e) => { 
+            if(this.state.status === "Follow"){ 
+                this.setState({status: "Unfollow"})
+                this.props.createFollow(userId)
+                .then(()=> this.props.visitProfile(this.props.userId))
+            }
+        }
     }
 
     render(){
@@ -26,6 +42,11 @@ class UserProfile extends React.Component{
             +
             </button> : <p> </p>; 
             
+        const followUser = this.props.currentUsersProfile != this.props.userProfile ?
+            <button className='follow-btn' onClick ={() => this.handleFollow(this.props.userId)}>
+                {this.state.status}
+            </button> : <p> </p>; 
+
         let fullName= this.props.userProfile != undefined ? this.props.userProfile.full_name : " "; 
         let email= this.props.userProfile != undefined ? this.props.userProfile.email : " "; 
         let jobTitle= this.props.userProfile != undefined ? this.props.userProfile.job_title : " "; 
@@ -49,6 +70,7 @@ class UserProfile extends React.Component{
                             {/* <p>Connections: {this.props.connections} </p> */}
                         </div>
                         {editProf}
+                        {followUser}
                     </div>
                 </div>
                 <div className="profile-about">

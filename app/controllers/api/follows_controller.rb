@@ -7,6 +7,7 @@ class Api::FollowsController < ApplicationController
             render :show
         else
             render json: @following.errors.full_messages, status: 422
+        end
     end
 
     def show
