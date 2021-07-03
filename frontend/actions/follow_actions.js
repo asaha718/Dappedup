@@ -15,7 +15,7 @@ const receiveCurrentUserFollows= (follows)=> ({
 }); 
 
 export const createFollow = userId => dispatch =>{ 
-    return FollowAPIUtil.createFollow(userId).then(()=> dispatch(receiveFollow(userId)))
+    return FollowAPIUtil.createFollow(userId).then((userId)=> dispatch(receiveFollow(userId)))
 } 
 
 export const fetchCurrentUserFollows =() => dispatch => { 

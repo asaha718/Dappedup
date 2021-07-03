@@ -8,6 +8,7 @@ class UserProfile extends React.Component{
         this.state= { 
             status: ''
         }; 
+
         this.handleFollow= this.handleFollow.bind(this);   
     }; 
 
@@ -15,11 +16,17 @@ class UserProfile extends React.Component{
         this.props.fetchCurrentUserFollows()
         this.props.fetchProfiles()
         .then(()=> this.props.visitProfile(this.props.userId))
-        .then(()=> {if (this.props.followed) this.setState({status: this.props.followed.includes(this.props.userProfile ? this.props.userProfile.id : this.props.userId) ? 'Unfollow' : 'Follow'})})
+        .then(()=> {if (this.props.followed.includes(this.props.userId)){ 
+            return (this.setState({status: 'Unfollow'}))
+        }else{ 
+            this.setState({status: 'Follow'})
+        }}); 
     }
 
     handleFollow(userId){ 
+        console.log('hi')
         return (e) => { 
+            e.preventDefault(); 
             if(this.state.status === "Follow"){ 
                 this.setState({status: "Unfollow"})
                 this.props.createFollow(userId)
