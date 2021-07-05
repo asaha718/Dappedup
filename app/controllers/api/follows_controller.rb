@@ -13,6 +13,17 @@ class Api::FollowsController < ApplicationController
     def show
         render :show
     end
+    
+    def destroy
+        @user= User.find_by(id: current_user.id)
+        @following= @user.given_follows.find_by(followed_user_id: params[:id])
+
+        if @following
+            @following.delete
+        else
+            render json: params[:followed_user_id]
+        end
+    end
 
     def follow_params
         params.require(:follow).permit(:followed_user_id)

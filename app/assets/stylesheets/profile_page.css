@@ -145,6 +145,21 @@
     font-size: 20px;
 }
 
+/* USER FOLLOW BTN */
+.follow-btn{ 
+    color: white;
+    height: 32px;
+    width: 70px; 
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    display:block;
+    background-color: #0a66c2;
+}
+
+.follow-btn:hover{ 
+    background-color: #064b91;
+}
 /* User Experience and Edu form */
 
 .add-job-form, .add-edu-form, .edit-user-form{

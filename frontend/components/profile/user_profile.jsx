@@ -29,8 +29,9 @@ class UserProfile extends React.Component{
             this.setState({status: 'Following'})
             this.props.createFollow(userId)
             .then(()=> this.props.visitProfile(this.props.userId))
-        }else{ 
-            console.log("notworking")
+        }else if(this.state.status === 'Following'){ 
+            this.props.removeFollow(userId)
+            this.setState({status: 'Follow'})
         }
         
     }
@@ -52,7 +53,7 @@ class UserProfile extends React.Component{
         const followUser = this.props.currentUsersProfile != this.props.userProfile ?
             <button className='follow-btn' onClick ={() => this.handleFollow(this.props.userId)}>
                 {this.state.status}
-            </button> : <p> </p>; 
+            </button> : null; 
 
         let fullName= this.props.userProfile != undefined ? this.props.userProfile.full_name : " "; 
         let email= this.props.userProfile != undefined ? this.props.userProfile.email : " "; 
