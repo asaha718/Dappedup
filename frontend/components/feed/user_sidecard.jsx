@@ -5,7 +5,12 @@ class UserSideCard extends React.Component{
         super(props)
     }
 
+    componentDidMount(){ 
+        this.props.fetchCurrentUserFollows(); 
+    }
+
     render(){ 
+        let numFollowing= this.props.following != undefined ? this.props.following.length : " ";
         return ( 
             <div>
                 <div className="profile-card-info">
@@ -19,6 +24,7 @@ class UserSideCard extends React.Component{
                         <h3>{this.props.profile.email}</h3>
                         <h3>{this.props.profile.job_title}</h3>
                         <h3>{this.props.profile.location}</h3>
+                        <h3>following: {numFollowing}</h3>
                     </div>
                 </div>
             </div>

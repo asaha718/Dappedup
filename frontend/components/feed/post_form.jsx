@@ -1,6 +1,7 @@
 import React from 'react'; 
 import PostIndexContainer from './post_index_container';
-import UserSideCardContainer from './user_sidecard_container'
+import UserSideCardContainer from './user_sidecard_container'; 
+import photo from '../../../public/images/picture.png'; 
 
 class PostForm extends React.Component{ 
     constructor(props){ 
@@ -65,7 +66,7 @@ class PostForm extends React.Component{
                             <div className="post-upload-btn">
                                 <div className="upload-photo-icon">
                                     <label className="photo-icon" htmlFor="file-input">
-                                        <img src="https://icon-library.net//images/photo-placeholder-icon/photo-placeholder-icon-0.jpg"/><p>Photo</p>
+                                        <img src={photo}/><p>Photo</p>
                                     </label> 
                                     <input id="file-input" type='file' onChange={this.handleFile}></input>
                                 </div>

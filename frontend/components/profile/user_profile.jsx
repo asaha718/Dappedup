@@ -30,8 +30,9 @@ class UserProfile extends React.Component{
             this.props.createFollow(userId)
             .then(()=> this.props.visitProfile(this.props.userId))
         }else if(this.state.status === 'Following'){ 
-            this.props.removeFollow(userId)
             this.setState({status: 'Follow'})
+            this.props.removeFollow(userId)
+            .then(()=> this.props.visitProfile(this.props.userId))
         }
         
     }
@@ -60,7 +61,8 @@ class UserProfile extends React.Component{
         let jobTitle= this.props.userProfile != undefined ? this.props.userProfile.job_title : " "; 
         let location= this.props.userProfile != undefined ? this.props.userProfile.location : " "; 
         let bio= this.props.userProfile != undefined ? this.props.userProfile.bio : " "; 
-            
+        let numFollows= this.props.followerss != undefined ? this.props.followerss : " ";
+        
         return ( 
             <div className="user-profile-page">
                 <div className="user-presentational">
@@ -75,7 +77,7 @@ class UserProfile extends React.Component{
                             <h3>{email}</h3>
                             <h3>{jobTitle}</h3>
                             <h3>{location}</h3>
-                            {/* <p>Connections: {this.props.connections} </p> */}
+                            <h3> {numFollows} followers</h3>
                         </div>
                         {editProf}
                         {followUser}

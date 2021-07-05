@@ -9,7 +9,7 @@ import EditProfileForm from './edit_profile';
 
 
 const mSTP= (state, ownProps) => {
-    console.log(state);
+    // console.log(state);
     // debugger
     let profileId= Number(ownProps.match.params.id ); 
     return {
@@ -17,7 +17,8 @@ const mSTP= (state, ownProps) => {
         currentUsersProfile: state.entities.users[state.session.id], 
         userProfile: state.entities.users[profileId], 
         followed: state.entities.follows.current.followings, 
-        followers: [...new Set(state.entities.follows.profile.followings ?
+        followers: state.entities.follows.profile.followers, 
+        followerss: [...new Set(state.entities.follows.profile.followings ?
             state.entities.follows.profile.followings.concat(
             state.entities.follows.profile.followers ? state.entities.follows.profile.followers : []
         ) : state.entities.follows.profile.followers ? state.entities.follows.profile.followers : [])].length
