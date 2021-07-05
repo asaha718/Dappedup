@@ -24,15 +24,15 @@ class UserProfile extends React.Component{
     }
 
     handleFollow(userId){ 
-        console.log('hi')
-        return (e) => { 
-            e.preventDefault(); 
-            if(this.state.status === 'Follow'){ 
-                this.setState({status: 'Following'})
-                this.props.createFollow(userId)
-                .then(()=> this.props.visitProfile(this.props.userId))
-            }
+        console.log(userId)
+        if(this.state.status === 'Follow'){ 
+            this.setState({status: 'Following'})
+            this.props.createFollow(userId)
+            .then(()=> this.props.visitProfile(this.props.userId))
+        }else{ 
+            console.log("notworking")
         }
+        
     }
 
     render(){

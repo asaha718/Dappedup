@@ -10,12 +10,12 @@ const followsReducer = (state = { profile: {}, current:{}}, action)=> {
             newState.profile.followers = action.user.followers;
             newState.profile.followings = action.user.followings;
             return newState; 
-        case RECEIVE_FOLLOW: 
-            newState.current.followings.push(action.followedId)
-            return newState;
         case RECEIVE_CURRENT_USER_FOLLOWS:
             newState.current.followers = action.follows.followers;
             newState.current.followings = action.follows.followings;
+        case RECEIVE_FOLLOW: 
+            newState.current.followings.push(action.followedId)
+            return newState;
         default:
             return state; 
     }

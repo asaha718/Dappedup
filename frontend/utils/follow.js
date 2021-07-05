@@ -1,10 +1,11 @@
-export const createFollow=(followedId)=> ( 
-    $.ajax({
+export const createFollow=(followedId)=> {
+    // debugger
+    return ($.ajax({
         method: 'POST', 
         url: '/api/follows', 
         data: { follow: {followed_user_id: followedId }} 
-    })
-); 
+    }))
+}; 
 
 export const fetchCurrentUserFollows = () => ( 
     $.ajax({
