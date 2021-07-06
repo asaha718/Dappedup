@@ -208,6 +208,25 @@ span a:hover{
     align-items: center;
 }
 
+.header-group .feed-btn a, 
+.header-group .profile-btn a, 
+.header-group .connections-btn a { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px 3px 0px 6px; 
+    padding: 4px; 
+    color: rgb(92, 91, 91);
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header-group .feed-btn a:hover, 
+.header-group .profile-btn a:hover, 
+.header-group .connections-btn a:hover { 
+    color: rgb(24, 24, 24)
+}
+
 input[type='text'], 
 input[type='password'], 
 textarea { 
