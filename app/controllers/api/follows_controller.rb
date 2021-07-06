@@ -6,7 +6,7 @@ class Api::FollowsController < ApplicationController
         if @following.save
             render :show
         else
-            render json: @following.errors.full_messages, status: 422
+            render json:@following.errors.full_messages, status: 422
         end
     end
 
@@ -21,7 +21,8 @@ class Api::FollowsController < ApplicationController
         if @following
             @following.delete
         else
-            render json: params[:followed_user_id]
+            # render json: params[:followed_user_id]
+            render json:@following.errors.full_messages, status: 422
         end
     end
 
