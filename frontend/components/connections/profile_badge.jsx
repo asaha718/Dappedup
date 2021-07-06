@@ -54,7 +54,6 @@ class ProfileBadgeItem extends React.Component{
                         <Link to={`/profile/${user.id}`}>{user.full_name}</Link>
                         <h3>{user.job_title}</h3>
                     </div>
-                    {userFollowState}
                     <button>{this.state.status}</button>
                 </div> 
             )

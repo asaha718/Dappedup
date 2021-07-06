@@ -20,6 +20,11 @@
     padding: 12px;
 }
 
+.all-users h2{ 
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
 .user-item{ 
     display: flex;
     flex-direction: column;
@@ -57,4 +62,18 @@
 
 .user-item button:hover{ 
     background-color: #acc9e6;
+}
+
+.name-pos-ctn{ 
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.name-pos-ctn a{
+    text-decoration: none;
+    color:black; 
+}
+
+.name-pos-ctn h3{ 
+    color: rgb(109, 108, 108);
+    font-size: 12px;
 }

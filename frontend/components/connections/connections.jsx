@@ -26,10 +26,10 @@ class Connections extends React.Component{
             <div className="connections-page">
                 <br/>
                 <div className="connected-users">
-                    <h2>You are following: </h2>
+                    {/* <h2>You are following: </h2> */}
                 </div> 
                 <div className="all-users">
-                    <h2>Everyone on DappedUp:</h2>
+                    <h2>People you may know on DappedUp</h2>
                     <ul className="listed-users">
                         { 
                             users.map((user)=>{ 
