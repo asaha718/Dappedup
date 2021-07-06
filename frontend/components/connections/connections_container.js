@@ -5,6 +5,7 @@ import Connections from './connections';
 
 const mSTP= (state)=> { 
     return { 
+        currentUserId: state.session.id, 
         users: Object.values(state.entities.users), 
         followingArr: state.entities.follows.current.followings
     }
@@ -14,8 +15,8 @@ const mDTP = (dispatch) => {
     return { 
         fetchProfiles: ()=> dispatch(fetchProfiles()), 
         fetchCurrentUserFollows: ()=> dispatch(fetchCurrentUserFollows()), 
-        createFollow: userId=> dispatch(createFollow(userId)), 
-        removeFollow: userId=> dispatch(destroyFollow(userId))
+        createFollow: id=> dispatch(createFollow(id)), 
+        removeFollow: id=> dispatch(destroyFollow(id))
     }
 }
 

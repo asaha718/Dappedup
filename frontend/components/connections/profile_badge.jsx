@@ -4,43 +4,42 @@ import { Link } from 'react-router-dom';
 class ProfileBadgeItem extends React.Component{
     constructor(props){ 
         super(props)
-        this.state= { 
-            status: " "
-        }
-        this.checkFollow= this.checkFollow.bind(this); 
+      
         this.handleFollow= this.handleFollow.bind(this); 
+        this.handleUnfollow= this.handleUnfollow.bind(this); 
     } 
 
     componentDidMount(){ 
         this.props.fetchCurrentUserFollows(); 
     }
 
-    checkFollow(userId){ 
-        // this.props.followingArr != undefined ? this.props.followingArr : [];
-        if(this.props.followingArr.includes(userId)){ 
-            this.setState({status: "Following"})
-        }else{ 
-            this.setState({status: "Follow"})
-        }
-    }
 
     handleFollow(userId){ 
-        if(this.state.status === 'Follow'){ 
-            this.setState({status: 'Following'})
-            this.props.createFollow(userId)
-            .then(()=> this.props.this.props.fetchCurrentUserFollows() )
-        }else if(this.state.status === 'Following'){ 
-            this.setState({status: 'Follow'})
-            this.props.removeFollow(userId)
-            .then(()=> this.props.fetchCurrentUserFollows())
-        }
+        this.props.createFollow(userId)
+        .then(()=> this.props.fetchCurrentUserFollows())
+        
+    }
+
+    handleUnfollow(userId){ 
+        this.props.removeFollow(userId)
+        .then(()=> this.props.fetchCurrentUserFollows())  
     }
 
 
     render(){ 
-        let {user}= this.props; 
-        console.log(this.props.followingArr); 
+        let {user, currentUserId }= this.props; 
+        console.log(this.props.followingArr);
+        // console.log(user.id)
+        if(this.props.followingArr === undefined) return null; 
 
+        const followUser = this.props.followingArr.includes(user.id) ?
+            <button disabled={currentUserId === user.id} onClick ={() => this.handleUnfollow(user.id)}>
+                Following            
+            </button> : 
+            <button disabled={currentUserId === user.id} onClick ={() => this.handleFollow(user.id)}>
+                Follow
+            </button>;  
+        // disable={currentUserId === user.id}
         // let userFollowState= this.props.followingArr ? this.checkFollow(user.id) : []; 
 
         if(this.props.followingArr === undefined){ 
@@ -54,7 +53,7 @@ class ProfileBadgeItem extends React.Component{
                         <Link to={`/profile/${user.id}`}>{user.full_name}</Link>
                         <h3>{user.job_title}</h3>
                     </div>
-                    <button>{this.state.status}</button>
+                    {followUser}
                 </div> 
             )
 

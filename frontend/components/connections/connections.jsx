@@ -14,14 +14,8 @@ class Connections extends React.Component{
     }
 
     render(){ 
-        let { users, followingArr, createFollow, removeFollow, fetchCurrentUserFollows } = this.props;
-        // console.log(this.props.followingArr) 
+        let { users, followingArr, createFollow, removeFollow, fetchCurrentUserFollows, currentUserId } = this.props;
 
-        // this.props.followingArr != undefined ? this.props.followingArr : [];
-        
-        // if(this.props.followingArr === undefined){ 
-        //     return null
-        
         return( 
             <div className="connections-page">
                 <br/>
@@ -33,7 +27,6 @@ class Connections extends React.Component{
                     <ul className="listed-users">
                         { 
                             users.map((user)=>{ 
-                                {/* this.checkFollow(user.id) */}
                                 return( 
                                     <ProfileBadgeItem key={user.id} 
                                                     user={user} 
@@ -41,6 +34,7 @@ class Connections extends React.Component{
                                                     createFollow= {createFollow}
                                                     removeFollow= {removeFollow}
                                                     fetchCurrentUserFollows= {fetchCurrentUserFollows}
+                                                    currentUserId= {currentUserId}
 
                                     />   
                                 )
