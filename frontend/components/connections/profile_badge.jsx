@@ -28,7 +28,7 @@ class ProfileBadgeItem extends React.Component{
 
     render(){ 
         let {user, currentUserId }= this.props; 
-        console.log(this.props.followingArr);
+        // console.log(this.props.followingArr);
         // console.log(user.id)
         if(this.props.followingArr === undefined) return null; 
 
