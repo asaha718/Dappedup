@@ -17,7 +17,7 @@ const mSTP= (state, ownProps) => {
         currentUsersProfile: state.entities.users[state.session.id], 
         userProfile: state.entities.users[profileId], 
         followed: state.entities.follows.current.followings, 
-        followers: state.entities.follows.profile.followers, 
+        // followers: state.entities.follows.profile.followers, 
         followerss: [...new Set(state.entities.follows.profile.followings ?
             state.entities.follows.profile.followings.concat(
             state.entities.follows.profile.followers ? state.entities.follows.profile.followers : []

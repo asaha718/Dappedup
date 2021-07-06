@@ -1,0 +1,47 @@
+.connections-page{
+    background-color: #f3f2ef; 
+    height: 89vh;
+    width: 100vw; 
+}
+
+.listed-users{ 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.all-users{ 
+    height: auto;
+    width: 65vw; 
+    background-color: white;
+    border: 2px solid gray;
+    border-radius: 20px;
+    margin: 20px auto;
+    padding: 12px;
+}
+
+.user-item{ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid black;
+    height: 180px;
+    width: 160px;
+    margin: 6px 8px; 
+    padding: 4px;
+}
+
+.user-item button{ 
+    color: gray;
+    height: 32px;
+    width: 70px; 
+    border: 1px solid #0a66c2;
+    border-radius: 20px;
+    cursor: pointer;
+    display:block;
+    background-color: white;
+}
+
+.user-item button:hover{ 
+    background-color: #acc9e6;
+}
