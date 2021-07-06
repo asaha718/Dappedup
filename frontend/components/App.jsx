@@ -37,9 +37,9 @@ const App = (props) => {
         <AuthRoute path="/login" component={LoginFormContainer} />
         <AuthRoute path="/signup" component={SignupFormContainer} />
         <Route exact path="/" component={HomePageContainer}/>
-        <ProtectedRoute path="/connections" component={ConnectionsContainer} />
-        <ProtectedRoute path="/profile/:id" component={UserProfileContainer}/>
+        <ProtectedRoute exact path="/network" component={ConnectionsContainer} />
         <ProtectedRoute path="/feed" component={PostFormContainer}/>
+        <ProtectedRoute path="/profile/:id" component={UserProfileContainer}/>
         <Route component={noMatchPage} />
       </Switch>
       <footer>

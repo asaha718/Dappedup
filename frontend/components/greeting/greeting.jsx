@@ -21,7 +21,7 @@ const Greeting = ({ currentUser, logout }) => {
         <Link to={`/profile/${currentUser.id}`}><i className="fa fa-user">Profile</i></Link>
       </div>
       <div className="connections-btn">
-        <Link to="connections">Network</Link>
+        <Link to="/network">Network</Link>
       </div>
       <div className="header-name">
         <img src="https://i.pinimg.com/originals/18/d9/e1/18d9e1307018dbc76750ca7d5124fccd.png"/> 
