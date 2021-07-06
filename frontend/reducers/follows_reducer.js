@@ -1,10 +1,12 @@
 import { RECEIVE_PROFILE } from '../actions/profile_actions'; 
 import { RECEIVE_FOLLOW, RECEIVE_CURRENT_USER_FOLLOWS, REMOVE_FOLLOW } from "../actions/follow_actions"; 
+import {merge} from "lodash"; 
 
 const followsReducer = (state = { profile: {}, current:{}}, action)=> { 
     Object.freeze(state);
-    let newState = {...state};
-
+    // let newState = {...state};
+    let newState = merge({}, state)
+    // debugger
     switch (action.type) {
         case RECEIVE_PROFILE:
             newState.profile.followers = action.user.followers;

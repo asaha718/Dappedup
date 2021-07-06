@@ -24,11 +24,24 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 2px solid black;
+    justify-content: space-evenly;
+    border: 1px solid #ccc;
+    border-radius: 10px;
     height: 180px;
     width: 160px;
     margin: 6px 8px; 
     padding: 4px;
+}
+
+.user-item:hover{ 
+    box-shadow: 0 0 8px rgba(33,33,33,.2); 
+}
+
+.name-pos-ctn{ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .user-item button{ 
