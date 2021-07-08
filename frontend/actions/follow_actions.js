@@ -15,10 +15,12 @@ const removeFollow = followedId => ({
     followedId
 })
 
-const receiveCurrentUserFollows= (follows)=> ({ 
+const receiveCurrentUserFollows= (follows)=> { 
+    // debugger
+    return({ 
     type: RECEIVE_CURRENT_USER_FOLLOWS, 
     follows
-}); 
+})}; 
 
 export const createFollow = userId => dispatch =>{ 
     // debugger

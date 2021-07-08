@@ -7,11 +7,14 @@ export const createFollow=(followedId)=> {
     }))
 }; 
 
-export const fetchCurrentUserFollows = () => ( 
-    $.ajax({
-        url: `/api/follows/0` //id doesn't matter here since backend will know who current user is 
-    })
-)
+export const fetchCurrentUserFollows = () => {
+    return(
+        $.ajax({
+            url: `/api/follows/1` //id doesn't matter here since backend will know who current user is 
+        })
+    )
+ }
+
 
 export const destroyFollow= (followedId) => (
     $.ajax({ 

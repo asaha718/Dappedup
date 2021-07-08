@@ -41,6 +41,6 @@ class Api::UsersController < ApplicationController
   #<Follow:0x00007fcbbc4d65e0 id: nil, follower_id: nil, followed_user_id: nil, created_at: nil, updated_at: nil>
   private 
   def user_params
-    params.require(:user).permit(:email, :password, :bio, :location, :job_title, :full_name)  
+    params.require(:user).permit(:email, :password, :bio, :location, :job_title, :full_name, :user_type)  
   end 
 end
