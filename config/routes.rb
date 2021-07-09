@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :educations, only: [:index, :create, :update, :show, :destroy]
     resources :jobs, only: [:index, :create, :update, :show, :destroy]
     resources :follows, only: [:create, :show, :destroy]
+    resources :job_postings, only: [:index, :create, :update, :show, :destroy]
   end 
   
   root "static_pages#root"

@@ -11,6 +11,10 @@ class User < ApplicationRecord
     foreign_key: :author_id, 
     class_name: :Post
 
+    has_many :job_postings, 
+    foreign_key: :company_id, 
+    class_name: :JobPosting
+
     has_many :educations, 
     foreign_key: :user_id, 
     class_name: :Education
@@ -34,22 +38,6 @@ class User < ApplicationRecord
     has_many :followings, #has many followed_user_ids
     through: :given_follows,
     source: :followed_user
-
-    # has_many :active_connections, 
-    # foreign_key: :connecter_id,
-    # class_name: :Connection
-
-    # has_many :passive_connections,
-    # foreign_key: :connectee_id,
-    # class_name: :Connection
-
-    # has_many :followers, #users that are following this user
-    # through: :passive_connections,
-    # source: :connecter
-
-    # has_many :followed, #users that this user is following
-    # through: :active_connections,
-    # source: :connectee
     
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)

@@ -10,7 +10,8 @@ class SessionForm extends React.Component {
         bio: "", 
         location: "", 
         job_title: "", 
-        full_name: ""
+        full_name: "", 
+        user_role: this.props.formType === "Signup Company" ? "company" : "user"
       } 
       this.handleSubmit = this.handleSubmit.bind(this);
        
@@ -121,11 +122,93 @@ class SessionForm extends React.Component {
                 <div className="sign-up-redirect-ctn">
                   <span> Already a member? {this.props.navLink} </span>  
                 </div>
+                <div className="sign-up-redirect-ctn">
+                  <span> <Link to="/signup-company"> Company Sign Up </Link> </span>  
+                </div>
               </form>
             </div>
           </div>
-          );
-
+        );
+      }else if(this.props.formType ==='Signup Company'){
+        return (
+          <div className="signup-page">
+            <div className="logo">
+              <Link to="/" className="header-link">
+                  <h2>DappedUp</h2>
+              </Link>
+            </div>
+            <div className="welcome-greeting">
+              <h2>Create a Company Page to hire for your needs</h2>
+            </div>
+            <div className="signup-form-container">
+              <form onSubmit={this.handleSubmit} className="signup-form-box">
+                <div className="signup-form">
+                  <br/>
+                  <label>Email:
+                    <input type="text"
+                      value={this.state.email}
+                      onChange={this.update('email')}
+                      className="signup-input"
+                    />
+                  </label>
+                  <br/>
+                  <label>Password:
+                    <input type="password"
+                      value={this.state.password}
+                      onChange={this.update('password')}
+                      className="signup-input"
+                    />
+                  </label>
+                  <div className="errors">
+                    {this.renderErrors()}
+                  </div>
+                  <br/>
+                  <label>Company Name:
+                    <input type="text"
+                      value={this.state.full_name}
+                      onChange={this.update('full_name')}
+                      className="signup-input"
+                      required
+                    />
+                  </label>
+                  <br/>
+                  <label>Company Bio:
+                    <textarea
+                      value={this.state.bio}
+                      onChange={this.update('bio')}
+                      className="signup-input"
+                      required
+                    />
+                  </label>
+                  <br/>
+                  <label>Company HQ:
+                    <input type="text"
+                      value={this.state.location}
+                      onChange={this.update('location')}
+                      className="signup-input"
+                      required
+                    />
+                  </label>
+                  <br/>
+                  <label>Industry:
+                    <input type="text"
+                      value={this.state.job_title}
+                      onChange={this.update('job_title')}
+                      className="signup-input"
+                      required
+                    />
+                  </label>
+                  <input type="hidden" value={this.state.user_role}/> 
+                  <br/>
+                  <input className="session-submit" type="submit" value={this.props.formType} />
+                </div>
+                <div className="sign-up-redirect-ctn">
+                  <span> Already a member? {this.props.navLink} </span>  
+                </div>
+              </form>
+            </div>
+          </div>
+        )
       }else if( this.props.formType==='Login'){ 
         return ( 
           <div className="login-form-container">

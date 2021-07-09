@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_08_161916) do
+ActiveRecord::Schema.define(version: 2021_07_09_194725) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,12 @@ ActiveRecord::Schema.define(version: 2021_07_08_161916) do
     t.integer "followed_user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "job_postings", force: :cascade do |t|
+    t.integer "company_id", null: false
+    t.string "header", null: false
+    t.text "body"
   end
 
   create_table "jobs", force: :cascade do |t|
