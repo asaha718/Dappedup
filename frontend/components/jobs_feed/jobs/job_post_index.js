@@ -24,7 +24,9 @@ class JobPostIndex extends React.Component{
                         )
                     }
                 </ul>
-                <CreateJobPostingContainer />
+            <button className='add-edu-btn' onClick={() => this.props.openModal({modal: 'addJobPosting'})}>
+                Add Job Post
+            </button> : <p> </p>; 
             </div>
         )
     }

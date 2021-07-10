@@ -43,6 +43,6 @@ class Api::JobPostingsController < ApplicationController
     end
     
     def post_params
-        params.require(:job_posting).permit(:header, :body, :company_id)
+        params.require(:job_posting).permit(:header, :body)
     end
 end

@@ -3,7 +3,8 @@ import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import EditPostContainer from '../feed/edit_post_container';
 import AddJobContainer from '../feed/job_elements/add_job_container';
-import AddEduContainer from '../profile/edu_elements/add_edu_container'; 
+import AddEduContainer from '../profile/edu_elements/add_edu_container';
+import AddJobPosting from '../jobs_feed/create_job_post_form_container';  
 import EditProfileContainer from '../profile/edit_profile_container'; 
 
 const Modal= ({ modal, closeModal, id})=> { 
@@ -24,6 +25,9 @@ const Modal= ({ modal, closeModal, id})=> {
       case 'editProfile': 
           component = <EditProfileContainer /> ; 
         break 
+      case 'addJobPosting':
+          component = <AddJobPosting /> ; 
+        break
       default:
         return null;
     }
