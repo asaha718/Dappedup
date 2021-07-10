@@ -1,6 +1,7 @@
 import React from 'react';
 import JobIndexContainer from '../feed/job_elements/job_index_container'; 
 import EduIndexContainer from '../profile/edu_elements/edu_index_container'; 
+import PokeLeague from '../../../public/images/pokemon_league.jpg'; 
 
 class UserProfile extends React.Component{ 
     constructor(props){ 
@@ -62,48 +63,77 @@ class UserProfile extends React.Component{
         let location= this.props.userProfile != undefined ? this.props.userProfile.location : " "; 
         let bio= this.props.userProfile != undefined ? this.props.userProfile.bio : " "; 
         let numFollows= this.props.followerss != undefined ? this.props.followerss : " ";
-        
-        return ( 
-            <div className="user-profile-page">
-                <div className="user-presentational">
-                    <div className="profile-pic">
-                        <img src="https://i.pinimg.com/originals/18/d9/e1/18d9e1307018dbc76750ca7d5124fccd.png"/>
-                    </div>
-                    <div className="fullname">
-                        <h1>{fullName}</h1>
-                    </div>
-                    <div className="user-info">
-                        <div className="user-info-contents">
-                            <h3>{email}</h3>
-                            <h3>{jobTitle}</h3>
-                            <h3>{location}</h3>
-                            <h3> {numFollows} followers</h3>
-                        </div>
-                        {editProf}
-                        {followUser}
-                    </div>
-                </div>
-                <div className="profile-about">
-                    <h3>About </h3>
-                    <p> {bio} </p>
-                </div>
 
-                <div className="user-jobs-ctn">
-                    <div className="user-job-ctn-header">
-                        <h2>Experience </h2>
-                        {editJob}
+        if(this.props.userProfile.user_role === "user"){
+            return ( 
+                <div className="user-profile-page">
+                    <div className="user-presentational">
+                        <div className="profile-pic">
+                            <img src="https://i.pinimg.com/originals/18/d9/e1/18d9e1307018dbc76750ca7d5124fccd.png"/>
+                        </div>
+                        <div className="fullname">
+                            <h1>{fullName}</h1>
+                        </div>
+                        <div className="user-info">
+                            <div className="user-info-contents">
+                                <h3>{email}</h3>
+                                <h3>{jobTitle}</h3>
+                                <h3>{location}</h3>
+                                <h3> {numFollows} followers</h3>
+                            </div>
+                            {editProf}
+                            {followUser}
+                        </div>
                     </div>
-                    <JobIndexContainer userId= {this.props.userId} />
-                </div>
-                <div className="user-education-ctn">
-                    <div className="user-edu-ctn-header">
-                        <h2>Education </h2>
-                        {editEdu}
+                    <div className="profile-about">
+                        <h3>About </h3>
+                        <p> {bio} </p>
                     </div>
-                    <EduIndexContainer userId={this.props.userId} /> 
+
+                    <div className="user-jobs-ctn">
+                        <div className="user-job-ctn-header">
+                            <h2>Experience </h2>
+                            {editJob}
+                        </div>
+                        <JobIndexContainer userId= {this.props.userId} />
+                    </div>
+                    <div className="user-education-ctn">
+                        <div className="user-edu-ctn-header">
+                            <h2>Education </h2>
+                            {editEdu}
+                        </div>
+                        <EduIndexContainer userId={this.props.userId} /> 
+                    </div>
+                </div> 
+            ) 
+        }else{ 
+            return (
+                <div className="company-profile-page">
+                    <div className="user-presentational">
+                        <div className="profile-pic">
+                            <img src={PokeLeague}/>
+                        </div>
+                        <div className="fullname">
+                            <h1>{fullName}</h1>
+                        </div>
+                        <div className="user-info">
+                            <div className="user-info-contents">
+                                <h3>{email}</h3>
+                                <h3>{jobTitle}</h3>
+                                <h3>{location}</h3>
+                                <h3> {numFollows} followers</h3>
+                            </div>
+                            {editProf}
+                            {followUser}
+                        </div>
+                    </div>
+                    <div className="profile-about">
+                        <h3>About </h3>
+                        <p> {bio} </p>
+                    </div>
                 </div>
-            </div> 
-        ) 
+            )
+        }
     }
 }
 

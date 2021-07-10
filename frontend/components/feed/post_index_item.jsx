@@ -1,5 +1,6 @@
 import React from 'react'; 
 import {Link} from 'react-router-dom'; 
+import PokeLeague from '../../../public/images/pokemon_league.jpg'; 
 import EditPostItem from './edit_post_item'; 
 
 const PostIndexItem= ({post, updatePost, deletePost, closeModal, openModal, current_userId, users}) => { 
@@ -16,6 +17,12 @@ const PostIndexItem= ({post, updatePost, deletePost, closeModal, openModal, curr
             </button>
         </div> 
     </div> : <p> </p> ;
+
+    let profilePic= users[post.author_id].user_role === "user" ? 
+        <img src="https://i.pinimg.com/originals/18/d9/e1/18d9e1307018dbc76750ca7d5124fccd.png"/>
+        :
+        <img src={PokeLeague}/>; 
+
     let fullname = users[post.author_id] != undefined ? users[post.author_id].full_name : " "; 
     let jobtitle = users[post.author_id] != undefined ? users[post.author_id].job_title : " "; 
     
@@ -26,7 +33,7 @@ const PostIndexItem= ({post, updatePost, deletePost, closeModal, openModal, curr
                 <div className="post-header">
                     <div className="post-er-info">
                         <div className="user-img-post">
-                            <img src="https://i.pinimg.com/originals/18/d9/e1/18d9e1307018dbc76750ca7d5124fccd.png"/>
+                            {profilePic}
                         </div>
                         <div className="post-er-id">
                             <Link to={`/profile/${post.author_id}`}> 

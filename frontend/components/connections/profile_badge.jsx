@@ -1,5 +1,6 @@
 import React from 'react'; 
 import { Link } from 'react-router-dom';
+import PokeLeague from '../../../public/images/pokemon_league.jpg'; 
 
 class ProfileBadgeItem extends React.Component{
     constructor(props){ 
@@ -30,6 +31,7 @@ class ProfileBadgeItem extends React.Component{
         let {user, currentUserId }= this.props; 
         // console.log(this.props.followingArr);
         // console.log(user.id)
+
         if(this.props.followingArr === undefined) return null; 
 
         const followUser = this.props.followingArr.includes(user.id) ?
@@ -38,9 +40,12 @@ class ProfileBadgeItem extends React.Component{
             </button> : 
             <button disabled={currentUserId === user.id} onClick ={() => this.handleFollow(user.id)}>
                 Follow
-            </button>;  
-        // disable={currentUserId === user.id}
-        // let userFollowState= this.props.followingArr ? this.checkFollow(user.id) : []; 
+            </button>;
+
+        let profilePic= user.user_role === "user" ? 
+            <img style={{height: "74px", width:"74px"}} src="https://i.pinimg.com/originals/18/d9/e1/18d9e1307018dbc76750ca7d5124fccd.png"/>
+            :
+            <img style={{height: "74px", width:"74px"}} src={PokeLeague}/>; 
 
         if(this.props.followingArr === undefined){ 
             return null
@@ -48,7 +53,7 @@ class ProfileBadgeItem extends React.Component{
             // this.checkFollow(user.id) 
             return (
                 <div className='user-item'>
-                    <img style={{height: "74px", width:"74px"}} src="https://i.pinimg.com/originals/18/d9/e1/18d9e1307018dbc76750ca7d5124fccd.png"/>
+                    {profilePic}
                     <div className="name-pos-ctn">
                         <Link to={`/profile/${user.id}`}>{user.full_name}</Link>
                         <h3>{user.job_title}</h3>

@@ -9,7 +9,7 @@ import EditProfileForm from './edit_profile';
 
 
 const mSTP= (state, ownProps) => {
-    console.log(state);
+    // console.log(state);
     let profileId= Number(ownProps.match.params.id ); 
     return {
         userId: Number(ownProps.match.params.id), 

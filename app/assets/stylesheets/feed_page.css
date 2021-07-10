@@ -108,6 +108,12 @@ textarea {
     border-radius: 50%;
 }
 
+.company-card-picture img{
+    width: 140px;
+    border-radius: 50%;
+    height: 120px;
+}
+
 .profile-card-info { 
     font-family: 'Rubik', sans-serif;
 }
@@ -194,6 +200,10 @@ textarea {
 .user-img-post { 
     height: 30px;
     width: 30px;
+}
+
+.user-img-post img{ 
+    height: 30px;
 }
 
 .user-img-post img { 
