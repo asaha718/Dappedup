@@ -32,7 +32,9 @@ const App = (props) => {
     <Modal />
     
       {
-        props.location.pathname === "/login" || props.location.pathname === "/signup" ? null : header
+        props.location.pathname === "/login" || 
+        props.location.pathname === "/signup" || 
+        props.location.pathname === "/signup-company" ? null : header
       }
 
       <Switch>

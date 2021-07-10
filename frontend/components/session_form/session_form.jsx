@@ -123,7 +123,7 @@ class SessionForm extends React.Component {
                   <span> Already a member? {this.props.navLink} </span>  
                 </div>
                 <div className="sign-up-redirect-ctn">
-                  <span> <Link to="/signup-company"> Company Sign Up </Link> </span>  
+                  <span> <Link to="/signup-company">Signup a Company Account</Link> </span>  
                 </div>
               </form>
             </div>

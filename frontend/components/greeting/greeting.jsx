@@ -23,6 +23,9 @@ const Greeting = ({ currentUser, logout }) => {
       <div className="connections-btn">
         <Link to="/network"><i className="fa fa-group"></i><span>Network</span></Link>
       </div>
+      <div className="connections-btn">
+        <Link to="/jobs"><i className="fa fa-briefcase" aria-hidden="true"></i><span>Jobs</span></Link>
+      </div>
       <div className="header-name">
         <img src="https://i.pinimg.com/originals/18/d9/e1/18d9e1307018dbc76750ca7d5124fccd.png"/> 
         <h2 className="name">{currentUser.full_name}</h2>

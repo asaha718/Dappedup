@@ -14,6 +14,10 @@ class JobPostIndex extends React.Component{
         let {jobPosts}= this.props; 
         return( 
             <div>
+                <button className='add-edu-btn' onClick={() => this.props.openModal({modal: 'addJobPosting'})}>
+                    Add Job Post
+                </button>
+                
                 <ul>
                     { 
                         jobPosts.map(post=> 
@@ -24,9 +28,7 @@ class JobPostIndex extends React.Component{
                         )
                     }
                 </ul>
-            <button className='add-edu-btn' onClick={() => this.props.openModal({modal: 'addJobPosting'})}>
-                Add Job Post
-            </button> : <p> </p>; 
+                
             </div>
         )
     }
