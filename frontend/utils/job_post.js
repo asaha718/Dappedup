@@ -10,19 +10,19 @@ export const fetchJobPost= (postId)=> (
     })
 );
 
-export const createJobPost= (jobPost)=> ( 
+export const createJobPost= (job_posting)=> ( 
     $.ajax({ 
         url: '/api/job_postings', 
         method: 'POST', 
-        data: jobPost
+        data: {job_posting}
     })
 );
 
-export const updateJobPost= (jobPost)=> ( 
+export const updateJobPost= (job_posting)=> ( 
     $.ajax({ 
-        url: `/api/job_postings/${jobPost.id}`, 
+        url: `/api/job_postings/${job_posting.id}`, 
         method: 'PATCH', 
-        data: {jobPost}
+        data: {job_posting}
     })
 );
 

@@ -4,10 +4,10 @@ import PokeLeague from '../../../public/images/pokemon_league.jpg';
 
 const Greeting = ({ currentUser, logout }) => {
   
-  let profilePic= currentUser.user_role === "user" ? 
-  <img src="https://i.pinimg.com/originals/18/d9/e1/18d9e1307018dbc76750ca7d5124fccd.png"/>
-  :
-  <img src={PokeLeague}/>; 
+  // let profilePic= currentUser.user_role === "user" ? 
+  // <img src="https://i.pinimg.com/originals/18/d9/e1/18d9e1307018dbc76750ca7d5124fccd.png"/>
+  // :
+  // <img src={PokeLeague}/>; 
 
   const sessionLinks = () => (
     <nav className="login-signup">
@@ -34,7 +34,7 @@ const Greeting = ({ currentUser, logout }) => {
         <Link to="/jobs"><i className="fa fa-briefcase" aria-hidden="true"></i><span>Jobs</span></Link>
       </div>
       <div className="header-name">
-        {profilePic} 
+        {/* {profilePic}  */}
         <h2 className="name">{currentUser.full_name}</h2>
       </div>
       <button className="header-button" onClick={logout}><i className="fa fa-sign-out"></i>Sign out</button>

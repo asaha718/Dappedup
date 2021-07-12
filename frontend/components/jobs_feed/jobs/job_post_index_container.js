@@ -1,14 +1,21 @@
 import { connect } from 'react-redux';
-import { fetchJobPosts } from '../../../actions/job_posting_actions';
-import { openModal } from '../../../actions/modal_actions'; 
+import { fetchJobPosts, updateJobPost, deleteJobPost } from '../../../actions/job_posting_actions';
+import { fetchProfiles } from '../../../actions/profile_actions';
+import { openModal, closeModal } from '../../../actions/modal_actions'; 
 import JobPostIndex from './job_post_index';
 
-const mSTP= state => ({ 
-    jobPosts: Object.values(state.entities.jobPosts)
-})
+const mSTP= state => {
+    return { 
+        companies: state.entities.users, 
+        jobPosts: Object.values(state.entities.jobPosts)
+}}; 
 
 const mDTP= dispatch => ({ 
-    fetchJobPosts: () => dispatch(fetchJobPosts()), 
+    fetchProfiles: ()=> dispatch(fetchProfiles()), 
+    fetchJobPosts: () => dispatch(fetchJobPosts()),
+    updateJobPost: (job) => dispatch(updateJobPost(job)), 
+    deleteJobPost: (id) => dispatch(deleteJobPost(id)), 
+    closeModal: ()=> dispatch(closeModal()), 
     openModal: modal=> dispatch(openModal(modal)) 
 })
 

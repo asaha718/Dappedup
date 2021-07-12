@@ -138,7 +138,7 @@ class SessionForm extends React.Component {
               </Link>
             </div>
             <div className="welcome-greeting">
-              <h2>Create a Company Page to hire for your needs</h2>
+              <h2>Find a great hire, fast</h2>
             </div>
             <div className="signup-form-container">
               <form onSubmit={this.handleSubmit} className="signup-form-box">

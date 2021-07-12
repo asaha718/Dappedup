@@ -6,6 +6,7 @@ import AddJobContainer from '../feed/job_elements/add_job_container';
 import AddEduContainer from '../profile/edu_elements/add_edu_container';
 import AddJobPosting from '../jobs_feed/create_job_post_form_container';  
 import EditProfileContainer from '../profile/edit_profile_container'; 
+import EditJobPosting from '../jobs_feed/editJobs/edit_job_post_container'; 
 
 const Modal= ({ modal, closeModal, id})=> { 
     if (!modal){ 
@@ -27,6 +28,9 @@ const Modal= ({ modal, closeModal, id})=> {
         break 
       case 'addJobPosting':
           component = <AddJobPosting /> ; 
+        break
+      case 'editJob': 
+          component= <EditJobPosting /> ; 
         break
       default:
         return null;

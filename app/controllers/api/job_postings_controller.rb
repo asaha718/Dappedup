@@ -31,6 +31,7 @@ class Api::JobPostingsController < ApplicationController
     end
     
     def create
+        debugger
         @job_post= JobPosting.new(post_params)
         @job_post.company_id= current_user.id
 
@@ -43,6 +44,6 @@ class Api::JobPostingsController < ApplicationController
     end
     
     def post_params
-        params.require(:job_posting).permit(:header, :body)
+        params.require(:job_posting).permit(:header, :body, :company_id)
     end
 end
