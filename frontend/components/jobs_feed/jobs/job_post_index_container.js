@@ -6,6 +6,7 @@ import JobPostIndex from './job_post_index';
 
 const mSTP= state => {
     return { 
+        current_userId: state.session.id,
         companies: state.entities.users, 
         jobPosts: Object.values(state.entities.jobPosts)
 }}; 

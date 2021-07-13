@@ -1,0 +1,62 @@
+.job-post-page{ 
+    height: 96vh;
+    background-color: #f3f2ef;
+    display: flex;
+    padding: 26px 20px 0px 32px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.job-postings{ 
+    width: 48vw;
+    height: auto; 
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 20px;
+    margin: 12px auto;
+    padding: 16px;
+}
+
+.add-job-post-btn-ctn{ 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 18vw;
+    height: 8vh; 
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 20px;
+}
+
+.add-job-post-btn{ 
+    border: none;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    background-color: white;
+    font-weight: 700;
+    color: #106ac3;
+}
+
+.add-job-post-btn .fa-edit{
+    font-size: larger; 
+    font-weight: 700;
+}
+
+.job-post-index-item{ 
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 6px;
+    padding-bottom: 4px;
+    border-bottom: .05px solid gray; 
+}
+
+.job-post-info h2{ 
+    font-size: medium;
+    color: #106ac3;
+}
+
+.job-post-info h3{ 
+    font-size: smaller;
+    color: gray; 
+}

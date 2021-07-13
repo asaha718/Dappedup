@@ -12,28 +12,32 @@ class JobPostIndex extends React.Component{
     }
 
     render(){ 
-        let {companies, jobPosts, updateJobPost, deleteJobPost }= this.props; 
+        let {current_userId, companies, jobPosts, updateJobPost, deleteJobPost }= this.props; 
         return( 
-            <div>
-                <button className='add-edu-btn' onClick={() => this.props.openModal({modal: 'addJobPosting'})}>
-                    Post a job
-                </button>
-                
-                <ul>
-                    { 
-                        jobPosts.map(post=> 
-                            <JobPostIndexItem key={post.id} 
-                                            post={post}
-                                            companyId={post.company_id} 
-                                            companies={companies}
-                                            updateJobPost={updateJobPost}
-                                            deleteJobPost={deleteJobPost} 
-                                            openModal= {this.props.openModal}
-                                            closeModal= {this.props.closeModal}
-                                            /> 
-                        )
-                    }
-                </ul>
+            <div className="job-post-page">
+                <div className="add-job-post-btn-ctn">
+                    <button className='add-job-post-btn' onClick={() => this.props.openModal({modal: 'addJobPosting'})}>
+                    <i className="fa fa-edit"></i>Post a job
+                    </button>
+                </div>
+                <div className="job-postings">
+                    <ul>
+                        { 
+                            jobPosts.map(post=> 
+                                <JobPostIndexItem key={post.id} 
+                                                post={post}
+                                                companyId={post.company_id} 
+                                                companies={companies}
+                                                current_userId= {current_userId}
+                                                updateJobPost={updateJobPost}
+                                                deleteJobPost={deleteJobPost} 
+                                                openModal= {this.props.openModal}
+                                                closeModal= {this.props.closeModal}
+                                                /> 
+                            )
+                        }
+                    </ul>
+                </div>
                 
             </div>
         )
