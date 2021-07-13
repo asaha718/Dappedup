@@ -1,9 +1,12 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 import JobPostIndexItem from './job_post_index_item';
 
 class JobPostIndex extends React.Component{ 
     constructor(props){ 
-        super(props)
+        super(props); 
+
+        // this.handleClick= this.handleClick.bind(this); 
     }
     
     componentDidMount(){ 
@@ -11,12 +14,23 @@ class JobPostIndex extends React.Component{
         this.props.fetchProfiles(); 
     }
 
+    handleClick(role){
+    //  console.log(this.props.users.user_role)
+        if(role === 'user'){
+            this.props.logout(); 
+            //  <Redirect to="/signup-company" />
+        }else{ 
+            this.props.openModal({modal: 'addJobPosting'})
+        }
+    }
+
     render(){ 
         let {current_userId, companies, jobPosts, updateJobPost, deleteJobPost }= this.props; 
+        console.log(this.props.user.user_role)
         return( 
             <div className="job-post-page">
                 <div className="add-job-post-btn-ctn">
-                    <button className='add-job-post-btn' onClick={() => this.props.openModal({modal: 'addJobPosting'})}>
+                    <button className='add-job-post-btn' onClick={()=> this.handleClick(this.props.user.user_role)}>
                     <i className="fa fa-edit"></i>Post a job
                     </button>
                 </div>
@@ -31,8 +45,6 @@ class JobPostIndex extends React.Component{
                                                 current_userId= {current_userId}
                                                 updateJobPost={updateJobPost}
                                                 deleteJobPost={deleteJobPost} 
-                                                openModal= {this.props.openModal}
-                                                closeModal= {this.props.closeModal}
                                                 /> 
                             )
                         }

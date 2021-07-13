@@ -2,11 +2,14 @@ import { connect } from 'react-redux';
 import { fetchJobPosts, updateJobPost, deleteJobPost } from '../../../actions/job_posting_actions';
 import { fetchProfiles } from '../../../actions/profile_actions';
 import { openModal, closeModal } from '../../../actions/modal_actions'; 
+import { logout } from '../../../actions/session_actions'; 
 import JobPostIndex from './job_post_index';
 
 const mSTP= state => {
+    // console.log(state);
+    const userId= state.session.id 
     return { 
-        current_userId: state.session.id,
+        user: state.entities.users[userId], 
         companies: state.entities.users, 
         jobPosts: Object.values(state.entities.jobPosts)
 }}; 
@@ -17,7 +20,8 @@ const mDTP= dispatch => ({
     updateJobPost: (job) => dispatch(updateJobPost(job)), 
     deleteJobPost: (id) => dispatch(deleteJobPost(id)), 
     closeModal: ()=> dispatch(closeModal()), 
-    openModal: modal=> dispatch(openModal(modal)) 
+    openModal: modal=> dispatch(openModal(modal)), 
+    logout: ()=> dispatch(logout())
 })
 
 export default connect(mSTP, mDTP)(JobPostIndex); 
