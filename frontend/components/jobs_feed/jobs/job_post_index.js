@@ -17,8 +17,11 @@ class JobPostIndex extends React.Component{
     handleClick(role){
     //  console.log(this.props.users.user_role)
         if(role === 'user'){
-            this.props.logout(); 
-            //  <Redirect to="/signup-company" />
+            return(
+                alert("Must be a company")
+            )
+            // this.props.logout()
+            // <Redirect to="/signup-company" />
         }else{ 
             this.props.openModal({modal: 'addJobPosting'})
         }
@@ -26,7 +29,7 @@ class JobPostIndex extends React.Component{
 
     render(){ 
         let {current_userId, companies, jobPosts, updateJobPost, deleteJobPost }= this.props; 
-        console.log(this.props.user.user_role)
+        // console.log(this.props.user.user_role)
         return( 
             <div className="job-post-page">
                 <div className="add-job-post-btn-ctn">
