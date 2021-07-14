@@ -9,7 +9,7 @@ class JobPostForm extends React.Component{
 
     handleSubmit(event){
         event.preventDefault(); 
-        this.props.createJobPost(this.state)
+        this.props.createJobPost(this.state).then(this.props.closeModal)
     } 
 
     update(field){ 
