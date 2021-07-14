@@ -198,7 +198,7 @@ class SessionForm extends React.Component {
                       required
                     />
                   </label>
-                  <input type="hidden" value={this.state.user_role}/> 
+                  {/* <input type="hidden" value={this.state.user_role}/>  */}
                   <br/>
                   <input className="session-submit" type="submit" value={this.props.formType} />
                 </div>
