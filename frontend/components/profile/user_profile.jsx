@@ -63,8 +63,9 @@ class UserProfile extends React.Component{
         let location= this.props.userProfile != undefined ? this.props.userProfile.location : " "; 
         let bio= this.props.userProfile != undefined ? this.props.userProfile.bio : " "; 
         let numFollows= this.props.followerss != undefined ? this.props.followerss : " ";
+        let profile = this.props.userProfile != undefined ? this.props.userProfile : "company";
 
-        if(this.props.userProfile.user_role === "user"){
+        if(profile.user_role === "user"){
             return ( 
                 <div className="user-profile-page">
                     <div className="user-presentational">

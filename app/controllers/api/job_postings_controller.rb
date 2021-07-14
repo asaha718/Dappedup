@@ -31,7 +31,7 @@ class Api::JobPostingsController < ApplicationController
     end
     
     def create
-        debugger
+        # debugger
         @job_post= JobPosting.new(post_params)
         @job_post.company_id= current_user.id
 
