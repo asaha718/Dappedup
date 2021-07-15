@@ -39,6 +39,10 @@ class User < ApplicationRecord
     through: :given_follows,
     source: :followed_user
     
+    has_many :job_applications, 
+    foreign_key: :applicant_id, 
+    class_name: :JobApplication
+
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
         return nil unless user

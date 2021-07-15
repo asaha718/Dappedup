@@ -1,0 +1,2 @@
+module Api::JobApplicationplicationsHelper
+end
