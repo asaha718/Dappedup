@@ -28,7 +28,7 @@ class JobPostIndex extends React.Component{
     }
 
     render(){ 
-        let {current_userId, companies, jobPosts, updateJobPost, deleteJobPost }= this.props; 
+        let {current_userId, companies, jobPosts, updateJobPost, deleteJobPost, createJobApp }= this.props; 
         // console.log(this.props.user.user_role)
         return( 
             <div className="job-post-page">
@@ -48,6 +48,7 @@ class JobPostIndex extends React.Component{
                                                 current_userId= {current_userId}
                                                 updateJobPost={updateJobPost}
                                                 deleteJobPost={deleteJobPost} 
+                                                createJobApp= {createJobApp}
                                                 /> 
                             )
                         }

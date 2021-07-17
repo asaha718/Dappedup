@@ -1,2 +1,2 @@
-module Api::JobApplicationplicationsHelper
+module Api::JobApplicationsHelper
 end
