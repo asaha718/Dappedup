@@ -23,7 +23,7 @@ class JobPostIndexItem extends React.Component{
 
         const userApply = this.props.jobApps.includes(post.id) ?
             <div className="applied-display">
-               <p>Applied</p>            
+               <p> Applied </p>            
             </div> : 
             <button className="apply-display" onClick ={() => this.handleJobApply(post.id)}>
                 Apply<i className="fa fa-external-link"></i>
@@ -43,13 +43,15 @@ class JobPostIndexItem extends React.Component{
 
         const companyName= companies[companyId] ? companies[companyId].full_name : " "
         const companyLocation= companies[companyId] ? companies[companyId].location : " "
-
+        const numApps= post.applicants ? post.applicants.length : " "
+ 
         return(
             <div className="job-post-index-item">
                 <div className="job-post-info">
                     <h2>{post.header}</h2>
                     <h3>{companyName}</h3>
                     <h3>{companyLocation}</h3>
+                    <h3>Processed applicants {numApps}</h3>
                     <p>{post.body}</p>
                 </div>
                 {userOpt}

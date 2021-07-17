@@ -49,6 +49,10 @@
     text-align: center;
 }
 
+.name-pos-ctn h3{ 
+    margin-top: 4px;
+}
+
 .user-item button{ 
     color: gray;
     height: 32px;

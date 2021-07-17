@@ -4,6 +4,7 @@ import { fetchProfiles } from '../../../actions/profile_actions';
 import { createJobApp, fetchCurrentUserJobApps } from '../../../actions/job_app_actions';
 import { openModal, closeModal } from '../../../actions/modal_actions'; 
 import { logout } from '../../../actions/session_actions'; 
+import {orderItems} from '../../../utils/selector';
 import JobPostIndex from './job_post_index';
 
 const mSTP= state => {
@@ -13,7 +14,7 @@ const mSTP= state => {
         jobApps: state.entities.jobApps.current.applications, 
         user: state.entities.users[userId], 
         companies: state.entities.users, 
-        jobPosts: Object.values(state.entities.jobPosts)
+        jobPosts: orderItems(state.entities.jobPosts)
 }}; 
 
 const mDTP= dispatch => ({ 
