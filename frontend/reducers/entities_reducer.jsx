@@ -7,6 +7,7 @@ import jobReducer from './jobs_reducer';
 import profilesReducer from "./profile_reducer";
 import followsReducer from "./follows_reducer";
 import jobPostsReducer from "./job_posts_reducer"; 
+import jobAppsReducer from "./job_apps_reducer";
 
 const entitiesReducer = combineReducers({
   users: usersReducer, 
@@ -15,7 +16,8 @@ const entitiesReducer = combineReducers({
   jobs: jobReducer, 
   profiles: profilesReducer, 
   follows: followsReducer, 
-  jobPosts: jobPostsReducer
+  jobPosts: jobPostsReducer, 
+  jobApps: jobAppsReducer
 });
 
 export default entitiesReducer;
