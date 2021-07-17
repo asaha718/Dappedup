@@ -13,6 +13,7 @@ class JobPostIndexItem extends React.Component{
     handleJobApply(jobId){ 
         this.props.createJobApp(jobId)
         .then(this.props.fetchCurrentUserJobApps())
+        .then(this.props.fetchJobPosts())
     }
 
     render(){ 

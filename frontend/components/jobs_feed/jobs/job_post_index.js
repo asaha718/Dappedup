@@ -32,7 +32,8 @@ class JobPostIndex extends React.Component{
             companies, 
             jobPosts, 
             updateJobPost, 
-            deleteJobPost, 
+            deleteJobPost,
+            fetchJobPosts,  
             createJobApp, 
             fetchCurrentUserJobApps, 
             jobApps }= this.props; 
@@ -56,6 +57,7 @@ class JobPostIndex extends React.Component{
                                                 updateJobPost={updateJobPost}
                                                 deleteJobPost={deleteJobPost} 
                                                 createJobApp= {createJobApp}
+                                                fetchJobPosts= {fetchJobPosts}
                                                 fetchCurrentUserJobApps= {fetchCurrentUserJobApps}
                                                 jobApps={jobApps}
                                                 /> 
