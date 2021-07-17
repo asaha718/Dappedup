@@ -1,9 +1,9 @@
-export const createJobApp= (jobPostId)=> { 
+export const createJobApp= (job_application)=> { 
     return (
         $.ajax({ 
             method: "POST", 
             url: 'api/job_applications', 
-            data: { jobPost: {job_post_id: jobPostId} }
+            data: {job_application}
         })
     )
 }

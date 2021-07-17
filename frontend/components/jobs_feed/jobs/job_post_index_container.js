@@ -10,6 +10,7 @@ const mSTP= state => {
     // console.log(state);
     const userId= state.session.id 
     return { 
+        jobApps: state.entities.jobApps.current.applications, 
         user: state.entities.users[userId], 
         companies: state.entities.users, 
         jobPosts: Object.values(state.entities.jobPosts)

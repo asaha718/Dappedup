@@ -16,7 +16,17 @@ class JobPostIndexItem extends React.Component{
     }
 
     render(){ 
-        let {post, deleteJobPost, companies, companyId, current_userId} = this.props; 
+        let {post, deleteJobPost, companies, companyId, current_userId} = this.props;
+        
+        if(this.props.jobApps === undefined) return null; 
+
+        const userApply = this.props.jobApps.includes(post.id) ?
+            <button>
+                Applied            
+            </button> : 
+            <button onClick ={() => this.handleJobApply(post.id)}>
+                Apply
+            </button>;
 
         const userOpt= post.company_id === current_userId ? 
             <div>
@@ -39,6 +49,7 @@ class JobPostIndexItem extends React.Component{
                     <p>{post.body}</p>
                 </div>
                 {userOpt}
+                {userApply}
             </div>
     
         )
