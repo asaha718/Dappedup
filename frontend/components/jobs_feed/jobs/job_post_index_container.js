@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { fetchJobPosts, updateJobPost, deleteJobPost } from '../../../actions/job_posting_actions';
 import { fetchProfiles } from '../../../actions/profile_actions';
-import { createJobApp } from '../../../actions/job_app_actions';
+import { createJobApp, fetchCurrentUserJobApps } from '../../../actions/job_app_actions';
 import { openModal, closeModal } from '../../../actions/modal_actions'; 
 import { logout } from '../../../actions/session_actions'; 
 import JobPostIndex from './job_post_index';
@@ -20,7 +20,8 @@ const mDTP= dispatch => ({
     fetchJobPosts: () => dispatch(fetchJobPosts()),
     updateJobPost: (job) => dispatch(updateJobPost(job)), 
     deleteJobPost: (id) => dispatch(deleteJobPost(id)),
-    createJobApp: (id)=> dispatch(createJobApp(id)),  
+    createJobApp: (id)=> dispatch(createJobApp(id)),
+    fetchCurrentUserJobApps: ()=> dispatch(fetchCurrentUserJobApps()), 
     closeModal: ()=> dispatch(closeModal()), 
     openModal: modal=> dispatch(openModal(modal)), 
     logout: ()=> dispatch(logout())

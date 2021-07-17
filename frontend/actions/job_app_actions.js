@@ -10,7 +10,7 @@ const receiveJobApp= jobPostId => ({
 
 const receiveCurrentUserJobApps= (jobApps)=> { 
     return({ 
-    type: RECEIVE_CURRENT_USER_FOLLOWS, 
+    type: RECEIVE_CURRENT_USER_JOB_APPS, 
     jobApps
 })}; 
 
@@ -18,6 +18,6 @@ export const createJobApp = postId => dispatch =>{
     return JobAppAPIUtil.createJobApp(postId).then(()=> dispatch(receiveJobApp(postId)))
 } 
 
-export const fetchCurrentUserFollows =() => dispatch => { 
+export const fetchCurrentUserJobApps =() => dispatch => { 
     return JobAppAPIUtil.fetchCurrentUserJobApps().then((jobApps)=> dispatch(receiveCurrentUserJobApps(jobApps)))
 }

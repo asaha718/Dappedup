@@ -3,10 +3,20 @@ import React from "react";
 class JobPostIndexItem extends React.Component{
     constructor(props){ 
         super(props); 
+        this.handleJobApply= this.handleJobApply.bind(this); 
     } 
 
+    componentDidMount(){ 
+        this.props.fetchCurrentUserJobApps(); 
+    }
+
+    handleJobApply(jobId){ 
+        this.props.createJobApp(jobId)
+        .then(this.props.fetchCurrentUserJobApps())
+    }
+
     render(){ 
-        const {post, deleteJobPost, companies, companyId, current_userId} = this.props; 
+        let {post, deleteJobPost, companies, companyId, current_userId} = this.props; 
 
         const userOpt= post.company_id === current_userId ? 
             <div>

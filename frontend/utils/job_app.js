@@ -9,6 +9,7 @@ export const createJobApp= (jobPostId)=> {
 }
 
 export const fetchCurrentUserJobApps = () => {
+    // debugger
     return(
         $.ajax({
             url: `/api/job_applications/1` //id doesn't matter here since backend will know who current user is 

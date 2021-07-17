@@ -1,5 +1,5 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
+// import { Redirect } from 'react-router-dom';
 import JobPostIndexItem from './job_post_index_item';
 
 class JobPostIndex extends React.Component{ 
@@ -28,7 +28,7 @@ class JobPostIndex extends React.Component{
     }
 
     render(){ 
-        let {current_userId, companies, jobPosts, updateJobPost, deleteJobPost, createJobApp }= this.props; 
+        let {current_userId, companies, jobPosts, updateJobPost, deleteJobPost, createJobApp, fetchCurrentUserJobApps }= this.props; 
         // console.log(this.props.user.user_role)
         return( 
             <div className="job-post-page">
@@ -49,6 +49,7 @@ class JobPostIndex extends React.Component{
                                                 updateJobPost={updateJobPost}
                                                 deleteJobPost={deleteJobPost} 
                                                 createJobApp= {createJobApp}
+                                                fetchCurrentUserJobApps= {fetchCurrentUserJobApps}
                                                 /> 
                             )
                         }

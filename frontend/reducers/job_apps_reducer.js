@@ -6,13 +6,14 @@ import {merge} from "lodash";
 const jobAppsReducer= (state= {current: {}}, action)=> { 
     Object.freeze(state);
     let newState = merge({}, state); 
-
+    // debugger
     switch (action.type) {
         case RECEIVE_JOB_APP:
-            newState.current.job_applications.push(action.jobPostId)
+            newState.current.applications.push(action.jobPostId)
             return newState;
         case RECEIVE_CURRENT_USER_JOB_APPS: 
-            newState.current.job_applications = action.jobApps.job_applications; 
+            newState.current.applications = action.jobApps.applications; 
+            return newState; 
         default:
             return state;
     }
