@@ -17,30 +17,33 @@ class JobPostIndexItem extends React.Component{
     }
 
     render(){ 
-        let {post, deleteJobPost, companies, companyId, current_userId} = this.props;
+        let {post, deleteJobPost, companies, companyId, user} = this.props;
         
         if(this.props.jobApps === undefined) return null; 
 
         const userApply = this.props.jobApps.includes(post.id) ?
-            <button>
-                Applied            
-            </button> : 
-            <button onClick ={() => this.handleJobApply(post.id)}>
-                Apply
+            <div className="applied-display">
+               <p>Applied</p>            
+            </div> : 
+            <button className="apply-display" onClick ={() => this.handleJobApply(post.id)}>
+                Apply<i className="fa fa-external-link"></i>
             </button>;
 
-        const userOpt= post.company_id === current_userId ? 
+        const isApplicant = user.user_role === "user" ? userApply : null; 
+
+        const userOpt= post.company_id === user.id ? 
             <div>
                 <div className="delete-post-btn-ctn">
                     <button className='delete-post-btn' onClick={()=> deleteJobPost(post.id)} >
                         <i className="fa fa-trash"></i>
                     </button>
                 </div> 
-            </div> : <div> </div>
-    
+            </div> : null; 
+             
+
         const companyName= companies[companyId] ? companies[companyId].full_name : " "
         const companyLocation= companies[companyId] ? companies[companyId].location : " "
-    
+
         return(
             <div className="job-post-index-item">
                 <div className="job-post-info">
@@ -50,7 +53,7 @@ class JobPostIndexItem extends React.Component{
                     <p>{post.body}</p>
                 </div>
                 {userOpt}
-                {userApply}
+                {isApplicant}
             </div>
     
         )

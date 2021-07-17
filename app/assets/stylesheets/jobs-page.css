@@ -61,6 +61,39 @@
     color: gray; 
 }
 
+.job-post-index-item .applied-display{ 
+    color: white;
+    height: 32px;
+    width: 70px; 
+    border: 1px solid #0a66c2;
+    border-radius: 20px;
+    display:block;
+    background-color: #0a66c2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.job-post-index-item .apply-display{ 
+    color: white;
+    height: 32px;
+    width: 70px; 
+    border: 1px solid #0a66c2;
+    border-radius: 20px;
+    display:block;
+    background-color: #0a66c2;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.job-post-index-item .apply-display:hover{ 
+    background-color: #064788;
+    border: 1px solid #064788; 
+    transition: 0.5s ease;
+}
+
 /* JOB POST FORM  */
 
 .job-post-form{ 

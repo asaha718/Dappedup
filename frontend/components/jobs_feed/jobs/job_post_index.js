@@ -28,7 +28,7 @@ class JobPostIndex extends React.Component{
     }
 
     render(){ 
-        let {current_userId, 
+        let {user, 
             companies, 
             jobPosts, 
             updateJobPost, 
@@ -53,7 +53,7 @@ class JobPostIndex extends React.Component{
                                                 post={post}
                                                 companyId={post.company_id} 
                                                 companies={companies}
-                                                current_userId= {current_userId}
+                                                user= {user}
                                                 updateJobPost={updateJobPost}
                                                 deleteJobPost={deleteJobPost} 
                                                 createJobApp= {createJobApp}
