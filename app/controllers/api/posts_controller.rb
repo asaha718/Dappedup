@@ -10,7 +10,6 @@ class Api::PostsController < ApplicationController
     end
 
     def create
-        # debugger
         @post= Post.new(post_params)
         @post.author_id= current_user.id
         if @post.save
@@ -21,7 +20,6 @@ class Api::PostsController < ApplicationController
     end
 
     def update
-        # debugger
         @post = Post.find_by(id: params[:id])
         #should only be able to update your own post 
         if @post.update(post_params)
