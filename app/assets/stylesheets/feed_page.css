@@ -213,6 +213,7 @@ textarea {
 .post-er-id{ 
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
+    margin-left: 4px;
 }
 
 .post-er-id a{ 
@@ -223,6 +224,10 @@ textarea {
 .post-er-id p:nth-child(2){ 
     color:rgb(94, 94, 94); 
     font-size: smaller;
+}
+
+.post-er-id a p{ 
+    margin-bottom: 2px;
 }
 
 .edit-post-btn, .delete-post-btn { 
