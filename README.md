@@ -23,6 +23,10 @@ DappedUp is an full stack inspiration of LinkedIn. Current features include logi
 
 ![signingDUgif](https://user-images.githubusercontent.com/76965024/126183199-b17873ed-0c30-49eb-a0b0-a28f73951ef7.gif)
 
+* Follow: Users can follow other users or companies. The number of follower will show on that person profile page. 
+
+![follow_page](https://user-images.githubusercontent.com/76965024/126184444-4eb68953-918a-4d5f-a06e-c07ca31eaa5c.JPG)
+
 
 ## Code
  A structure I used a couple of times on my React/Redux side of my application was the threding down of props. Below you will see my render function for job post index item. In this component I pass down props from my job_post_index.jsx file which is a ul of a list to each job post(item).This took me a couple of times to understand why my pages were crashing when entering job posts page or even the posts page but eventually I was able to get it working with setting values from the props either to null or an empty string. This was because the rendering function is called multiple times and props are not always available to those first few renders.    
