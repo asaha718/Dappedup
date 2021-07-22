@@ -3,7 +3,7 @@ export const createJobApp= (job_application)=> {
         $.ajax({ 
             method: "POST", 
             url: 'api/job_applications', 
-            data: {job_application}
+            data: {'job_application': job_application}
         })
     )
 }
