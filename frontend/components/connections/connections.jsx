@@ -15,7 +15,8 @@ class Connections extends React.Component{
 
     render(){ 
         let { users, followingArr, createFollow, removeFollow, fetchCurrentUserFollows, currentUserId } = this.props;
-
+        const profiles= users.filter((user) => user.id !== currentUserId)
+    
         return( 
             <div className="connections-page">
                 <br/>
@@ -26,7 +27,7 @@ class Connections extends React.Component{
                     <h2>People you may know on DappedUp</h2>
                     <ul className="listed-users">
                         { 
-                            users.map((user)=>{ 
+                            profiles.map((user)=>{ 
                                 return( 
                                     <ProfileBadgeItem key={user.id} 
                                                     user={user} 

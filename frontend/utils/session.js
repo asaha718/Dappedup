@@ -1,10 +1,14 @@
-export const login = user => ( // creates new session
+export const login = user => { 
+  return (
     $.ajax({
       method: 'POST',
       url: '/api/session',
       data: { user }
     })
-);
+
+  )
+}
+
   
 export const signup = user => ( //creates new user
     $.ajax({
