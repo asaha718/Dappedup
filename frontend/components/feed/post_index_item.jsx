@@ -4,19 +4,29 @@ import PokeLeague from '../../../public/images/pokemon_league.jpg';
 import EditPostItem from './edit_post_item'; 
 
 const PostIndexItem= ({post, updatePost, deletePost, closeModal, openModal, current_userId, users}) => { 
-    const userOpt= post.author_id === current_userId ?                 
-    <div className="post-option-btns">
-        <div className="edit-post-btn-ctn">
-            <button className='edit-post-btn' onClick={() => openModal({modal: 'edit', id: post.id})}>
-                <i className="fa fa-edit">edit</i>
+    const userOpt =
+      post.author_id === current_userId ? (
+        <div className="post-option-btns">
+          <div className="edit-post-btn-ctn">
+            <button
+              className="edit-post-btn"
+              onClick={() => openModal({ modal: "edit", id: post.id })}
+            >
+              <i className="fa fa-edit"></i>edit
             </button>
+          </div>
+          <div className="delete-post-btn-ctn">
+            <button
+              className="delete-post-btn"
+              onClick={() => deletePost(post.id)}
+            >
+              <i className="fa fa-trash"></i>delete
+            </button>
+          </div>
         </div>
-        <div className="delete-post-btn-ctn">
-            <button className='delete-post-btn' onClick={()=> deletePost(post.id)} >
-                <i className="fa fa-trash">delete</i>
-            </button>
-        </div> 
-    </div> : <p> </p> ;
+      ) : (
+        <p> </p>
+      ); ;
 
     let profilePic= users[post.author_id].user_role === "user" ? 
         <img src="https://i.pinimg.com/originals/18/d9/e1/18d9e1307018dbc76750ca7d5124fccd.png"/>
