@@ -9,7 +9,6 @@ import EditProfileForm from './edit_profile';
 
 
 const mSTP= (state, ownProps) => {
-    // console.log(state);
     let profileId= Number(ownProps.match.params.id ); 
     return {
         userId: Number(ownProps.match.params.id), 
@@ -25,7 +24,6 @@ const mSTP= (state, ownProps) => {
 }
 
 const mDTP= dispatch => {
-    // debugger
     return {
     visitProfile: userId=> dispatch(visitProfile(userId)), 
     fetchProfiles: () => dispatch(fetchProfiles()),  

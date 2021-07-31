@@ -25,7 +25,6 @@ class UserProfile extends React.Component{
     }
 
     handleFollow(userId){ 
-        // console.log(userId)
         if(this.state.status === 'Follow'){ 
             this.setState({status: 'Following'})
             this.props.createFollow(userId)
