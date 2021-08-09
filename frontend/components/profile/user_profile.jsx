@@ -40,7 +40,7 @@ class UserProfile extends React.Component{
     render(){
         const editProf= this.props.currentUsersProfile === this.props.userProfile ?
             <button className="edit-profile-btn" onClick={() => this.props.openModal({modal: 'editProfile'})}>
-                <i className="fa fa-edit">edit</i> 
+                <i className="fa fa-edit"></i>edit
             </button> : <p> </p>; 
         const editJob= this.props.currentUsersProfile === this.props.userProfile ?
             <button className='add-job-btn' onClick={() => this.props.openModal({modal: 'addJob'})}>

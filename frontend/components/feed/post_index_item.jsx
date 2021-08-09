@@ -1,7 +1,6 @@
 import React from 'react'; 
 import {Link} from 'react-router-dom'; 
 import PokeLeague from '../../../public/images/pokemon_league.jpg'; 
-import EditPostItem from './edit_post_item'; 
 
 const PostIndexItem= ({post, updatePost, deletePost, closeModal, openModal, current_userId, users}) => { 
     const userOpt =

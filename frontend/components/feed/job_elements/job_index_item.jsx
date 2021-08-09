@@ -1,10 +1,14 @@
 import React from 'react'; 
 
 const JobIndexItem= ({job, deleteJob, currentUserId, updateJob}) => { 
-    const removeJob= currentUserId === job.user_id ?
-        <button className='delete-job-btn' onClick={()=> deleteJob(job.id)} >
-            <i className="fa fa-trash">delete</i>
-        </button> : <p> </p>; 
+    const removeJob =
+      currentUserId === job.user_id ? (
+        <button className="delete-job-btn" onClick={() => deleteJob(job.id)}>
+          <i className="fa fa-trash"></i> delete
+        </button>
+      ) : (
+        <p> </p>
+      ); 
 
         const endDate = job.end_date ? job.end_date : 'present'
     return(

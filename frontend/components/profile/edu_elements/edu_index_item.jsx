@@ -3,7 +3,7 @@ import React from 'react';
 const EduIndexItem=({ edu, deleteEdu, currentUserId, updateEdu})=> {
     const removeEdu= currentUserId === edu.user_id ?
         <button className='delete-edu-btn' onClick={()=> deleteEdu(edu.id)} >
-            <i className="fa fa-trash">delete</i>
+            <i className="fa fa-trash"></i> delete
         </button> : <p> </p>; 
         const endDate = edu.end_date ? edu.end_date : 'present'
     return (
