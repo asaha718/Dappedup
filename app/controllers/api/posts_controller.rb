@@ -31,7 +31,6 @@ class Api::PostsController < ApplicationController
 
     def destroy
         @post= Post.find_by(id: params[:id])
-        #should only be able to destroy your own post
          
         if @post.destroy
             render :show

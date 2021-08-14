@@ -16,7 +16,7 @@ export const createPost= (post)=> (
         method: 'POST',
         contentType: false, 
         processData: false, 
-        data: {post}
+        data: post
     })
 );
 
