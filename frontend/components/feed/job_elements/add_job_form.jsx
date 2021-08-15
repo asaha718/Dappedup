@@ -110,6 +110,7 @@ class AddJob extends React.Component {
                 onChange={this.update("end_date")}
               />
             </label>
+            <p>*If you currently work here, leave End Date blank</p>
             <input className="save-job-btn" type="submit" value="Save" />
           </div>
         </form>

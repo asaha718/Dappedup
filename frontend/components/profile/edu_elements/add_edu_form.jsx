@@ -5,7 +5,7 @@ class AddEdu extends React.Component {
     super(props);
     this.state = this.props.edu;
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.todaysDate= this.todaysDate.bind(this);
+    this.todaysDate = this.todaysDate.bind(this);
   }
 
   handleSubmit(e) {
@@ -20,22 +20,21 @@ class AddEdu extends React.Component {
     };
   }
 
-  todaysDate(){ 
+  todaysDate() {
     let today = new Date();
     let dd = today.getDate();
     let mm = today.getMonth() + 1;
     let yyyy = today.getFullYear();
     if (dd < 10) {
-        dd = "0" + dd;
+      dd = "0" + dd;
     }
     if (mm < 10) {
-        mm = "0" + mm;
+      mm = "0" + mm;
     }
 
     today = yyyy + "-" + mm + "-" + dd;
-    return `${today}`
+    return `${today}`;
   }
-
 
   render() {
     return (
@@ -85,6 +84,7 @@ class AddEdu extends React.Component {
                 onChange={this.update("end_date")}
               />
             </label>
+            <p>*If you currently study here, leave End Date blank</p>
             <input className="save-edu-btn" type="submit" value="Save" />
           </div>
         </form>
