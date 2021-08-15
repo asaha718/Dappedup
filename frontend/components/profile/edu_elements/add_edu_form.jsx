@@ -5,7 +5,7 @@ class AddEdu extends React.Component {
     super(props);
     this.state = this.props.edu;
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.todaysDate=this.todaysDate.bind(this);
+    this.todaysDate= this.todaysDate.bind(this);
   }
 
   handleSubmit(e) {

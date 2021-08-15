@@ -1,7 +1,6 @@
 class Api::EducationsController < ApplicationController
     def index
         @educations= Education.all
-        #all education associated with that userId
         render :index
     end
 

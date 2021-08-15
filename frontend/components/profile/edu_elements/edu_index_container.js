@@ -1,16 +1,13 @@
 import { connect } from 'react-redux';
 import {orderItems} from '../../../utils/selector';
-import { withRouter } from 'react-router'; 
 
 import { fetchAllEdu, updateEdu, deleteEdu } from '../../../actions/edu_actions'; 
 import EduIndex from './edu_index'; 
 
-const mSTP= (state, ownProps) =>{
-    // console.log(ownProps); 
+const mSTP= (state) =>{
     return { 
     educations: orderItems(state.entities.educations), 
     currentUserId: state.session.id, 
-    // profileId: ownProps.match.params.id
     }
 }; 
 
