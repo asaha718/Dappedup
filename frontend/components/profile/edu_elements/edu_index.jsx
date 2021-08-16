@@ -11,7 +11,7 @@ class EduIndex extends React.Component {
   }
 
   render() {
-    let { educations, deleteEdu, updateEdu, currentUserId} =
+    let { educations, deleteEdu, updateEdu, currentUserId, openModal } =
       this.props;
     if (this.props.educations) {
       return (
@@ -26,6 +26,7 @@ class EduIndex extends React.Component {
                     deleteEdu={deleteEdu}
                     updateEdu={updateEdu}
                     currentUserId={currentUserId}
+                    openModal={openModal}
                   />
                 );
               }

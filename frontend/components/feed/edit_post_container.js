@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
 import EditPostItem from './edit_post_item';
-import { withRouter } from 'react-router';
 
 import { openModal, closeModal } from '../../actions/modal_actions'; 
 import { fetchPost, updatePost} from '../../actions/post_actions'; 

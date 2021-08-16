@@ -2,6 +2,7 @@ import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import EditPostContainer from '../feed/edit_post_container';
+import EditEduContainer from '../profile/edu_elements/edit_edu_container'
 import AddJobContainer from '../feed/job_elements/add_job_container';
 import AddEduContainer from '../profile/edu_elements/add_edu_container';
 import AddJobPosting from '../jobs_feed/create_job_post_form_container';  
@@ -29,8 +30,11 @@ const Modal= ({ modal, closeModal, id})=> {
       case 'addJobPosting':
           component = <AddJobPosting /> ; 
         break
-      case 'editJob': 
+      case 'editJobPosting': 
           component= <EditJobPosting /> ; 
+        break
+      case 'editEdu': 
+          component = <EditEduContainer />; 
         break
       default:
         return null;

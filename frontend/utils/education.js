@@ -20,7 +20,7 @@ export const createEdu= (education)=> (
 
 export const updateEdu= (education)=> ( 
     $.ajax({ 
-        url: `/api/educations/${edu.id}`,
+        url: `/api/educations/${education.id}`,
         method: 'PATCH',
         data: {education}
     })

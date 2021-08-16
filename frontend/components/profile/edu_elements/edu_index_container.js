@@ -6,6 +6,8 @@ import {
   updateEdu,
   deleteEdu,
 } from "../../../actions/edu_actions";
+
+import { openModal } from "../../../actions/modal_actions";
 import EduIndex from "./edu_index";
 
 const mSTP = (state) => {
@@ -19,6 +21,7 @@ const mDTP = (dispatch) => ({
   fetchEdus: () => dispatch(fetchAllEdu()),
   updateEdu: (edu) => dispatch(updateEdu(edu)),
   deleteEdu: (edu) => dispatch(deleteEdu(edu)),
+  openModal: (modal) => dispatch(openModal(modal))
 });
 
 export default connect(mSTP, mDTP)(EduIndex);
