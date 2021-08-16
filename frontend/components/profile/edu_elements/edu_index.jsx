@@ -33,7 +33,9 @@ class EduIndex extends React.Component {
             })}
           </ul>
         </div>
-      );
+      )
+    } else {
+      return <div> Add previous education</div>;
     }
   }
 }

@@ -32,8 +32,12 @@ class JobIndex extends React.Component {
             })}
           </ul>
         </div>
-      );
-    }ss
+      )
+    }else { 
+      return(
+        <div> Add work experience</div>
+      )
+    }
   }
 }
 
