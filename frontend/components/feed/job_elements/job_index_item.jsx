@@ -1,11 +1,19 @@
 import React from "react";
 
-const JobIndexItem = ({ job, deleteJob, currentUserId, updateJob }) => {
-  const removeJob =
+const JobIndexItem = ({ job, deleteJob, currentUserId, openModal}) => {
+  const modJob =
     currentUserId === job.user_id ? (
-      <button className="delete-job-btn" onClick={() => deleteJob(job.id)}>
-        <i className="fa fa-trash"></i> delete
-      </button>
+      <div className="edu-option-btns">
+        <button className="delete-job-btn" onClick={() => deleteJob(job.id)}>
+          <i className="fa fa-trash"></i> delete
+        </button>
+        <button
+          className="edit-edu-btn"
+          onClick={() => openModal({ modal: "editJob", id: job.id })}
+        >
+          <i className="fa fa-edit"></i>edit
+        </button>
+      </div>
     ) : (
       <p> </p>
     );
@@ -28,7 +36,7 @@ const JobIndexItem = ({ job, deleteJob, currentUserId, updateJob }) => {
             <p>{job.description}</p>
           </div>
         </div>
-        <div className="delete-job-btn-ctn">{removeJob}</div>
+        <div className="delete-job-btn-ctn">{modJob}</div>
       </li>
     </div>
   );

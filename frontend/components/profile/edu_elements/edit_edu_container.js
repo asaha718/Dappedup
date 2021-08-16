@@ -2,9 +2,8 @@ import { connect } from "react-redux";
 import EditEduItem from "./edit_edu_item"; 
 import { closeModal } from "../../../actions/modal_actions"; 
 import { fetchEdu, updateEdu } from "../../../actions/edu_actions";
-import { withRouter } from "react-router";
 
-const mSTP= (state, ownProps) => {
+const mSTP= (state) => {
     return {
       edu: state.entities.educations[state.ui.modal.id] 
     };

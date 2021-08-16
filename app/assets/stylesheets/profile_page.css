@@ -265,3 +265,25 @@
   font-family: Arial, Helvetica, sans-serif;
   font-size: 11px;
 }
+
+.edu-option-btns {
+  display: flex;
+}
+
+.edit-edu-btn {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  margin-left: 3px;
+  cursor: pointer;
+  border-radius: 12px;
+  display: block;
+  background-color: rgba(255, 255, 255, 0.856);
+  color: black;
+  border: 2px solid #0850eb;
+  transition-duration: 0.4s;
+}
+
+.edit-edu-btn:hover {
+  background-color: #0850eb;
+  color: white;
+}

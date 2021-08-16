@@ -11,7 +11,7 @@ class JobIndex extends React.Component {
   }
 
   render() {
-    let { jobs, deleteJob, updateJob, currentUserId } = this.props;
+    let { jobs, deleteJob, updateJob, currentUserId, openModal } = this.props;
     if (this.props.jobs) {
       return (
         <div>
@@ -25,6 +25,7 @@ class JobIndex extends React.Component {
                     updateJob={updateJob}
                     deleteJob={deleteJob}
                     currentUserId={currentUserId}
+                    openModal={openModal}
                   />
                 );
               }

@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import { orderItems } from "../../../utils/selector";
+import { openModal } from "../../../actions/modal_actions";
 
 import {
   fetchAllJobs,
@@ -19,6 +20,7 @@ const mDTP = (dispatch) => ({
   fetchJobs: () => dispatch(fetchAllJobs()),
   updateJob: (job) => dispatch(updateJob(job)),
   deleteJob: (job) => dispatch(deleteJob(job)),
+  openModal: (modal) => dispatch(openModal(modal))
 });
 
 export default connect(mSTP, mDTP)(JobIndex);

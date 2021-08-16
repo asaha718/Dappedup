@@ -1,4 +1,4 @@
-import React from 'react'; 
+import React from "react";
 
 class EditEduItem extends React.Component {
   constructor(props) {
@@ -38,7 +38,7 @@ class EditEduItem extends React.Component {
       <div className="edit-post-form">
         <form onSubmit={this.handleSubmit}>
           <div className="edit-post-modal-header">
-            <h2>Edit Edu</h2>
+            <h2>Edit Education</h2>
             <div className="close-x-ctn">
               <div onClick={this.props.closeModal} className="close-x">
                 &times;
@@ -52,36 +52,36 @@ class EditEduItem extends React.Component {
               value={this.state.school}
               onChange={this.update("school")}
             />
-            <label>
-              Field of Study:
-              <input
-                type="text"
-                value={this.state.field_of_study}
-                onChange={this.update("field_of_study")}
-                required
-              />
-            </label>
-            <label>
-              Start Date:
-              <input
-                type="date"
-                value={this.state.start_date}
-                max={this.todaysDate()}
-                onChange={this.update("start_date")}
-                required
-              />
-            </label>
-            <label>
-              End Date:
-              <input
-                type="date"
-                value={this.state.end_date}
-                min={this.state.start_date}
-                onChange={this.update("end_date")}
-              />
-            </label>
-            <p>*If you currently study here, leave End Date blank</p>
           </label>
+          <label>
+            Field of Study:
+            <input
+              type="text"
+              value={this.state.field_of_study}
+              onChange={this.update("field_of_study")}
+              required
+            />
+          </label>
+          <label>
+            Start Date:
+            <input
+              type="date"
+              value={this.state.start_date}
+              max={this.todaysDate()}
+              onChange={this.update("start_date")}
+              required
+            />
+          </label>
+          <label>
+            End Date:
+            <input
+              type="date"
+              value={this.state.end_date}
+              min={this.state.start_date}
+              onChange={this.update("end_date")}
+            />
+          </label>
+          <p>*If you currently study here, leave End Date blank</p>
           <input className="update-post-btn" type="submit" value="update" />
         </form>
       </div>
@@ -89,4 +89,4 @@ class EditEduItem extends React.Component {
   }
 }
 
-export default EditEduItem; 
+export default EditEduItem;
