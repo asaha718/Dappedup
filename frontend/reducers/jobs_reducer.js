@@ -14,7 +14,7 @@ const jobReducer = (oldState={}, action) => {
             return newState;
         case REMOVE_JOB:
             newState= merge({}, oldState); 
-            delete newState[action.eduId]; 
+            delete newState[action.jobId]; 
             return newState; 
         default:
             return oldState 
